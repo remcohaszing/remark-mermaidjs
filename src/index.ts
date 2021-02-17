@@ -1,6 +1,7 @@
 import { resolve } from 'path';
 import { pathToFileURL } from 'url';
 
+// eslint-disable-next-line import/no-unresolved
 import { Code, Parent } from 'mdast';
 import { Mermaid } from 'mermaid';
 import { Browser, launch, LaunchOptions } from 'puppeteer';
