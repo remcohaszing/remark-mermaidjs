@@ -4,7 +4,7 @@ import { pathToFileURL } from 'url';
 // eslint-disable-next-line import/no-unresolved
 import { Code, Parent } from 'mdast';
 import { Mermaid } from 'mermaid';
-import { Browser, launch, LaunchOptions } from 'puppeteer';
+import { Browser, launch, LaunchOptions, Page } from 'puppeteer';
 import * as SVGO from 'svgo';
 import { Attacher } from 'unified';
 import * as visit from 'unist-util-visit';
@@ -89,6 +89,8 @@ export const remarkMermaid: Attacher<[RemarkMermaidOptions?]> = ({
   theme = 'default',
 } = {}) => {
   const optimizer = svgo && new SVGO(svgo);
+  let browserPromise: Promise<Browser> | undefined;
+  let count = 0;
 
   return async function transformer(ast) {
     const instances: [string, number, Parent][] = [];
@@ -102,10 +104,12 @@ export const remarkMermaid: Attacher<[RemarkMermaidOptions?]> = ({
       return ast;
     }
 
-    let browser: Browser;
+    count += 1;
+    browserPromise ??= launch(launchOptions);
+    const browser = await browserPromise;
+    let page: Page | undefined;
     try {
-      browser = await launch(launchOptions);
-      const page = await browser.newPage();
+      page = await browser.newPage();
       await page.goto(String(pathToFileURL(resolve(__dirname, '..', 'index.html'))));
       await page.addScriptTag({ path: require.resolve('mermaid/dist/mermaid.min') });
       await page.setViewport({ width: 600, height: 3000 });
@@ -135,7 +139,11 @@ export const remarkMermaid: Attacher<[RemarkMermaidOptions?]> = ({
         }),
       );
     } finally {
-      // @ts-expect-error The browser is referenced before it’s defined on purpose here.
+      count -= 1;
+      await page?.close();
+    }
+    if (!count) {
+      browserPromise = undefined;
       await browser?.close();
     }
 

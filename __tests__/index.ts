@@ -2,6 +2,7 @@ import { promises as fs, readdirSync } from 'fs';
 import { join, resolve } from 'path';
 
 import { toMatchFile } from 'jest-file-snapshot';
+import * as puppeteer from 'puppeteer';
 import * as remark from 'remark';
 
 import { defaultSVGOOptions, remarkMermaid, RemarkMermaidOptions } from '../src';
@@ -26,4 +27,39 @@ describe('fixtures', () => {
     const { contents } = await remark().use(remarkMermaid, options).process(actual);
     expect(contents).toMatchFile(expected);
   });
+});
+
+const markdown = `
+\`\`\`mermaid
+graph TD;
+  A-->B;
+\`\`\`
+`;
+
+it('should not launch the browser if no graphs are defined', async () => {
+  const processor = remark().use(remarkMermaid);
+  jest.spyOn(puppeteer, 'launch');
+  await processor.process('```js\n```');
+  // eslint-disable-next-line jest/no-restricted-matchers
+  expect(puppeteer.launch).not.toHaveBeenCalled();
+});
+
+it('should share the browser for concurrent calls', async () => {
+  const processor = remark().use(remarkMermaid);
+  jest.spyOn(puppeteer, 'launch');
+  await Promise.all(
+    Array.from<string>({ length: 3 })
+      .fill(markdown)
+      .map((content) => processor.process(content)),
+  );
+  expect(puppeteer.launch).toHaveBeenCalledTimes(1);
+});
+
+it('should close the browser if no more files are being processed', async () => {
+  const processor = remark().use(remarkMermaid);
+  jest.spyOn(puppeteer, 'launch');
+  for (const content of Array.from<string>({ length: 3 }).fill(markdown)) {
+    await processor.process(content);
+  }
+  expect(puppeteer.launch).toHaveBeenCalledTimes(3);
 });
