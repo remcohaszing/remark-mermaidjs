@@ -20,7 +20,6 @@ export const defaultSVGOOptions: SVGO.Options = {
     indent: 2,
     pretty: true,
   },
-  // @ts-expect-error https://github.com/DefinitelyTyped/DefinitelyTyped/pull/51286
   multipass: true,
   plugins: [
     { cleanupAttrs: true },
@@ -124,7 +123,6 @@ export const remarkMermaid: Attacher<[RemarkMermaidOptions?]> = ({
             const id = 'a';
             mermaid.initialize({ theme: t });
             const div = document.createElement('div');
-            // @ts-expect-error Despite what the types say, the callback is optional.
             div.innerHTML = mermaid.render(id, code);
             return div.innerHTML;
           }),

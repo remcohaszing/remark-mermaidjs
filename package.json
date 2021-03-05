@@ -34,12 +34,12 @@
     "node": ">=12"
   },
   "dependencies": {
-    "@types/svgo": "^1.3.3",
+    "@types/svgo": "^1.3.4",
     "hast-util-from-parse5": "^6.0.1",
-    "mermaid": "^8.2.3",
+    "mermaid": "^8.9.1",
     "parse5": "^6.0.1",
     "svgo": "^1.3.0",
-    "unified": "^9.2.0",
+    "unified": "^9.2.1",
     "unist-util-visit": "^2.0.0"
   },
   "peerDependencies": {
@@ -47,21 +47,21 @@
   },
   "devDependencies": {
     "@types/mdast": "^3.0.3",
-    "@types/mermaid": "^8.2.1",
-    "@typescript-eslint/eslint-plugin": "^4.15.1",
-    "@typescript-eslint/parser": "^4.15.1",
-    "eslint": "^7.20.0",
+    "@types/mermaid": "^8.2.2",
+    "@typescript-eslint/eslint-plugin": "^4.16.1",
+    "@typescript-eslint/parser": "^4.16.1",
+    "eslint": "^7.21.0",
     "eslint-config-remcohaszing": "^3.2.0",
     "eslint-plugin-eslint-comments": "^3.2.0",
     "eslint-plugin-import": "^2.18.2",
     "eslint-plugin-jest": "^24.1.5",
     "eslint-plugin-jest-formatting": "^2.0.1",
-    "eslint-plugin-jsdoc": "^32.0.2",
+    "eslint-plugin-jsdoc": "^32.2.0",
     "eslint-plugin-markdown": "^2.0.0",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-prettier": "^3.3.1",
     "eslint-plugin-sort-destructure-keys": "^1.3.5",
-    "eslint-plugin-unicorn": "^28.0.1",
+    "eslint-plugin-unicorn": "^28.0.2",
     "jest": "^26.6.3",
     "jest-file-snapshot": "^0.5.0",
     "prettier": "^2.2.1",
@@ -69,7 +69,7 @@
     "rehype-stringify": "^8.0.0",
     "remark": "^13.0.0",
     "remark-rehype": "^8.0.0",
-    "ts-jest": "^26.5.1",
-    "typescript": "^4.1.5"
+    "ts-jest": "^26.5.3",
+    "typescript": "^4.2.3"
   }
 }
