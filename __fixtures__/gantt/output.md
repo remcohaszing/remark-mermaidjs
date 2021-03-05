@@ -108,7 +108,7 @@
       <tspan x="10" alignment-baseline="central">Critical tasks</tspan>
     </text>
   </g>
-  <path fill="none" stroke="red" stroke-width="2" d="M70727 25v290"/>
+  <path fill="none" stroke="red" stroke-width="2" d="M71024 25v290"/>
   <text x="292" y="25" font-family="'trebuchet ms',verdana,arial,sans-serif" font-size="18" text-anchor="middle">
     Adding GANTT diagram functionality to mermaid
   </text>

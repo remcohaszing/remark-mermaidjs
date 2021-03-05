@@ -1,9 +1,11 @@
 import { resolve } from 'path';
 import { pathToFileURL } from 'url';
 
+import * as fromParse5 from 'hast-util-from-parse5';
 // eslint-disable-next-line import/no-unresolved
 import { Code, Parent } from 'mdast';
 import { Mermaid } from 'mermaid';
+import { parseFragment } from 'parse5';
 import { Browser, launch, LaunchOptions, Page } from 'puppeteer';
 import * as SVGO from 'svgo';
 import { Attacher } from 'unified';
@@ -135,7 +137,11 @@ export const remarkMermaid: Attacher<[RemarkMermaidOptions?]> = ({
           if (optimizer) {
             value = (await optimizer.optimize(value)).data;
           }
-          parent.children.splice(index, 1, { type: 'html', value });
+          parent.children.splice(index, 1, {
+            type: 'paragraph',
+            children: [{ type: 'html', value }],
+            data: { hChildren: [fromParse5(parseFragment(value))] },
+          });
         }),
       );
     } finally {

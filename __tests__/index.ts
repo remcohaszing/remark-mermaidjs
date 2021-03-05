@@ -3,7 +3,9 @@ import { join, resolve } from 'path';
 
 import { toMatchFile } from 'jest-file-snapshot';
 import * as puppeteer from 'puppeteer';
+import * as rehypeStringify from 'rehype-stringify';
 import * as remark from 'remark';
+import * as remarkRehype from 'remark-rehype';
 
 import { defaultSVGOOptions, remarkMermaid, RemarkMermaidOptions } from '../src';
 
@@ -62,4 +64,19 @@ it('should close the browser if no more files are being processed', async () => 
     await processor.process(content);
   }
   expect(puppeteer.launch).toHaveBeenCalledTimes(3);
+});
+
+it('should output a remark-rehype compatible ast', async () => {
+  const processor = remark().use(remarkMermaid).use(remarkRehype).use(rehypeStringify);
+  jest.spyOn(puppeteer, 'launch');
+  const { contents } = await processor.process(`
+\`\`\`mermaid
+graph TD;
+    A-->B;
+    A-->C;
+    B-->D;
+    C-->D;
+\`\`\`
+`);
+  expect(contents).toMatchFile(join(__dirname, '__snapshots__', 'rehype.html'));
 });
