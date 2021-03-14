@@ -46,6 +46,7 @@
     "puppeteer": ">=8"
   },
   "devDependencies": {
+    "@types/jest": "^26.0.20",
     "@types/mdast": "^3.0.3",
     "@types/mermaid": "^8.2.2",
     "@typescript-eslint/eslint-plugin": "^4.17.0",
