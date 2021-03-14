@@ -54,8 +54,9 @@ The [mermaid theme] to use.
 
 [codecov badge]: https://codecov.io/gh/remcohaszing/remark-mermaidjs/branch/master/graph/badge.svg
 [codecov]: https://codecov.io/gh/remcohaszing/remark-mermaidjs
-[github actions badge]: https://github.com/remcohaszing/remark-mermaidjs/workflows/NodeJS/badge.svg
-[github actions]: https://github.com/remcohaszing/remark-mermaidjs/actions
+[github actions badge]:
+  https://github.com/remcohaszing/remark-mermaidjs/actions/workflows/ci.yml/badge.svg
+[github actions]: https://github.com/remcohaszing/remark-mermaidjs/actions/workflows/ci.yml
 [install-chrome-dependencies]: https://gitlab.com/appsemble/install-chrome-dependencies
 [jest badge]: https://jestjs.io/img/jest-badge.svg
 [jest]: https://jestjs.io
