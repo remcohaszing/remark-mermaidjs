@@ -2,12 +2,11 @@ import { resolve } from 'path';
 import { pathToFileURL } from 'url';
 
 import * as fromParse5 from 'hast-util-from-parse5';
-// eslint-disable-next-line import/no-unresolved
 import { Code, Parent } from 'mdast';
 import { Mermaid } from 'mermaid';
 import { parseFragment } from 'parse5';
 import { Browser, launch, LaunchOptions, Page } from 'puppeteer';
-import * as SVGO from 'svgo';
+import { optimize, OptimizeOptions } from 'svgo';
 import { Attacher } from 'unified';
 import * as visit from 'unist-util-visit';
 
@@ -15,44 +14,62 @@ type Theme = 'dark' | 'default' | 'forest' | 'neutral';
 
 declare const mermaid: Mermaid;
 
-export const defaultSVGOOptions: SVGO.Options = {
+export const defaultSVGOOptions: OptimizeOptions = {
   js2svg: {
     indent: 2,
     pretty: true,
   },
-  multipass: true,
+  multipass: false,
   plugins: [
-    { cleanupAttrs: true },
-    { removeViewBox: true },
-    { inlineStyles: { onlyMatchedOnce: false } },
-    { convertStyleToAttrs: true },
-    { removeStyleElement: true },
-    { cleanupIDs: { force: true } },
-    { removeAttrs: { attrs: ['class'] } },
-    { removeUnknownsAndDefaults: true },
-    { removeUselessDefs: true },
-    {
-      removeHiddenElems: {
-        isHidden: true,
-        displayNone: true,
-        opacity0: true,
-        circleR0: true,
-        ellipseRX0: true,
-        ellipseRY0: true,
-        rectWidth0: true,
-        rectHeight0: true,
-        patternWidth0: true,
-        patternHeight0: true,
-        imageWidth0: true,
-        imageHeight0: true,
-        pathEmptyD: true,
-        polylineEmptyPoints: true,
-        polygonEmptyPoints: true,
-      },
-    },
-    { removeEmptyContainers: true },
-    { collapseGroups: true },
-    { sortAttrs: true },
+    { name: 'addAttributesToSVGElement', active: false },
+    { name: 'addClassesToSVGElement', active: false },
+    { name: 'cleanupAttrs', active: true },
+    { name: 'cleanupEnableBackground', active: false },
+    { name: 'cleanupListOfValues', active: false },
+    { name: 'cleanupNumericValues', active: true },
+    { name: 'convertColors', active: true },
+    { name: 'convertEllipseToCircle', active: true },
+    { name: 'convertPathData', active: true },
+    { name: 'convertShapeToPath', active: false },
+    { name: 'convertTransform', active: true },
+    { name: 'minifyStyles', active: true },
+    { name: 'inlineStyles', active: true, params: { onlyMatchedOnce: false } },
+    { name: 'convertStyleToAttrs', active: true },
+    { name: 'mergePaths', active: true },
+    { name: 'moveElemsAttrsToGroup', active: false },
+    { name: 'moveGroupAttrsToElems', active: false },
+    { name: 'prefixIds', active: false },
+    { name: 'removeAttributesBySelector', active: false },
+    { name: 'removeComments', active: true },
+    { name: 'removeDesc', active: true },
+    { name: 'removeDimensions', active: false },
+    { name: 'removeDoctype', active: true },
+    { name: 'removeEditorsNSData', active: true },
+    { name: 'removeElementsByAttr', active: false },
+    { name: 'removeEmptyAttrs', active: false },
+    { name: 'removeEmptyContainers', active: true },
+    { name: 'removeEmptyText', active: true },
+    { name: 'removeHiddenElems', active: true },
+    { name: 'removeMetadata', active: true },
+    { name: 'removeNonInheritableGroupAttrs', active: true },
+    { name: 'removeOffCanvasPaths', active: true },
+    { name: 'removeRasterImages', active: true },
+    { name: 'removeScriptElement', active: true },
+    { name: 'removeStyleElement', active: true },
+    { name: 'removeTitle', active: true },
+    { name: 'removeUnknownsAndDefaults', active: true },
+    { name: 'removeUnusedNS', active: true },
+    { name: 'removeUselessDefs', active: true },
+    { name: 'removeUselessStrokeAndFill', active: true, params: { removeNone: true } },
+    { name: 'removeViewBox', active: true },
+    { name: 'removeXMLNS', active: true },
+    { name: 'removeXMLProcInst', active: true },
+    { name: 'reusePaths', active: true },
+    { name: 'removeAttrs', active: true, params: { attrs: ['class'] } },
+    { name: 'cleanupIDs', active: true },
+    { name: 'sortAttrs', active: true },
+    { name: 'sortDefsChildren', active: true },
+    { name: 'collapseGroups', active: true },
   ],
 };
 
@@ -71,7 +88,7 @@ export interface RemarkMermaidOptions {
    *
    * @default defaultSVGOOptions
    */
-  svgo?: SVGO.Options | null;
+  svgo?: OptimizeOptions | null;
 
   /**
    * The Mermaod theme to use.
@@ -89,7 +106,6 @@ export const remarkMermaid: Attacher<[RemarkMermaidOptions?]> = ({
   svgo = defaultSVGOOptions,
   theme = 'default',
 } = {}) => {
-  const optimizer = svgo && new SVGO(svgo);
   let browserPromise: Promise<Browser> | undefined;
   let count = 0;
 
@@ -129,19 +145,18 @@ export const remarkMermaid: Attacher<[RemarkMermaidOptions?]> = ({
         instances.map((instance) => instance[0]),
         theme,
       );
-      await Promise.all(
-        instances.map(async ([, index, parent], i) => {
-          let value = results[i];
-          if (optimizer) {
-            value = (await optimizer.optimize(value)).data;
-          }
-          parent.children.splice(index, 1, {
-            type: 'paragraph',
-            children: [{ type: 'html', value }],
-            data: { hChildren: [fromParse5(parseFragment(value))] },
-          });
-        }),
-      );
+
+      instances.map(([, index, parent], i) => {
+        let value = results[i];
+        if (svgo) {
+          value = optimize(value, svgo).data;
+        }
+        parent.children.splice(index, 1, {
+          type: 'paragraph',
+          children: [{ type: 'html', value }],
+          data: { hChildren: [fromParse5(parseFragment(value))] },
+        });
+      });
     } finally {
       count -= 1;
       await page?.close();
