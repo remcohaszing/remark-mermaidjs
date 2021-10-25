@@ -52,7 +52,7 @@ completely.
 
 The [mermaid theme] to use.
 
-[codecov badge]: https://codecov.io/gh/remcohaszing/remark-mermaidjs/branch/master/graph/badge.svg
+[codecov badge]: https://codecov.io/gh/remcohaszing/remark-mermaidjs/branch/main/graph/badge.svg
 [codecov]: https://codecov.io/gh/remcohaszing/remark-mermaidjs
 [github actions badge]:
   https://github.com/remcohaszing/remark-mermaidjs/actions/workflows/ci.yml/badge.svg
