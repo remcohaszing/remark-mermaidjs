@@ -5,7 +5,7 @@ import * as fromParse5 from 'hast-util-from-parse5';
 import { Code, Parent } from 'mdast';
 import { Mermaid } from 'mermaid';
 import { parseFragment } from 'parse5';
-import { Browser, launch, LaunchOptions, Page } from 'puppeteer';
+import * as puppeteer from 'puppeteer';
 import { optimize, OptimizeOptions } from 'svgo';
 import { Attacher } from 'unified';
 import * as visit from 'unist-util-visit';
@@ -19,7 +19,7 @@ export const defaultSVGOOptions: OptimizeOptions = {
     indent: 2,
     pretty: true,
   },
-  multipass: false,
+  multipass: true,
   plugins: [
     { name: 'addAttributesToSVGElement', active: false },
     { name: 'addClassesToSVGElement', active: false },
@@ -79,7 +79,7 @@ export interface RemarkMermaidOptions {
    *
    * @default {}
    */
-  launchOptions?: LaunchOptions;
+  launchOptions?: puppeteer.LaunchOptions;
 
   /**
    * SVGO options used to minify the SVO output.
@@ -106,7 +106,7 @@ export const remarkMermaid: Attacher<[RemarkMermaidOptions?]> = ({
   svgo = defaultSVGOOptions,
   theme = 'default',
 } = {}) => {
-  let browserPromise: Promise<Browser> | undefined;
+  let browserPromise: Promise<puppeteer.Browser> | undefined;
   let count = 0;
 
   return async function transformer(ast) {
@@ -122,13 +122,13 @@ export const remarkMermaid: Attacher<[RemarkMermaidOptions?]> = ({
     }
 
     count += 1;
-    browserPromise ??= launch(launchOptions);
+    browserPromise ??= puppeteer.launch(launchOptions);
     const browser = await browserPromise;
-    let page: Page | undefined;
+    let page: puppeteer.Page | undefined;
     try {
       page = await browser.newPage();
       await page.goto(String(pathToFileURL(resolve(__dirname, '..', 'index.html'))));
-      await page.addScriptTag({ path: require.resolve('mermaid/dist/mermaid.min') });
+      await page.addScriptTag({ path: require.resolve('mermaid/dist/mermaid.min.js') });
       await page.setViewport({ width: 600, height: 3000 });
 
       const results = await page.evaluate(

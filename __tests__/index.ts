@@ -42,7 +42,6 @@ it('should not launch the browser if no graphs are defined', async () => {
   const processor = remark().use(remarkMermaid);
   jest.spyOn(puppeteer, 'launch');
   await processor.process('```js\n```');
-  // eslint-disable-next-line jest/no-restricted-matchers
   expect(puppeteer.launch).not.toHaveBeenCalled();
 });
 
