@@ -19,7 +19,7 @@ export const defaultSVGOOptions: OptimizeOptions = {
     indent: 2,
     pretty: true,
   },
-  multipass: true,
+  multipass: false,
   plugins: [
     { name: 'addAttributesToSVGElement', active: false },
     { name: 'addClassesToSVGElement', active: false },
