@@ -12,8 +12,8 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           node-version: 16
-      - run: yarn --frozen-lockfile
-      - run: yarn eslint .
+      - run: npm ci
+      - run: npx eslint .
 
   jest:
     runs-on: ubuntu-latest
@@ -25,8 +25,9 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           node-version: ${{ matrix.node-version }}
-      - run: yarn --frozen-lockfile
-      - run: yarn test --coverage
+      - run: npm --global install npm@8
+      - run: npm ci
+      - run: npm test -- --coverage
       - uses: codecov/codecov-action@v2
         if: ${{ matrix.node-version == 16 }}
 
@@ -37,8 +38,8 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: 16
-      - run: yarn --frozen-lockfile
-      - run: yarn prettier .
+      - run: npm ci
+      - run: npx prettier .
 
   tsc:
     runs-on: ubuntu-latest
@@ -47,5 +48,5 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           node-version: 16
-      - run: yarn --frozen-lockfile
-      - run: yarn tsc
+      - run: npm xi
+      - run: npx tsc

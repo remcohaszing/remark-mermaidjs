@@ -99,7 +99,7 @@ export interface RemarkMermaidOptions {
 }
 
 /**
- * @param options - Options that may be used to tweak the output.
+ * @param options Options that may be used to tweak the output.
  */
 export const remarkMermaid: Attacher<[RemarkMermaidOptions?]> = ({
   launchOptions = { args: ['--no-sandbox', '--disable-setuid-sandbox'] },

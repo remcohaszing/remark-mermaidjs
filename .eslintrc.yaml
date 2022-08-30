@@ -1,3 +1,6 @@
 extends:
   - remcohaszing
   - remcohaszing/jest
+rules:
+  import/extensions: off
+  import/no-unresolved: off
