@@ -1,6 +1,6 @@
 # An example of a gantt diagram
 
-<svg height="340" fill="#333" font-family="&quot;trebuchet ms&quot;,verdana,arial,sans-serif" font-size="16px" style="max-width:584px" viewBox="0 0 584 340">
+<svg height="340" fill="#333" aria-labelledby="chart-title-a chart-desc-a" font-family="&quot;trebuchet ms&quot;,verdana,arial,sans-serif" font-size="16px" style="max-width:584px" viewBox="0 0 584 340">
   <g fill="none" font-family="sans-serif" font-size="10" text-anchor="middle" transform="translate(75 290)">
     <path d="M.5-255V.5h434V-255"/>
     <g stroke="#d3d3d3" opacity=".8" shape-rendering="crispEdges" transform="translate(27.5)">
@@ -68,6 +68,6 @@
   <text x="450" y="279.5" fill="#000" font-size="11" text-anchor="end">Add to mermaid                      </text>
   <text x="10" y="98" dy="0em" font-family="var(--mermaid-font-family)" font-size="11"><tspan x="10" alignment-baseline="central">A section</tspan></text>
   <text x="10" y="218" dy="0em" font-family="var(--mermaid-font-family)" font-size="11"><tspan x="10" alignment-baseline="central">Critical tasks</tspan></text>
-  <line x1="85747" x2="85747" y1="25" y2="315" fill="none" stroke="red" stroke-width="2px"/>
+  <line x1="85750" x2="85750" y1="25" y2="315" fill="none" stroke="red" stroke-width="2px"/>
   <text x="292" y="25" font-family="var(--mermaid-font-family)" font-size="18px" text-anchor="middle">Adding GANTT diagram functionality to mermaid</text>
 </svg>

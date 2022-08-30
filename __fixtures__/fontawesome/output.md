@@ -4,7 +4,7 @@ It is possible to add icons from fontawesome.
 
 The icons are acessed via the syntax `fa:#icon class name#`.
 
-<svg xmlns:xlink="http://www.w3.org/1999/xlink" height="144" fill="#333" font-family="&quot;trebuchet ms&quot;,verdana,arial,sans-serif" font-size="16px" style="max-width:321.15625px" viewBox="0 0 321.156 144">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" height="144" fill="#333" aria-labelledby="chart-title-a chart-desc-a" font-family="&quot;trebuchet ms&quot;,verdana,arial,sans-serif" font-size="16px" style="max-width:321.15625px" viewBox="0 0 321.156 144">
   <defs>
     <path id="b" stroke-dasharray="1,0" d="m0 0 10 5-10 5z"/>
   </defs>

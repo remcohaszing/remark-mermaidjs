@@ -1,2 +1,4 @@
+__fixtures__/*/output.md
 __snapshots__/
+coverage/
 dist/

@@ -1,6 +1,6 @@
 # An example of a flowchart
 
-<svg xmlns:xlink="http://www.w3.org/1999/xlink" height="233" fill="#ccc" font-family="&quot;trebuchet ms&quot;,verdana,arial,sans-serif" font-size="16px" style="max-width:124.640625px" viewBox="0 0 124.641 233">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" height="233" fill="#ccc" aria-labelledby="chart-title-a chart-desc-a" font-family="&quot;trebuchet ms&quot;,verdana,arial,sans-serif" font-size="16px" style="max-width:124.640625px" viewBox="0 0 124.641 233">
   <defs>
     <path id="b" fill="#d3d3d3" stroke-dasharray="1,0" d="m0 0 10 5-10 5z"/>
   </defs>

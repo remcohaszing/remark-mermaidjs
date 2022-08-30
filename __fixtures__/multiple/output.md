@@ -2,7 +2,7 @@
 
 ## Basic sequence diagram
 
-<svg height="553" fill="#333" font-family="&quot;trebuchet ms&quot;,verdana,arial,sans-serif" font-size="16px" style="max-width:814px" viewBox="-50 -10 814 553">
+<svg height="541" fill="#333" aria-labelledby="chart-title-a chart-desc-a" font-family="&quot;trebuchet ms&quot;,verdana,arial,sans-serif" font-size="16px" style="max-width:790px" viewBox="-50 -10 790 541">
   <defs>
     <symbol>
       <path d="M2 2v13h20V2H2zm18 11H4V4h16v9zM9.772 19l.466-1h3.524l.467 1H9.772zM24 22H0l2-6h2.104l-1.33 4h18.45l-1.297-4H22l2 6zm-5-10H5V5h14v7z" transform="scale(.5)"/>
@@ -18,15 +18,15 @@
       <path d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10S2 17.514 2 12 6.486 2 12 2zm0-2C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.848 12.459c.202.038.202.333.001.372-1.907.361-6.045 1.111-6.547 1.111a1.3 1.3 0 0 1-1.301-1.301c0-.512.77-5.447 1.125-7.445.034-.192.312-.181.343.014l.985 6.238 5.394 1.011z" transform="scale(.5)"/>
     </symbol>
   </defs>
-  <line x1="75" x2="75" y1="5" y2="487" fill="#ececff" stroke="#dacef3" stroke-width="2px"/>
+  <line x1="75" x2="75" y1="5" y2="475" fill="#ececff" stroke="#dacef3" stroke-width="2px"/>
   <rect width="150" height="65" fill="#ececff" stroke="#dacef3" rx="3" ry="3"/>
-  <text x="75" y="32.5" fill="#ececff" stroke="#dacef3" alignment-baseline="central" dominant-baseline="central" font-family="Open-Sans,&quot;sans-serif&quot;" font-size="14px" font-weight="400" text-anchor="middle"><tspan x="75" fill="#000" stroke="none" dy="0">Alice</tspan></text>
-  <line x1="318" x2="318" y1="5" y2="487" fill="#ececff" stroke="#dacef3" stroke-width="2px"/>
-  <rect width="150" height="65" x="243" fill="#ececff" stroke="#dacef3" rx="3" ry="3"/>
-  <text x="318" y="32.5" fill="#ececff" stroke="#dacef3" alignment-baseline="central" dominant-baseline="central" font-family="Open-Sans,&quot;sans-serif&quot;" font-size="14px" font-weight="400" text-anchor="middle"><tspan x="318" fill="#000" stroke="none" dy="0">Bob</tspan></text>
-  <line x1="539" x2="539" y1="5" y2="487" fill="#ececff" stroke="#dacef3" stroke-width="2px"/>
-  <rect width="150" height="65" x="464" fill="#ececff" stroke="#dacef3" rx="3" ry="3"/>
-  <text x="539" y="32.5" fill="#ececff" stroke="#dacef3" alignment-baseline="central" dominant-baseline="central" font-family="Open-Sans,&quot;sans-serif&quot;" font-size="14px" font-weight="400" text-anchor="middle"><tspan x="539" fill="#000" stroke="none" dy="0">John</tspan></text>
+  <text x="75" y="32.5" fill="#ececff" stroke="#dacef3" alignment-baseline="central" dominant-baseline="central" font-size="14px" font-weight="400" text-anchor="middle"><tspan x="75" fill="#000" stroke="none" dy="0">Alice</tspan></text>
+  <line x1="305" x2="305" y1="5" y2="475" fill="#ececff" stroke="#dacef3" stroke-width="2px"/>
+  <rect width="150" height="65" x="230" fill="#ececff" stroke="#dacef3" rx="3" ry="3"/>
+  <text x="305" y="32.5" fill="#ececff" stroke="#dacef3" alignment-baseline="central" dominant-baseline="central" font-size="14px" font-weight="400" text-anchor="middle"><tspan x="305" fill="#000" stroke="none" dy="0">Bob</tspan></text>
+  <line x1="515" x2="515" y1="5" y2="475" fill="#ececff" stroke="#dacef3" stroke-width="2px"/>
+  <rect width="150" height="65" x="440" fill="#ececff" stroke="#dacef3" rx="3" ry="3"/>
+  <text x="515" y="32.5" fill="#ececff" stroke="#dacef3" alignment-baseline="central" dominant-baseline="central" font-size="14px" font-weight="400" text-anchor="middle"><tspan x="515" fill="#000" stroke="none" dy="0">John</tspan></text>
   <defs>
     <marker id="a" markerHeight="12" markerUnits="userSpaceOnUse" markerWidth="12" orient="auto" refX="9" refY="5">
       <path stroke="#333" d="m0 0 10 5-10 5z"/>
@@ -47,35 +47,35 @@
       <circle cx="15" cy="15" r="6"/>
     </marker>
   </defs>
-  <text x="197" y="80" stroke="#333" alignment-baseline="middle" dominant-baseline="middle" dy="1em" font-weight="400" text-anchor="middle">Hello Bob, how are you?</text>
-  <line x1="75" x2="318" y1="113" y2="113" fill="none" stroke="#333" stroke-width="1.5" marker-end="url(#a)"/>
-  <text x="429" y="128" stroke="#333" alignment-baseline="middle" dominant-baseline="middle" dy="1em" font-weight="400" text-anchor="middle">How about you John?</text>
-  <line x1="318" x2="539" y1="161" y2="161" fill="none" stroke="#333" stroke-dasharray="3,3" stroke-width="1.5" marker-end="url(#a)"/>
-  <text x="197" y="176" stroke="#333" alignment-baseline="middle" dominant-baseline="middle" dy="1em" font-weight="400" text-anchor="middle">I am good thanks!</text>
-  <line x1="318" x2="75" y1="209" y2="209" fill="none" stroke="#333" stroke-dasharray="3,3" stroke-width="1.5" marker-end="url(#b)"/>
-  <text x="429" y="224" stroke="#333" alignment-baseline="middle" dominant-baseline="middle" dy="1em" font-weight="400" text-anchor="middle">I am good thanks!</text>
-  <line x1="318" x2="539" y1="257" y2="257" fill="none" stroke="#333" stroke-width="1.5" marker-end="url(#b)"/>
-  <rect width="150" height="84" x="564" y="267" fill="#fff5ad" stroke="#aa3" rx="0" ry="0"/>
-  <text x="639" y="272" fill="#000" alignment-baseline="middle" dominant-baseline="middle" dy="1em" font-size="14px" font-weight="400" text-anchor="middle"><tspan x="639">Bob thinks a long</tspan></text>
-  <text x="639" y="288" fill="#000" alignment-baseline="middle" dominant-baseline="middle" dy="1em" font-size="14px" font-weight="400" text-anchor="middle"><tspan x="639">long time, so long</tspan></text>
-  <text x="639" y="304" fill="#000" alignment-baseline="middle" dominant-baseline="middle" dy="1em" font-size="14px" font-weight="400" text-anchor="middle"><tspan x="639">that the text does</tspan></text>
-  <text x="639" y="320" fill="#000" alignment-baseline="middle" dominant-baseline="middle" dy="1em" font-size="14px" font-weight="400" text-anchor="middle"><tspan x="639">not fit on a row.</tspan></text>
-  <text x="197" y="366" stroke="#333" alignment-baseline="middle" dominant-baseline="middle" dy="1em" font-weight="400" text-anchor="middle">Checking with John...</text>
-  <line x1="318" x2="75" y1="399" y2="399" fill="none" stroke="#333" stroke-dasharray="3,3" stroke-width="1.5"/>
-  <text x="307" y="414" stroke="#333" alignment-baseline="middle" dominant-baseline="middle" dy="1em" font-weight="400" text-anchor="middle">Yes... John, how are you?</text>
-  <line x1="75" x2="539" y1="447" y2="447" fill="none" stroke="#333" stroke-width="1.5"/>
-  <rect width="150" height="65" y="467" fill="#ececff" stroke="#dacef3" rx="3" ry="3"/>
-  <text x="75" y="499.5" fill="#ececff" stroke="#dacef3" alignment-baseline="central" dominant-baseline="central" font-family="Open-Sans,&quot;sans-serif&quot;" font-size="14px" font-weight="400" text-anchor="middle"><tspan x="75" fill="#000" stroke="none" dy="0">Alice</tspan></text>
-  <rect width="150" height="65" x="243" y="467" fill="#ececff" stroke="#dacef3" rx="3" ry="3"/>
-  <text x="318" y="499.5" fill="#ececff" stroke="#dacef3" alignment-baseline="central" dominant-baseline="central" font-family="Open-Sans,&quot;sans-serif&quot;" font-size="14px" font-weight="400" text-anchor="middle"><tspan x="318" fill="#000" stroke="none" dy="0">Bob</tspan></text>
-  <rect width="150" height="65" x="464" y="467" fill="#ececff" stroke="#dacef3" rx="3" ry="3"/>
-  <text x="539" y="499.5" fill="#ececff" stroke="#dacef3" alignment-baseline="central" dominant-baseline="central" font-family="Open-Sans,&quot;sans-serif&quot;" font-size="14px" font-weight="400" text-anchor="middle"><tspan x="539" fill="#000" stroke="none" dy="0">John</tspan></text>
+  <rect width="150" height="84" x="540" y="259" fill="#fff5ad" stroke="#aa3" rx="0" ry="0"/>
+  <text x="615" y="264" fill="#000" alignment-baseline="middle" dominant-baseline="middle" dy="1em" font-size="14px" font-weight="400" text-anchor="middle"><tspan x="615">Bob thinks a long</tspan></text>
+  <text x="615" y="280" fill="#000" alignment-baseline="middle" dominant-baseline="middle" dy="1em" font-size="14px" font-weight="400" text-anchor="middle"><tspan x="615">long time, so long</tspan></text>
+  <text x="615" y="296" fill="#000" alignment-baseline="middle" dominant-baseline="middle" dy="1em" font-size="14px" font-weight="400" text-anchor="middle"><tspan x="615">that the text does</tspan></text>
+  <text x="615" y="312" fill="#000" alignment-baseline="middle" dominant-baseline="middle" dy="1em" font-size="14px" font-weight="400" text-anchor="middle"><tspan x="615">not fit on a row.</tspan></text>
+  <text x="190" y="80" stroke="#333" alignment-baseline="middle" dominant-baseline="middle" dy="1em" font-weight="400" text-anchor="middle">Hello Bob, how are you?</text>
+  <line x1="75" x2="305" y1="111" y2="111" fill="none" stroke="#333" stroke-width="1.5" marker-end="url(#a)"/>
+  <text x="410" y="126" stroke="#333" alignment-baseline="middle" dominant-baseline="middle" dy="1em" font-weight="400" text-anchor="middle">How about you John?</text>
+  <line x1="305" x2="515" y1="157" y2="157" fill="none" stroke="#333" stroke-dasharray="3,3" stroke-width="1.5" marker-end="url(#a)"/>
+  <text x="190" y="172" stroke="#333" alignment-baseline="middle" dominant-baseline="middle" dy="1em" font-weight="400" text-anchor="middle">I am good thanks!</text>
+  <line x1="305" x2="75" y1="203" y2="203" fill="none" stroke="#333" stroke-dasharray="3,3" stroke-width="1.5" marker-end="url(#b)"/>
+  <text x="410" y="218" stroke="#333" alignment-baseline="middle" dominant-baseline="middle" dy="1em" font-weight="400" text-anchor="middle">I am good thanks!</text>
+  <line x1="305" x2="515" y1="249" y2="249" fill="none" stroke="#333" stroke-width="1.5" marker-end="url(#b)"/>
+  <text x="190" y="358" stroke="#333" alignment-baseline="middle" dominant-baseline="middle" dy="1em" font-weight="400" text-anchor="middle">Checking with John...</text>
+  <line x1="305" x2="75" y1="389" y2="389" fill="none" stroke="#333" stroke-dasharray="3,3" stroke-width="1.5"/>
+  <text x="295" y="404" stroke="#333" alignment-baseline="middle" dominant-baseline="middle" dy="1em" font-weight="400" text-anchor="middle">Yes... John, how are you?</text>
+  <line x1="75" x2="515" y1="435" y2="435" fill="none" stroke="#333" stroke-width="1.5"/>
+  <rect width="150" height="65" y="455" fill="#ececff" stroke="#dacef3" rx="3" ry="3"/>
+  <text x="75" y="487.5" fill="#ececff" stroke="#dacef3" alignment-baseline="central" dominant-baseline="central" font-size="14px" font-weight="400" text-anchor="middle"><tspan x="75" fill="#000" stroke="none" dy="0">Alice</tspan></text>
+  <rect width="150" height="65" x="230" y="455" fill="#ececff" stroke="#dacef3" rx="3" ry="3"/>
+  <text x="305" y="487.5" fill="#ececff" stroke="#dacef3" alignment-baseline="central" dominant-baseline="central" font-size="14px" font-weight="400" text-anchor="middle"><tspan x="305" fill="#000" stroke="none" dy="0">Bob</tspan></text>
+  <rect width="150" height="65" x="440" y="455" fill="#ececff" stroke="#dacef3" rx="3" ry="3"/>
+  <text x="515" y="487.5" fill="#ececff" stroke="#dacef3" alignment-baseline="central" dominant-baseline="central" font-size="14px" font-weight="400" text-anchor="middle"><tspan x="515" fill="#000" stroke="none" dy="0">John</tspan></text>
 </svg>
 
 
 ## Basic flowchart
 
-<svg xmlns:xlink="http://www.w3.org/1999/xlink" height="166.719" fill="#333" font-family="&quot;trebuchet ms&quot;,verdana,arial,sans-serif" font-size="16px" style="max-width:495.8031311035156px" viewBox="0 0 495.803 166.719">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" height="166.719" fill="#333" aria-labelledby="chart-title-a chart-desc-a" font-family="&quot;trebuchet ms&quot;,verdana,arial,sans-serif" font-size="16px" style="max-width:495.8031234741211px" viewBox="0 0 495.803 166.719">
   <defs>
     <path id="b" stroke-dasharray="1,0" d="m0 0 10 5-10 5z"/>
   </defs>
@@ -173,7 +173,7 @@
 
 ## Loops, alt and opt
 
-<svg height="573" fill="#333" font-family="&quot;trebuchet ms&quot;,verdana,arial,sans-serif" font-size="16px" style="max-width:498px" viewBox="-50 -10 498 573">
+<svg height="565" fill="#333" aria-labelledby="chart-title-a chart-desc-a" font-family="&quot;trebuchet ms&quot;,verdana,arial,sans-serif" font-size="16px" style="max-width:481px" viewBox="-50 -10 481 565">
   <defs>
     <symbol>
       <path d="M2 2v13h20V2H2zm18 11H4V4h16v9zM9.772 19l.466-1h3.524l.467 1H9.772zM24 22H0l2-6h2.104l-1.33 4h18.45l-1.297-4H22l2 6zm-5-10H5V5h14v7z" transform="scale(.5)"/>
@@ -189,12 +189,12 @@
       <path d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10S2 17.514 2 12 6.486 2 12 2zm0-2C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.848 12.459c.202.038.202.333.001.372-1.907.361-6.045 1.111-6.547 1.111a1.3 1.3 0 0 1-1.301-1.301c0-.512.77-5.447 1.125-7.445.034-.192.312-.181.343.014l.985 6.238 5.394 1.011z" transform="scale(.5)"/>
     </symbol>
   </defs>
-  <line x1="75" x2="75" y1="5" y2="507" fill="#ececff" stroke="#dacef3" stroke-width="2px"/>
+  <line x1="75" x2="75" y1="5" y2="499" fill="#ececff" stroke="#dacef3" stroke-width="2px"/>
   <rect width="150" height="65" fill="#ececff" stroke="#dacef3" rx="3" ry="3"/>
-  <text x="75" y="32.5" fill="#ececff" stroke="#dacef3" alignment-baseline="central" dominant-baseline="central" font-family="Open-Sans,&quot;sans-serif&quot;" font-size="14px" font-weight="400" text-anchor="middle"><tspan x="75" fill="#000" stroke="none" dy="0">Alice</tspan></text>
-  <line x1="323" x2="323" y1="5" y2="507" fill="#ececff" stroke="#dacef3" stroke-width="2px"/>
-  <rect width="150" height="65" x="248" fill="#ececff" stroke="#dacef3" rx="3" ry="3"/>
-  <text x="323" y="32.5" fill="#ececff" stroke="#dacef3" alignment-baseline="central" dominant-baseline="central" font-family="Open-Sans,&quot;sans-serif&quot;" font-size="14px" font-weight="400" text-anchor="middle"><tspan x="323" fill="#000" stroke="none" dy="0">Bob</tspan></text>
+  <text x="75" y="32.5" fill="#ececff" stroke="#dacef3" alignment-baseline="central" dominant-baseline="central" font-size="14px" font-weight="400" text-anchor="middle"><tspan x="75" fill="#000" stroke="none" dy="0">Alice</tspan></text>
+  <line x1="306" x2="306" y1="5" y2="499" fill="#ececff" stroke="#dacef3" stroke-width="2px"/>
+  <rect width="150" height="65" x="231" fill="#ececff" stroke="#dacef3" rx="3" ry="3"/>
+  <text x="306" y="32.5" fill="#ececff" stroke="#dacef3" alignment-baseline="central" dominant-baseline="central" font-size="14px" font-weight="400" text-anchor="middle"><tspan x="306" fill="#000" stroke="none" dy="0">Bob</tspan></text>
   <defs>
     <marker id="a" markerHeight="12" markerUnits="userSpaceOnUse" markerWidth="12" orient="auto" refX="9" refY="5">
       <path stroke="#333" d="m0 0 10 5-10 5z"/>
@@ -215,47 +215,47 @@
       <circle cx="15" cy="15" r="6"/>
     </marker>
   </defs>
-  <text x="199" y="125" stroke="#333" alignment-baseline="middle" dominant-baseline="middle" dy="1em" font-weight="400" text-anchor="middle">Hello Bob, how are you?</text>
-  <line x1="75" x2="323" y1="158" y2="158" fill="none" stroke="#333" stroke-width="1.5" marker-end="url(#a)"/>
-  <text x="199" y="218" stroke="#333" alignment-baseline="middle" dominant-baseline="middle" dy="1em" font-weight="400" text-anchor="middle">Not so good :(</text>
-  <line x1="323" x2="75" y1="251" y2="251" fill="none" stroke="#333" stroke-width="1.5" marker-end="url(#a)"/>
-  <text x="199" y="311" stroke="#333" alignment-baseline="middle" dominant-baseline="middle" dy="1em" font-weight="400" text-anchor="middle">Feeling fresh like a daisy</text>
-  <line x1="323" x2="75" y1="344" y2="344" fill="none" stroke="#333" stroke-width="1.5" marker-end="url(#a)"/>
-  <line x1="65" x2="333" y1="168" y2="168" fill="#dacef3" stroke="#dacef3" stroke-dasharray="2,2" stroke-width="2px"/>
-  <line x1="333" x2="333" y1="168" y2="354" fill="#dacef3" stroke="#dacef3" stroke-dasharray="2,2" stroke-width="2px"/>
-  <line x1="65" x2="333" y1="354" y2="354" fill="#dacef3" stroke="#dacef3" stroke-dasharray="2,2" stroke-width="2px"/>
-  <line x1="65" x2="65" y1="168" y2="354" fill="#dacef3" stroke="#dacef3" stroke-dasharray="2,2" stroke-width="2px"/>
-  <line x1="65" x2="333" y1="266" y2="266" fill="#dacef3" stroke="#dacef3" stroke-dasharray="3,3" stroke-width="2px"/>
-  <polygon fill="#ececff" stroke="#dacef3" points="65,168 115,168 115,181 106.6,188 65,188"/>
-  <text x="90" y="181" fill="#000" alignment-baseline="middle" dominant-baseline="middle" font-weight="400" text-anchor="middle">alt</text>
-  <text x="224" y="186" fill="#000" font-weight="400" text-anchor="middle"><tspan x="224">[is sick]</tspan></text>
-  <text x="199" y="284" fill="#000" font-weight="400" text-anchor="middle">[is well]</text>
-  <text x="199" y="414" stroke="#333" alignment-baseline="middle" dominant-baseline="middle" dy="1em" font-weight="400" text-anchor="middle">Thanks for asking</text>
-  <line x1="323" x2="75" y1="447" y2="447" fill="none" stroke="#333" stroke-width="1.5" marker-end="url(#a)"/>
-  <line x1="65" x2="333" y1="364" y2="364" fill="#dacef3" stroke="#dacef3" stroke-dasharray="2,2" stroke-width="2px"/>
-  <line x1="333" x2="333" y1="364" y2="457" fill="#dacef3" stroke="#dacef3" stroke-dasharray="2,2" stroke-width="2px"/>
-  <line x1="65" x2="333" y1="457" y2="457" fill="#dacef3" stroke="#dacef3" stroke-dasharray="2,2" stroke-width="2px"/>
-  <line x1="65" x2="65" y1="364" y2="457" fill="#dacef3" stroke="#dacef3" stroke-dasharray="2,2" stroke-width="2px"/>
-  <polygon fill="#ececff" stroke="#dacef3" points="65,364 115,364 115,377 106.6,384 65,384"/>
-  <text x="90" y="377" fill="#000" alignment-baseline="middle" dominant-baseline="middle" font-weight="400" text-anchor="middle">opt</text>
-  <text x="224" y="382" fill="#000" font-weight="400" text-anchor="middle"><tspan x="224">[Extra response]</tspan></text>
-  <line x1="55" x2="343" y1="75" y2="75" fill="#dacef3" stroke="#dacef3" stroke-dasharray="2,2" stroke-width="2px"/>
-  <line x1="343" x2="343" y1="75" y2="467" fill="#dacef3" stroke="#dacef3" stroke-dasharray="2,2" stroke-width="2px"/>
-  <line x1="55" x2="343" y1="467" y2="467" fill="#dacef3" stroke="#dacef3" stroke-dasharray="2,2" stroke-width="2px"/>
-  <line x1="55" x2="55" y1="75" y2="467" fill="#dacef3" stroke="#dacef3" stroke-dasharray="2,2" stroke-width="2px"/>
+  <line x1="65" x2="316" y1="166" y2="166" fill="#dacef3" stroke="#dacef3" stroke-dasharray="2,2" stroke-width="2px"/>
+  <line x1="316" x2="316" y1="166" y2="348" fill="#dacef3" stroke="#dacef3" stroke-dasharray="2,2" stroke-width="2px"/>
+  <line x1="65" x2="316" y1="348" y2="348" fill="#dacef3" stroke="#dacef3" stroke-dasharray="2,2" stroke-width="2px"/>
+  <line x1="65" x2="65" y1="166" y2="348" fill="#dacef3" stroke="#dacef3" stroke-dasharray="2,2" stroke-width="2px"/>
+  <line x1="65" x2="316" y1="262" y2="262" fill="#dacef3" stroke="#dacef3" stroke-dasharray="3,3" stroke-width="2px"/>
+  <polygon fill="#ececff" stroke="#dacef3" points="65,166 115,166 115,179 106.6,186 65,186"/>
+  <text x="90" y="179" fill="#000" alignment-baseline="middle" dominant-baseline="middle" font-weight="400" text-anchor="middle">alt</text>
+  <text x="215.5" y="184" fill="#000" font-weight="400" text-anchor="middle"><tspan x="215.5">[is sick]</tspan></text>
+  <text x="190.5" y="280" fill="#000" font-weight="400" text-anchor="middle">[is well]</text>
+  <line x1="65" x2="316" y1="358" y2="358" fill="#dacef3" stroke="#dacef3" stroke-dasharray="2,2" stroke-width="2px"/>
+  <line x1="316" x2="316" y1="358" y2="449" fill="#dacef3" stroke="#dacef3" stroke-dasharray="2,2" stroke-width="2px"/>
+  <line x1="65" x2="316" y1="449" y2="449" fill="#dacef3" stroke="#dacef3" stroke-dasharray="2,2" stroke-width="2px"/>
+  <line x1="65" x2="65" y1="358" y2="449" fill="#dacef3" stroke="#dacef3" stroke-dasharray="2,2" stroke-width="2px"/>
+  <polygon fill="#ececff" stroke="#dacef3" points="65,358 115,358 115,371 106.6,378 65,378"/>
+  <text x="90" y="371" fill="#000" alignment-baseline="middle" dominant-baseline="middle" font-weight="400" text-anchor="middle">opt</text>
+  <text x="215.5" y="376" fill="#000" font-weight="400" text-anchor="middle"><tspan x="215.5">[Extra response]</tspan></text>
+  <line x1="55" x2="326" y1="75" y2="75" fill="#dacef3" stroke="#dacef3" stroke-dasharray="2,2" stroke-width="2px"/>
+  <line x1="326" x2="326" y1="75" y2="459" fill="#dacef3" stroke="#dacef3" stroke-dasharray="2,2" stroke-width="2px"/>
+  <line x1="55" x2="326" y1="459" y2="459" fill="#dacef3" stroke="#dacef3" stroke-dasharray="2,2" stroke-width="2px"/>
+  <line x1="55" x2="55" y1="75" y2="459" fill="#dacef3" stroke="#dacef3" stroke-dasharray="2,2" stroke-width="2px"/>
   <polygon fill="#ececff" stroke="#dacef3" points="55,75 105,75 105,88 96.6,95 55,95"/>
   <text x="80" y="88" fill="#000" alignment-baseline="middle" dominant-baseline="middle" font-weight="400" text-anchor="middle">loop</text>
-  <text x="224" y="93" fill="#000" font-weight="400" text-anchor="middle"><tspan x="224">[Daily query]</tspan></text>
-  <rect width="150" height="65" y="487" fill="#ececff" stroke="#dacef3" rx="3" ry="3"/>
-  <text x="75" y="519.5" fill="#ececff" stroke="#dacef3" alignment-baseline="central" dominant-baseline="central" font-family="Open-Sans,&quot;sans-serif&quot;" font-size="14px" font-weight="400" text-anchor="middle"><tspan x="75" fill="#000" stroke="none" dy="0">Alice</tspan></text>
-  <rect width="150" height="65" x="248" y="487" fill="#ececff" stroke="#dacef3" rx="3" ry="3"/>
-  <text x="323" y="519.5" fill="#ececff" stroke="#dacef3" alignment-baseline="central" dominant-baseline="central" font-family="Open-Sans,&quot;sans-serif&quot;" font-size="14px" font-weight="400" text-anchor="middle"><tspan x="323" fill="#000" stroke="none" dy="0">Bob</tspan></text>
+  <text x="215.5" y="93" fill="#000" font-weight="400" text-anchor="middle"><tspan x="215.5">[Daily query]</tspan></text>
+  <text x="191" y="125" stroke="#333" alignment-baseline="middle" dominant-baseline="middle" dy="1em" font-weight="400" text-anchor="middle">Hello Bob, how are you?</text>
+  <line x1="75" x2="306" y1="156" y2="156" fill="none" stroke="#333" stroke-width="1.5" marker-end="url(#a)"/>
+  <text x="191" y="216" stroke="#333" alignment-baseline="middle" dominant-baseline="middle" dy="1em" font-weight="400" text-anchor="middle">Not so good :(</text>
+  <line x1="306" x2="75" y1="247" y2="247" fill="none" stroke="#333" stroke-width="1.5" marker-end="url(#a)"/>
+  <text x="191" y="307" stroke="#333" alignment-baseline="middle" dominant-baseline="middle" dy="1em" font-weight="400" text-anchor="middle">Feeling fresh like a daisy</text>
+  <line x1="306" x2="75" y1="338" y2="338" fill="none" stroke="#333" stroke-width="1.5" marker-end="url(#a)"/>
+  <text x="191" y="408" stroke="#333" alignment-baseline="middle" dominant-baseline="middle" dy="1em" font-weight="400" text-anchor="middle">Thanks for asking</text>
+  <line x1="306" x2="75" y1="439" y2="439" fill="none" stroke="#333" stroke-width="1.5" marker-end="url(#a)"/>
+  <rect width="150" height="65" y="479" fill="#ececff" stroke="#dacef3" rx="3" ry="3"/>
+  <text x="75" y="511.5" fill="#ececff" stroke="#dacef3" alignment-baseline="central" dominant-baseline="central" font-size="14px" font-weight="400" text-anchor="middle"><tspan x="75" fill="#000" stroke="none" dy="0">Alice</tspan></text>
+  <rect width="150" height="65" x="231" y="479" fill="#ececff" stroke="#dacef3" rx="3" ry="3"/>
+  <text x="306" y="511.5" fill="#ececff" stroke="#dacef3" alignment-baseline="central" dominant-baseline="central" font-size="14px" font-weight="400" text-anchor="middle"><tspan x="306" fill="#000" stroke="none" dy="0">Bob</tspan></text>
 </svg>
 
 
 ## Message to self in loop
 
-<svg height="588" fill="#333" font-family="&quot;trebuchet ms&quot;,verdana,arial,sans-serif" font-size="16px" style="max-width:750px" viewBox="-50 -10 750 588">
+<svg height="576" fill="#333" aria-labelledby="chart-title-a chart-desc-a" font-family="&quot;trebuchet ms&quot;,verdana,arial,sans-serif" font-size="16px" style="max-width:750px" viewBox="-50 -10 750 576">
   <defs>
     <symbol>
       <path d="M2 2v13h20V2H2zm18 11H4V4h16v9zM9.772 19l.466-1h3.524l.467 1H9.772zM24 22H0l2-6h2.104l-1.33 4h18.45l-1.297-4H22l2 6zm-5-10H5V5h14v7z" transform="scale(.5)"/>
@@ -271,15 +271,15 @@
       <path d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10S2 17.514 2 12 6.486 2 12 2zm0-2C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.848 12.459c.202.038.202.333.001.372-1.907.361-6.045 1.111-6.547 1.111a1.3 1.3 0 0 1-1.301-1.301c0-.512.77-5.447 1.125-7.445.034-.192.312-.181.343.014l.985 6.238 5.394 1.011z" transform="scale(.5)"/>
     </symbol>
   </defs>
-  <line x1="75" x2="75" y1="5" y2="522" fill="#ececff" stroke="#dacef3" stroke-width="2px"/>
+  <line x1="75" x2="75" y1="5" y2="510" fill="#ececff" stroke="#dacef3" stroke-width="2px"/>
   <rect width="150" height="65" fill="#ececff" stroke="#dacef3" rx="3" ry="3"/>
-  <text x="75" y="32.5" fill="#ececff" stroke="#dacef3" alignment-baseline="central" dominant-baseline="central" font-family="Open-Sans,&quot;sans-serif&quot;" font-size="14px" font-weight="400" text-anchor="middle"><tspan x="75" fill="#000" stroke="none" dy="0">Alice</tspan></text>
-  <line x1="275" x2="275" y1="5" y2="522" fill="#ececff" stroke="#dacef3" stroke-width="2px"/>
+  <text x="75" y="32.5" fill="#ececff" stroke="#dacef3" alignment-baseline="central" dominant-baseline="central" font-size="14px" font-weight="400" text-anchor="middle"><tspan x="75" fill="#000" stroke="none" dy="0">Alice</tspan></text>
+  <line x1="275" x2="275" y1="5" y2="510" fill="#ececff" stroke="#dacef3" stroke-width="2px"/>
   <rect width="150" height="65" x="200" fill="#ececff" stroke="#dacef3" rx="3" ry="3"/>
-  <text x="275" y="32.5" fill="#ececff" stroke="#dacef3" alignment-baseline="central" dominant-baseline="central" font-family="Open-Sans,&quot;sans-serif&quot;" font-size="14px" font-weight="400" text-anchor="middle"><tspan x="275" fill="#000" stroke="none" dy="0">Bob</tspan></text>
-  <line x1="475" x2="475" y1="5" y2="522" fill="#ececff" stroke="#dacef3" stroke-width="2px"/>
+  <text x="275" y="32.5" fill="#ececff" stroke="#dacef3" alignment-baseline="central" dominant-baseline="central" font-size="14px" font-weight="400" text-anchor="middle"><tspan x="275" fill="#000" stroke="none" dy="0">Bob</tspan></text>
+  <line x1="475" x2="475" y1="5" y2="510" fill="#ececff" stroke="#dacef3" stroke-width="2px"/>
   <rect width="150" height="65" x="400" fill="#ececff" stroke="#dacef3" rx="3" ry="3"/>
-  <text x="475" y="32.5" fill="#ececff" stroke="#dacef3" alignment-baseline="central" dominant-baseline="central" font-family="Open-Sans,&quot;sans-serif&quot;" font-size="14px" font-weight="400" text-anchor="middle"><tspan x="475" fill="#000" stroke="none" dy="0">John</tspan></text>
+  <text x="475" y="32.5" fill="#ececff" stroke="#dacef3" alignment-baseline="central" dominant-baseline="central" font-size="14px" font-weight="400" text-anchor="middle"><tspan x="475" fill="#000" stroke="none" dy="0">John</tspan></text>
   <defs>
     <marker id="a" markerHeight="12" markerUnits="userSpaceOnUse" markerWidth="12" orient="auto" refX="9" refY="5">
       <path stroke="#333" d="m0 0 10 5-10 5z"/>
@@ -300,30 +300,30 @@
       <circle cx="15" cy="15" r="6"/>
     </marker>
   </defs>
+  <line x1="377" x2="573" y1="121" y2="121" fill="#dacef3" stroke="#dacef3" stroke-dasharray="2,2" stroke-width="2px"/>
+  <line x1="573" x2="573" y1="121" y2="272" fill="#dacef3" stroke="#dacef3" stroke-dasharray="2,2" stroke-width="2px"/>
+  <line x1="377" x2="573" y1="272" y2="272" fill="#dacef3" stroke="#dacef3" stroke-dasharray="2,2" stroke-width="2px"/>
+  <line x1="377" x2="377" y1="121" y2="272" fill="#dacef3" stroke="#dacef3" stroke-dasharray="2,2" stroke-width="2px"/>
+  <polygon fill="#ececff" stroke="#dacef3" points="377,121 427,121 427,134 418.6,141 377,141"/>
+  <text x="402" y="134" fill="#000" alignment-baseline="middle" dominant-baseline="middle" font-weight="400" text-anchor="middle">loop</text>
+  <text x="500" y="139" fill="#000" font-weight="400" text-anchor="middle"><tspan x="500">[Healthcheck]</tspan></text>
+  <rect width="150" height="52" x="500" y="282" fill="#fff5ad" stroke="#aa3" rx="0" ry="0"/>
+  <text x="575" y="287" fill="#000" alignment-baseline="middle" dominant-baseline="middle" dy="1em" font-size="14px" font-weight="400" text-anchor="middle"><tspan x="575">Rational thoughts</tspan></text>
+  <text x="575" y="303" fill="#000" alignment-baseline="middle" dominant-baseline="middle" dy="1em" font-size="14px" font-weight="400" text-anchor="middle"><tspan x="575">prevail...</tspan></text>
   <text x="275" y="80" stroke="#333" alignment-baseline="middle" dominant-baseline="middle" dy="1em" font-weight="400" text-anchor="middle">Hello John, how are you?</text>
-  <line x1="75" x2="475" y1="113" y2="113" fill="none" stroke="#333" stroke-width="1.5" marker-end="url(#a)"/>
-  <text x="475" y="173" stroke="#333" alignment-baseline="middle" dominant-baseline="middle" dy="1em" font-weight="400" text-anchor="middle">Fight against hypochondria</text>
-  <path fill="none" stroke="#333" stroke-width="1.5" marker-end="url(#a)" d="M475 206c60-10 60 30 0 20"/>
-  <line x1="368.5" x2="581.5" y1="123" y2="123" fill="#dacef3" stroke="#dacef3" stroke-dasharray="2,2" stroke-width="2px"/>
-  <line x1="581.5" x2="581.5" y1="123" y2="276" fill="#dacef3" stroke="#dacef3" stroke-dasharray="2,2" stroke-width="2px"/>
-  <line x1="368.5" x2="581.5" y1="276" y2="276" fill="#dacef3" stroke="#dacef3" stroke-dasharray="2,2" stroke-width="2px"/>
-  <line x1="368.5" x2="368.5" y1="123" y2="276" fill="#dacef3" stroke="#dacef3" stroke-dasharray="2,2" stroke-width="2px"/>
-  <polygon fill="#ececff" stroke="#dacef3" points="368.5,123 418.5,123 418.5,136 410.1,143 368.5,143"/>
-  <text x="394" y="136" fill="#000" alignment-baseline="middle" dominant-baseline="middle" font-weight="400" text-anchor="middle">loop</text>
-  <text x="500" y="141" fill="#000" font-weight="400" text-anchor="middle"><tspan x="500">[Healthcheck]</tspan></text>
-  <rect width="150" height="52" x="500" y="286" fill="#fff5ad" stroke="#aa3" rx="0" ry="0"/>
-  <text x="575" y="291" fill="#000" alignment-baseline="middle" dominant-baseline="middle" dy="1em" font-size="14px" font-weight="400" text-anchor="middle"><tspan x="575">Rational thoughts</tspan></text>
-  <text x="575" y="307" fill="#000" alignment-baseline="middle" dominant-baseline="middle" dy="1em" font-size="14px" font-weight="400" text-anchor="middle"><tspan x="575">prevail...</tspan></text>
-  <text x="275" y="353" stroke="#333" alignment-baseline="middle" dominant-baseline="middle" dy="1em" font-weight="400" text-anchor="middle">Great!</text>
-  <line x1="475" x2="75" y1="386" y2="386" fill="none" stroke="#333" stroke-dasharray="3,3" stroke-width="1.5" marker-end="url(#a)"/>
-  <text x="375" y="401" stroke="#333" alignment-baseline="middle" dominant-baseline="middle" dy="1em" font-weight="400" text-anchor="middle">How about you?</text>
-  <line x1="475" x2="275" y1="434" y2="434" fill="none" stroke="#333" stroke-width="1.5" marker-end="url(#a)"/>
-  <text x="375" y="449" stroke="#333" alignment-baseline="middle" dominant-baseline="middle" dy="1em" font-weight="400" text-anchor="middle">Jolly good!</text>
-  <line x1="275" x2="475" y1="482" y2="482" fill="none" stroke="#333" stroke-dasharray="3,3" stroke-width="1.5" marker-end="url(#a)"/>
-  <rect width="150" height="65" y="502" fill="#ececff" stroke="#dacef3" rx="3" ry="3"/>
-  <text x="75" y="534.5" fill="#ececff" stroke="#dacef3" alignment-baseline="central" dominant-baseline="central" font-family="Open-Sans,&quot;sans-serif&quot;" font-size="14px" font-weight="400" text-anchor="middle"><tspan x="75" fill="#000" stroke="none" dy="0">Alice</tspan></text>
-  <rect width="150" height="65" x="200" y="502" fill="#ececff" stroke="#dacef3" rx="3" ry="3"/>
-  <text x="275" y="534.5" fill="#ececff" stroke="#dacef3" alignment-baseline="central" dominant-baseline="central" font-family="Open-Sans,&quot;sans-serif&quot;" font-size="14px" font-weight="400" text-anchor="middle"><tspan x="275" fill="#000" stroke="none" dy="0">Bob</tspan></text>
-  <rect width="150" height="65" x="400" y="502" fill="#ececff" stroke="#dacef3" rx="3" ry="3"/>
-  <text x="475" y="534.5" fill="#ececff" stroke="#dacef3" alignment-baseline="central" dominant-baseline="central" font-family="Open-Sans,&quot;sans-serif&quot;" font-size="14px" font-weight="400" text-anchor="middle"><tspan x="475" fill="#000" stroke="none" dy="0">John</tspan></text>
+  <line x1="75" x2="475" y1="111" y2="111" fill="none" stroke="#333" stroke-width="1.5" marker-end="url(#a)"/>
+  <text x="475" y="171" stroke="#333" alignment-baseline="middle" dominant-baseline="middle" dy="1em" font-weight="400" text-anchor="middle">Fight against hypochondria</text>
+  <path fill="none" stroke="#333" stroke-width="1.5" marker-end="url(#a)" d="M475 202c60-10 60 30 0 20"/>
+  <text x="275" y="349" stroke="#333" alignment-baseline="middle" dominant-baseline="middle" dy="1em" font-weight="400" text-anchor="middle">Great!</text>
+  <line x1="475" x2="75" y1="378" y2="378" fill="none" stroke="#333" stroke-dasharray="3,3" stroke-width="1.5" marker-end="url(#a)"/>
+  <text x="375" y="393" stroke="#333" alignment-baseline="middle" dominant-baseline="middle" dy="1em" font-weight="400" text-anchor="middle">How about you?</text>
+  <line x1="475" x2="275" y1="424" y2="424" fill="none" stroke="#333" stroke-width="1.5" marker-end="url(#a)"/>
+  <text x="375" y="439" stroke="#333" alignment-baseline="middle" dominant-baseline="middle" dy="1em" font-weight="400" text-anchor="middle">Jolly good!</text>
+  <line x1="275" x2="475" y1="470" y2="470" fill="none" stroke="#333" stroke-dasharray="3,3" stroke-width="1.5" marker-end="url(#a)"/>
+  <rect width="150" height="65" y="490" fill="#ececff" stroke="#dacef3" rx="3" ry="3"/>
+  <text x="75" y="522.5" fill="#ececff" stroke="#dacef3" alignment-baseline="central" dominant-baseline="central" font-size="14px" font-weight="400" text-anchor="middle"><tspan x="75" fill="#000" stroke="none" dy="0">Alice</tspan></text>
+  <rect width="150" height="65" x="200" y="490" fill="#ececff" stroke="#dacef3" rx="3" ry="3"/>
+  <text x="275" y="522.5" fill="#ececff" stroke="#dacef3" alignment-baseline="central" dominant-baseline="central" font-size="14px" font-weight="400" text-anchor="middle"><tspan x="275" fill="#000" stroke="none" dy="0">Bob</tspan></text>
+  <rect width="150" height="65" x="400" y="490" fill="#ececff" stroke="#dacef3" rx="3" ry="3"/>
+  <text x="475" y="522.5" fill="#ececff" stroke="#dacef3" alignment-baseline="central" dominant-baseline="central" font-size="14px" font-weight="400" text-anchor="middle"><tspan x="475" fill="#000" stroke="none" dy="0">John</tspan></text>
 </svg>

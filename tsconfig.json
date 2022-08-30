@@ -4,7 +4,6 @@
     "lib": ["dom", "es2020"],
     "module": "node16",
     "noEmit": true,
-    "outDir": "dist",
     "skipLibCheck": true,
     "strict": true,
     "target": "es2020"

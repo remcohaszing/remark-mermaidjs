@@ -128,15 +128,16 @@ export const remarkMermaid: Plugin<[RemarkMermaidOptions?], Root> = ({
     browserPromise ??= puppeteer.launch(launchOptions);
     const browser = await browserPromise;
     let page: puppeteer.Page | undefined;
+    let results: string[];
     try {
       page = await browser.newPage();
       await page.goto(String(new URL('index.html', import.meta.url)));
       await page.addScriptTag(mermaidScript);
       await page.setViewport({ width: 600, height: 3000 });
 
-      const results = await page.evaluate(
-        // We can’t calculate coverage on this function, as it’s run by Chrome, not Jest.
-        /* istanbul ignore next */
+      results = await page.evaluate(
+        // We can’t calculate coverage on this function, as it’s run by Chrome, not Node.
+        /* c8 ignore start */
         (codes, t) =>
           codes.map((code) => {
             const id = 'a';
@@ -146,24 +147,25 @@ export const remarkMermaid: Plugin<[RemarkMermaidOptions?], Root> = ({
             div.innerHTML = mermaid.render(id, code);
             return div.innerHTML;
           }),
+        /* C8 ignore stop */
         instances.map((instance) => instance[0]),
         theme,
       );
-
-      instances.map(([, index, parent], i) => {
-        let value = results[i];
-        if (svgo) {
-          value = (optimize(value, svgo) as OptimizedSvg).data;
-        }
-        parent.children.splice(index, 1, {
-          type: 'paragraph',
-          children: [{ type: 'html', value }],
-          data: { hChildren: [fromParse5(parseFragment(value))] },
-        });
-      });
     } finally {
       count -= 1;
       await page?.close();
+    }
+
+    for (const [i, [, index, parent]] of instances.entries()) {
+      let value = results[i];
+      if (svgo) {
+        value = (optimize(value, svgo) as OptimizedSvg).data;
+      }
+      parent.children.splice(index, 1, {
+        type: 'paragraph',
+        children: [{ type: 'html', value }],
+        data: { hChildren: [fromParse5(parseFragment(value))] },
+      });
     }
     if (!count) {
       browserPromise = undefined;
