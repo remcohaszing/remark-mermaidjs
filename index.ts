@@ -13,8 +13,6 @@ const mermaidScript = {
   path: createRequire(import.meta.url).resolve('mermaid/dist/mermaid.min.js'),
 };
 
-type Theme = 'dark' | 'default' | 'forest' | 'neutral';
-
 declare const mermaid: Mermaid;
 
 export const defaultSVGOOptions: OptimizeOptions = {
@@ -94,11 +92,9 @@ export interface RemarkMermaidOptions {
   svgo?: OptimizeOptions | null;
 
   /**
-   * The Mermaod theme to use.
-   *
-   * @default 'default'
+   * The mermaid options to use.
    */
-  theme?: Theme;
+  mermaidOptions?: Parameters<typeof mermaid['initialize']>[0];
 }
 
 /**
@@ -106,8 +102,8 @@ export interface RemarkMermaidOptions {
  */
 export const remarkMermaid: Plugin<[RemarkMermaidOptions?], Root> = ({
   launchOptions = { args: ['--no-sandbox', '--disable-setuid-sandbox'] },
+  mermaidOptions = {},
   svgo = defaultSVGOOptions,
-  theme = 'default',
 } = {}) => {
   let browserPromise: Promise<puppeteer.Browser> | undefined;
   let count = 0;
@@ -138,18 +134,17 @@ export const remarkMermaid: Plugin<[RemarkMermaidOptions?], Root> = ({
       results = await page.evaluate(
         // We can’t calculate coverage on this function, as it’s run by Chrome, not Node.
         /* c8 ignore start */
-        (codes, t) =>
+        (codes, initOptions) =>
           codes.map((code) => {
             const id = 'a';
-            // @ts-expect-error The mermaid types are wrong.
-            mermaid.initialize({ theme: t });
+            mermaid.initialize(initOptions);
             const div = document.createElement('div');
             div.innerHTML = mermaid.render(id, code);
             return div.innerHTML;
           }),
         /* C8 ignore stop */
         instances.map((instance) => instance[0]),
-        theme,
+        mermaidOptions,
       );
     } finally {
       count -= 1;
