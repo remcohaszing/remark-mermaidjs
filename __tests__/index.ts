@@ -6,6 +6,8 @@ import * as puppeteer from 'puppeteer';
 import * as rehypeStringify from 'rehype-stringify';
 import * as remark from 'remark';
 import * as remarkRehype from 'remark-rehype';
+import { test } from 'uvu';
+import * as assert from 'uvu/assert';
 
 import { defaultSVGOOptions, remarkMermaid, RemarkMermaidOptions } from '../src';
 

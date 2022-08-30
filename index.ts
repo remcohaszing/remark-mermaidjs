@@ -1,14 +1,17 @@
-import { resolve } from 'path';
-import { pathToFileURL } from 'url';
+import { createRequire } from 'module';
 
-import * as fromParse5 from 'hast-util-from-parse5';
-import { Code, Parent } from 'mdast';
+import { fromParse5 } from 'hast-util-from-parse5';
+import { Code, Parent, Root } from 'mdast';
 import { Mermaid } from 'mermaid';
 import { parseFragment } from 'parse5';
-import * as puppeteer from 'puppeteer';
-import { optimize, OptimizeOptions } from 'svgo';
-import { Attacher } from 'unified';
-import * as visit from 'unist-util-visit';
+import puppeteer from 'puppeteer';
+import { optimize, OptimizedSvg, OptimizeOptions } from 'svgo';
+import { Plugin } from 'unified';
+import { visit } from 'unist-util-visit';
+
+const mermaidScript = {
+  path: createRequire(import.meta.url).resolve('mermaid/dist/mermaid.min.js'),
+};
 
 type Theme = 'dark' | 'default' | 'forest' | 'neutral';
 
@@ -101,7 +104,7 @@ export interface RemarkMermaidOptions {
 /**
  * @param options Options that may be used to tweak the output.
  */
-export const remarkMermaid: Attacher<[RemarkMermaidOptions?]> = ({
+export const remarkMermaid: Plugin<[RemarkMermaidOptions?], Root> = ({
   launchOptions = { args: ['--no-sandbox', '--disable-setuid-sandbox'] },
   svgo = defaultSVGOOptions,
   theme = 'default',
@@ -112,8 +115,8 @@ export const remarkMermaid: Attacher<[RemarkMermaidOptions?]> = ({
   return async function transformer(ast) {
     const instances: [string, number, Parent][] = [];
 
-    visit<Code>(ast, { type: 'code', lang: 'mermaid' }, (node, index, parent) => {
-      instances.push([node.value, index, parent as Parent]);
+    visit(ast, { type: 'code', lang: 'mermaid' }, (node: Code, index, parent: Parent) => {
+      instances.push([node.value, index, parent]);
     });
 
     // Nothing to do. No need to start puppeteer in this case.
@@ -127,16 +130,17 @@ export const remarkMermaid: Attacher<[RemarkMermaidOptions?]> = ({
     let page: puppeteer.Page | undefined;
     try {
       page = await browser.newPage();
-      await page.goto(String(pathToFileURL(resolve(__dirname, '..', 'index.html'))));
-      await page.addScriptTag({ path: require.resolve('mermaid/dist/mermaid.min.js') });
+      await page.goto(String(new URL('index.html', import.meta.url)));
+      await page.addScriptTag(mermaidScript);
       await page.setViewport({ width: 600, height: 3000 });
 
       const results = await page.evaluate(
         // We can’t calculate coverage on this function, as it’s run by Chrome, not Jest.
         /* istanbul ignore next */
-        (codes: string[], t: Theme) =>
+        (codes, t) =>
           codes.map((code) => {
             const id = 'a';
+            // @ts-expect-error The mermaid types are wrong.
             mermaid.initialize({ theme: t });
             const div = document.createElement('div');
             div.innerHTML = mermaid.render(id, code);
@@ -149,7 +153,7 @@ export const remarkMermaid: Attacher<[RemarkMermaidOptions?]> = ({
       instances.map(([, index, parent], i) => {
         let value = results[i];
         if (svgo) {
-          value = optimize(value, svgo).data;
+          value = (optimize(value, svgo) as OptimizedSvg).data;
         }
         parent.children.splice(index, 1, {
           type: 'paragraph',

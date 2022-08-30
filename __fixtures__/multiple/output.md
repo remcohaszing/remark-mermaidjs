@@ -20,13 +20,13 @@
   </defs>
   <line x1="75" x2="75" y1="5" y2="487" fill="#ececff" stroke="#dacef3" stroke-width="2px"/>
   <rect width="150" height="65" fill="#ececff" stroke="#dacef3" rx="3" ry="3"/>
-  <text x="75" y="32.5" fill="#ececff" stroke="#dacef3" alignment-baseline="central" dominant-baseline="central" font-family="Open-Sans,sans-serif" font-size="14px" font-weight="400" text-anchor="middle"><tspan x="75" fill="#000" stroke="none" dy="0">Alice</tspan></text>
+  <text x="75" y="32.5" fill="#ececff" stroke="#dacef3" alignment-baseline="central" dominant-baseline="central" font-family="Open-Sans,&quot;sans-serif&quot;" font-size="14px" font-weight="400" text-anchor="middle"><tspan x="75" fill="#000" stroke="none" dy="0">Alice</tspan></text>
   <line x1="318" x2="318" y1="5" y2="487" fill="#ececff" stroke="#dacef3" stroke-width="2px"/>
   <rect width="150" height="65" x="243" fill="#ececff" stroke="#dacef3" rx="3" ry="3"/>
-  <text x="318" y="32.5" fill="#ececff" stroke="#dacef3" alignment-baseline="central" dominant-baseline="central" font-family="Open-Sans,sans-serif" font-size="14px" font-weight="400" text-anchor="middle"><tspan x="318" fill="#000" stroke="none" dy="0">Bob</tspan></text>
+  <text x="318" y="32.5" fill="#ececff" stroke="#dacef3" alignment-baseline="central" dominant-baseline="central" font-family="Open-Sans,&quot;sans-serif&quot;" font-size="14px" font-weight="400" text-anchor="middle"><tspan x="318" fill="#000" stroke="none" dy="0">Bob</tspan></text>
   <line x1="539" x2="539" y1="5" y2="487" fill="#ececff" stroke="#dacef3" stroke-width="2px"/>
   <rect width="150" height="65" x="464" fill="#ececff" stroke="#dacef3" rx="3" ry="3"/>
-  <text x="539" y="32.5" fill="#ececff" stroke="#dacef3" alignment-baseline="central" dominant-baseline="central" font-family="Open-Sans,sans-serif" font-size="14px" font-weight="400" text-anchor="middle"><tspan x="539" fill="#000" stroke="none" dy="0">John</tspan></text>
+  <text x="539" y="32.5" fill="#ececff" stroke="#dacef3" alignment-baseline="central" dominant-baseline="central" font-family="Open-Sans,&quot;sans-serif&quot;" font-size="14px" font-weight="400" text-anchor="middle"><tspan x="539" fill="#000" stroke="none" dy="0">John</tspan></text>
   <defs>
     <marker id="a" markerHeight="12" markerUnits="userSpaceOnUse" markerWidth="12" orient="auto" refX="9" refY="5">
       <path stroke="#333" d="m0 0 10 5-10 5z"/>
@@ -65,22 +65,22 @@
   <text x="307" y="414" stroke="#333" alignment-baseline="middle" dominant-baseline="middle" dy="1em" font-weight="400" text-anchor="middle">Yes... John, how are you?</text>
   <line x1="75" x2="539" y1="447" y2="447" fill="none" stroke="#333" stroke-width="1.5"/>
   <rect width="150" height="65" y="467" fill="#ececff" stroke="#dacef3" rx="3" ry="3"/>
-  <text x="75" y="499.5" fill="#ececff" stroke="#dacef3" alignment-baseline="central" dominant-baseline="central" font-family="Open-Sans,sans-serif" font-size="14px" font-weight="400" text-anchor="middle"><tspan x="75" fill="#000" stroke="none" dy="0">Alice</tspan></text>
+  <text x="75" y="499.5" fill="#ececff" stroke="#dacef3" alignment-baseline="central" dominant-baseline="central" font-family="Open-Sans,&quot;sans-serif&quot;" font-size="14px" font-weight="400" text-anchor="middle"><tspan x="75" fill="#000" stroke="none" dy="0">Alice</tspan></text>
   <rect width="150" height="65" x="243" y="467" fill="#ececff" stroke="#dacef3" rx="3" ry="3"/>
-  <text x="318" y="499.5" fill="#ececff" stroke="#dacef3" alignment-baseline="central" dominant-baseline="central" font-family="Open-Sans,sans-serif" font-size="14px" font-weight="400" text-anchor="middle"><tspan x="318" fill="#000" stroke="none" dy="0">Bob</tspan></text>
+  <text x="318" y="499.5" fill="#ececff" stroke="#dacef3" alignment-baseline="central" dominant-baseline="central" font-family="Open-Sans,&quot;sans-serif&quot;" font-size="14px" font-weight="400" text-anchor="middle"><tspan x="318" fill="#000" stroke="none" dy="0">Bob</tspan></text>
   <rect width="150" height="65" x="464" y="467" fill="#ececff" stroke="#dacef3" rx="3" ry="3"/>
-  <text x="539" y="499.5" fill="#ececff" stroke="#dacef3" alignment-baseline="central" dominant-baseline="central" font-family="Open-Sans,sans-serif" font-size="14px" font-weight="400" text-anchor="middle"><tspan x="539" fill="#000" stroke="none" dy="0">John</tspan></text>
+  <text x="539" y="499.5" fill="#ececff" stroke="#dacef3" alignment-baseline="central" dominant-baseline="central" font-family="Open-Sans,&quot;sans-serif&quot;" font-size="14px" font-weight="400" text-anchor="middle"><tspan x="539" fill="#000" stroke="none" dy="0">John</tspan></text>
 </svg>
 
 
 ## Basic flowchart
 
-<svg xmlns:xlink="http://www.w3.org/1999/xlink" height="166.719" fill="#333" font-family="&quot;trebuchet ms&quot;,verdana,arial,sans-serif" font-size="16px" style="max-width:497.7406311035156px" viewBox="0 0 497.741 166.719">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" height="166.719" fill="#333" font-family="&quot;trebuchet ms&quot;,verdana,arial,sans-serif" font-size="16px" style="max-width:495.8031311035156px" viewBox="0 0 495.803 166.719">
   <defs>
     <path id="b" stroke-dasharray="1,0" d="m0 0 10 5-10 5z"/>
   </defs>
   <g opacity="1">
-    <path fill="none" stroke="#333" stroke-width="2px" marker-end="url(#a)" d="m103.575 69.54 11.187-5.114c11.187-5.114 33.56-15.34 57.533-20.453 23.973-5.114 49.546-5.114 62.333-5.114h12.786"/>
+    <path fill="none" stroke="#333" stroke-width="2px" marker-end="url(#a)" d="m103.13 69.54 11.155-5.114c11.154-5.114 33.462-15.34 57.294-20.453 23.832-5.114 49.19-5.114 61.868-5.114h12.678"/>
     <defs>
       <marker id="a" markerHeight="6" markerUnits="strokeWidth" markerWidth="8" orient="auto" refX="9" refY="5" viewBox="0 0 10 10">
         <use xlink:href="#b" stroke-dasharray="1,0"/>
@@ -88,7 +88,7 @@
     </defs>
   </g>
   <g opacity="1">
-    <path fill="none" stroke="#333" stroke-width="2px" marker-end="url(#c)" d="m103.575 108.54 11.187 5.112c11.187 5.114 33.56 15.34 54.225 20.453 20.664 5.114 39.62 5.114 49.098 5.114h9.477"/>
+    <path fill="none" stroke="#333" stroke-width="2px" marker-end="url(#c)" d="m103.13 108.54 11.155 5.112c11.154 5.114 33.462 15.34 54.094 20.453 20.631 5.114 39.587 5.114 49.065 5.114h9.478"/>
     <defs>
       <marker id="c" markerHeight="6" markerUnits="strokeWidth" markerWidth="8" orient="auto" refX="9" refY="5" viewBox="0 0 10 10">
         <use xlink:href="#b" stroke-dasharray="1,0"/>
@@ -96,7 +96,7 @@
     </defs>
   </g>
   <g opacity="1">
-    <path fill="none" stroke="#333" stroke-width="2px" marker-end="url(#d)" d="M309.133 38.86h7.475c7.475 0 22.426 0 37.699 4.899 15.272 4.899 30.867 14.697 38.664 19.596l7.798 4.9"/>
+    <path fill="none" stroke="#333" stroke-width="2px" marker-end="url(#d)" d="M307.844 38.86h7.367c7.367 0 22.101 0 37.266 4.899s30.76 14.697 38.557 19.596l7.797 4.9"/>
     <defs>
       <marker id="d" markerHeight="6" markerUnits="strokeWidth" markerWidth="8" orient="auto" refX="9" refY="5" viewBox="0 0 10 10">
         <use xlink:href="#b" stroke-dasharray="1,0"/>
@@ -104,14 +104,14 @@
     </defs>
   </g>
   <g opacity="1">
-    <path fill="none" stroke="#333" stroke-width="2px" marker-end="url(#e)" d="M328.984 139.219h4.167c4.167 0 12.5 0 24.464-4.733 11.964-4.732 27.559-14.197 35.356-18.93l7.798-4.732"/>
+    <path fill="none" stroke="#333" stroke-width="2px" marker-end="url(#e)" d="M327.047 139.219h4.167c4.166 0 12.5 0 24.464-4.733 11.964-4.732 27.559-14.197 35.356-18.93l7.797-4.732"/>
     <defs>
       <marker id="e" markerHeight="6" markerUnits="strokeWidth" markerWidth="8" orient="auto" refX="9" refY="5" viewBox="0 0 10 10">
         <use xlink:href="#b" stroke-dasharray="1,0"/>
       </marker>
     </defs>
   </g>
-  <g color="#333" transform="translate(170.695 38.86) translate(-31.867 -9.5)" style="background-color:#e8e8e8;text-align:center">
+  <g color="#333" transform="translate(170.055 38.86) translate(-31.867 -9.5)" style="background-color:#e8e8e8;text-align:center">
     <rect width="63.734" height="19" fill="#e8e8e8" opacity=".5" rx="0" ry="0" style="background-color:#e8e8e8"/>
     <foreignObject width="63.734" height="19">
       <div xmlns="http://www.w3.org/1999/xhtml" display="inline-block" style="white-space:nowrap">
@@ -136,15 +136,15 @@
       <span fill="#333" color="#333" style="background-color:#e8e8e8;text-align:center"/>
     </div>
   </foreignObject>
-  <g opacity="1" transform="translate(60.914 89.04)">
-    <rect width="105.828" height="39" x="-52.914" y="-19.5" fill="#ececff" stroke="#9370db" stroke-width="1px" rx="0" ry="0"/>
-    <foreignObject width="85.828" height="19" transform="translate(-42.914 -9.5)" color="#333" style="text-align:center">
+  <g opacity="1" transform="translate(60.594 89.04)">
+    <rect width="105.188" height="39" x="-52.594" y="-19.5" fill="#ececff" stroke="#9370db" stroke-width="1px" rx="0" ry="0"/>
+    <foreignObject width="85.188" height="19" transform="translate(-42.594 -9.5)" color="#333" style="text-align:center">
       <div xmlns="http://www.w3.org/1999/xhtml" display="inline-block" style="white-space:nowrap">
         Square Rect
       </div>
     </foreignObject>
   </g>
-  <g opacity="1" transform="translate(278.273 38.86)">
+  <g opacity="1" transform="translate(276.984 38.86)">
     <circle r="30.859" fill="#ececff" stroke="#9370db" stroke-width="1px"/>
     <foreignObject width="41.719" height="19" transform="translate(-20.86 -9.5)" color="#333" style="text-align:center">
       <div xmlns="http://www.w3.org/1999/xhtml" display="inline-block" style="white-space:nowrap">
@@ -152,15 +152,15 @@
       </div>
     </foreignObject>
   </g>
-  <g opacity="1" transform="translate(278.273 139.219)">
-    <rect width="101.422" height="39" x="-50.711" y="-19.5" fill="#ececff" stroke="#9370db" stroke-width="1px" rx="5" ry="5"/>
-    <foreignObject width="81.422" height="19" transform="translate(-40.71 -9.5)" color="#333" style="text-align:center">
+  <g opacity="1" transform="translate(276.984 139.219)">
+    <rect width="100.125" height="39" x="-50.063" y="-19.5" fill="#ececff" stroke="#9370db" stroke-width="1px" rx="5" ry="5"/>
+    <foreignObject width="80.125" height="19" transform="translate(-40.063 -9.5)" color="#333" style="text-align:center">
       <div xmlns="http://www.w3.org/1999/xhtml" display="inline-block" style="white-space:nowrap">
         Round Rect
       </div>
     </foreignObject>
   </g>
-  <g opacity="1" transform="translate(434.362 89.04)">
+  <g opacity="1" transform="translate(432.425 89.04)">
     <polygon fill="#ececff" stroke="#9370db" stroke-width="1px" points="55.378125000000004,0 110.75625000000001,-55.378125000000004 55.378125000000004,-110.75625000000001 0,-55.378125000000004" transform="translate(-55.378 55.378)"/>
     <foreignObject width="64.063" height="19" transform="translate(-32.031 -9.5)" color="#333" style="text-align:center">
       <div xmlns="http://www.w3.org/1999/xhtml" display="inline-block" style="white-space:nowrap">
@@ -191,10 +191,10 @@
   </defs>
   <line x1="75" x2="75" y1="5" y2="507" fill="#ececff" stroke="#dacef3" stroke-width="2px"/>
   <rect width="150" height="65" fill="#ececff" stroke="#dacef3" rx="3" ry="3"/>
-  <text x="75" y="32.5" fill="#ececff" stroke="#dacef3" alignment-baseline="central" dominant-baseline="central" font-family="Open-Sans,sans-serif" font-size="14px" font-weight="400" text-anchor="middle"><tspan x="75" fill="#000" stroke="none" dy="0">Alice</tspan></text>
+  <text x="75" y="32.5" fill="#ececff" stroke="#dacef3" alignment-baseline="central" dominant-baseline="central" font-family="Open-Sans,&quot;sans-serif&quot;" font-size="14px" font-weight="400" text-anchor="middle"><tspan x="75" fill="#000" stroke="none" dy="0">Alice</tspan></text>
   <line x1="323" x2="323" y1="5" y2="507" fill="#ececff" stroke="#dacef3" stroke-width="2px"/>
   <rect width="150" height="65" x="248" fill="#ececff" stroke="#dacef3" rx="3" ry="3"/>
-  <text x="323" y="32.5" fill="#ececff" stroke="#dacef3" alignment-baseline="central" dominant-baseline="central" font-family="Open-Sans,sans-serif" font-size="14px" font-weight="400" text-anchor="middle"><tspan x="323" fill="#000" stroke="none" dy="0">Bob</tspan></text>
+  <text x="323" y="32.5" fill="#ececff" stroke="#dacef3" alignment-baseline="central" dominant-baseline="central" font-family="Open-Sans,&quot;sans-serif&quot;" font-size="14px" font-weight="400" text-anchor="middle"><tspan x="323" fill="#000" stroke="none" dy="0">Bob</tspan></text>
   <defs>
     <marker id="a" markerHeight="12" markerUnits="userSpaceOnUse" markerWidth="12" orient="auto" refX="9" refY="5">
       <path stroke="#333" d="m0 0 10 5-10 5z"/>
@@ -247,9 +247,9 @@
   <text x="80" y="88" fill="#000" alignment-baseline="middle" dominant-baseline="middle" font-weight="400" text-anchor="middle">loop</text>
   <text x="224" y="93" fill="#000" font-weight="400" text-anchor="middle"><tspan x="224">[Daily query]</tspan></text>
   <rect width="150" height="65" y="487" fill="#ececff" stroke="#dacef3" rx="3" ry="3"/>
-  <text x="75" y="519.5" fill="#ececff" stroke="#dacef3" alignment-baseline="central" dominant-baseline="central" font-family="Open-Sans,sans-serif" font-size="14px" font-weight="400" text-anchor="middle"><tspan x="75" fill="#000" stroke="none" dy="0">Alice</tspan></text>
+  <text x="75" y="519.5" fill="#ececff" stroke="#dacef3" alignment-baseline="central" dominant-baseline="central" font-family="Open-Sans,&quot;sans-serif&quot;" font-size="14px" font-weight="400" text-anchor="middle"><tspan x="75" fill="#000" stroke="none" dy="0">Alice</tspan></text>
   <rect width="150" height="65" x="248" y="487" fill="#ececff" stroke="#dacef3" rx="3" ry="3"/>
-  <text x="323" y="519.5" fill="#ececff" stroke="#dacef3" alignment-baseline="central" dominant-baseline="central" font-family="Open-Sans,sans-serif" font-size="14px" font-weight="400" text-anchor="middle"><tspan x="323" fill="#000" stroke="none" dy="0">Bob</tspan></text>
+  <text x="323" y="519.5" fill="#ececff" stroke="#dacef3" alignment-baseline="central" dominant-baseline="central" font-family="Open-Sans,&quot;sans-serif&quot;" font-size="14px" font-weight="400" text-anchor="middle"><tspan x="323" fill="#000" stroke="none" dy="0">Bob</tspan></text>
 </svg>
 
 
@@ -273,13 +273,13 @@
   </defs>
   <line x1="75" x2="75" y1="5" y2="522" fill="#ececff" stroke="#dacef3" stroke-width="2px"/>
   <rect width="150" height="65" fill="#ececff" stroke="#dacef3" rx="3" ry="3"/>
-  <text x="75" y="32.5" fill="#ececff" stroke="#dacef3" alignment-baseline="central" dominant-baseline="central" font-family="Open-Sans,sans-serif" font-size="14px" font-weight="400" text-anchor="middle"><tspan x="75" fill="#000" stroke="none" dy="0">Alice</tspan></text>
+  <text x="75" y="32.5" fill="#ececff" stroke="#dacef3" alignment-baseline="central" dominant-baseline="central" font-family="Open-Sans,&quot;sans-serif&quot;" font-size="14px" font-weight="400" text-anchor="middle"><tspan x="75" fill="#000" stroke="none" dy="0">Alice</tspan></text>
   <line x1="275" x2="275" y1="5" y2="522" fill="#ececff" stroke="#dacef3" stroke-width="2px"/>
   <rect width="150" height="65" x="200" fill="#ececff" stroke="#dacef3" rx="3" ry="3"/>
-  <text x="275" y="32.5" fill="#ececff" stroke="#dacef3" alignment-baseline="central" dominant-baseline="central" font-family="Open-Sans,sans-serif" font-size="14px" font-weight="400" text-anchor="middle"><tspan x="275" fill="#000" stroke="none" dy="0">Bob</tspan></text>
+  <text x="275" y="32.5" fill="#ececff" stroke="#dacef3" alignment-baseline="central" dominant-baseline="central" font-family="Open-Sans,&quot;sans-serif&quot;" font-size="14px" font-weight="400" text-anchor="middle"><tspan x="275" fill="#000" stroke="none" dy="0">Bob</tspan></text>
   <line x1="475" x2="475" y1="5" y2="522" fill="#ececff" stroke="#dacef3" stroke-width="2px"/>
   <rect width="150" height="65" x="400" fill="#ececff" stroke="#dacef3" rx="3" ry="3"/>
-  <text x="475" y="32.5" fill="#ececff" stroke="#dacef3" alignment-baseline="central" dominant-baseline="central" font-family="Open-Sans,sans-serif" font-size="14px" font-weight="400" text-anchor="middle"><tspan x="475" fill="#000" stroke="none" dy="0">John</tspan></text>
+  <text x="475" y="32.5" fill="#ececff" stroke="#dacef3" alignment-baseline="central" dominant-baseline="central" font-family="Open-Sans,&quot;sans-serif&quot;" font-size="14px" font-weight="400" text-anchor="middle"><tspan x="475" fill="#000" stroke="none" dy="0">John</tspan></text>
   <defs>
     <marker id="a" markerHeight="12" markerUnits="userSpaceOnUse" markerWidth="12" orient="auto" refX="9" refY="5">
       <path stroke="#333" d="m0 0 10 5-10 5z"/>
@@ -321,9 +321,9 @@
   <text x="375" y="449" stroke="#333" alignment-baseline="middle" dominant-baseline="middle" dy="1em" font-weight="400" text-anchor="middle">Jolly good!</text>
   <line x1="275" x2="475" y1="482" y2="482" fill="none" stroke="#333" stroke-dasharray="3,3" stroke-width="1.5" marker-end="url(#a)"/>
   <rect width="150" height="65" y="502" fill="#ececff" stroke="#dacef3" rx="3" ry="3"/>
-  <text x="75" y="534.5" fill="#ececff" stroke="#dacef3" alignment-baseline="central" dominant-baseline="central" font-family="Open-Sans,sans-serif" font-size="14px" font-weight="400" text-anchor="middle"><tspan x="75" fill="#000" stroke="none" dy="0">Alice</tspan></text>
+  <text x="75" y="534.5" fill="#ececff" stroke="#dacef3" alignment-baseline="central" dominant-baseline="central" font-family="Open-Sans,&quot;sans-serif&quot;" font-size="14px" font-weight="400" text-anchor="middle"><tspan x="75" fill="#000" stroke="none" dy="0">Alice</tspan></text>
   <rect width="150" height="65" x="200" y="502" fill="#ececff" stroke="#dacef3" rx="3" ry="3"/>
-  <text x="275" y="534.5" fill="#ececff" stroke="#dacef3" alignment-baseline="central" dominant-baseline="central" font-family="Open-Sans,sans-serif" font-size="14px" font-weight="400" text-anchor="middle"><tspan x="275" fill="#000" stroke="none" dy="0">Bob</tspan></text>
+  <text x="275" y="534.5" fill="#ececff" stroke="#dacef3" alignment-baseline="central" dominant-baseline="central" font-family="Open-Sans,&quot;sans-serif&quot;" font-size="14px" font-weight="400" text-anchor="middle"><tspan x="275" fill="#000" stroke="none" dy="0">Bob</tspan></text>
   <rect width="150" height="65" x="400" y="502" fill="#ececff" stroke="#dacef3" rx="3" ry="3"/>
-  <text x="475" y="534.5" fill="#ececff" stroke="#dacef3" alignment-baseline="central" dominant-baseline="central" font-family="Open-Sans,sans-serif" font-size="14px" font-weight="400" text-anchor="middle"><tspan x="475" fill="#000" stroke="none" dy="0">John</tspan></text>
+  <text x="475" y="534.5" fill="#ececff" stroke="#dacef3" alignment-baseline="central" dominant-baseline="central" font-family="Open-Sans,&quot;sans-serif&quot;" font-size="14px" font-weight="400" text-anchor="middle"><tspan x="475" fill="#000" stroke="none" dy="0">John</tspan></text>
 </svg>

@@ -4,7 +4,7 @@ It is possible to add icons from fontawesome.
 
 The icons are acessed via the syntax `fa:#icon class name#`.
 
-<svg xmlns:xlink="http://www.w3.org/1999/xlink" height="144" fill="#333" font-family="&quot;trebuchet ms&quot;,verdana,arial,sans-serif" font-size="16px" style="max-width:322.046875px" viewBox="0 0 322.047 144">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" height="144" fill="#333" font-family="&quot;trebuchet ms&quot;,verdana,arial,sans-serif" font-size="16px" style="max-width:321.15625px" viewBox="0 0 321.156 144">
   <defs>
     <path id="b" stroke-dasharray="1,0" d="m0 0 10 5-10 5z"/>
   </defs>
@@ -25,7 +25,7 @@ The icons are acessed via the syntax `fa:#icon class name#`.
     </defs>
   </g>
   <g opacity="1">
-    <path fill="none" stroke="#333" stroke-width="2px" marker-end="url(#d)" d="m201.617 45.632 10.693 4.395c10.693 4.394 32.078 13.184 42.77 21.745 10.693 8.561 10.693 16.895 10.693 21.061V97"/>
+    <path fill="none" stroke="#333" stroke-width="2px" marker-end="url(#d)" d="m201.617 45.707 10.619 4.382c10.618 4.382 31.855 13.147 42.474 21.695 10.618 8.55 10.618 16.883 10.618 21.05V97"/>
     <defs>
       <marker id="d" markerHeight="6" markerUnits="strokeWidth" markerWidth="8" orient="auto" refX="9" refY="5" viewBox="0 0 10 10">
         <use xlink:href="#b" stroke-dasharray="1,0"/>
@@ -73,9 +73,9 @@ The icons are acessed via the syntax `fa:#icon class name#`.
       </div>
     </foreignObject>
   </g>
-  <g opacity="1" transform="translate(265.773 116.5)">
-    <rect width="96.547" height="39" x="-48.273" y="-19.5" fill="#ececff" stroke="#9370db" stroke-width="1px" rx="5" ry="5"/>
-    <foreignObject width="76.547" height="19" transform="translate(-38.273 -9.5)" color="#333" style="text-align:center">
+  <g opacity="1" transform="translate(265.328 116.5)">
+    <rect width="95.656" height="39" x="-47.828" y="-19.5" fill="#ececff" stroke="#9370db" stroke-width="1px" rx="5" ry="5"/>
+    <foreignObject width="75.656" height="19" transform="translate(-37.828 -9.5)" color="#333" style="text-align:center">
       <div xmlns="http://www.w3.org/1999/xhtml" display="inline-block" style="white-space:nowrap">
         A
         <i/>

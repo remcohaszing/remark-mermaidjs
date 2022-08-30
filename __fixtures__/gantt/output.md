@@ -68,6 +68,6 @@
   <text x="450" y="279.5" fill="#000" font-size="11" text-anchor="end">Add to mermaid                      </text>
   <text x="10" y="98" dy="0em" font-family="var(--mermaid-font-family)" font-size="11"><tspan x="10" alignment-baseline="central">A section</tspan></text>
   <text x="10" y="218" dy="0em" font-family="var(--mermaid-font-family)" font-size="11"><tspan x="10" alignment-baseline="central">Critical tasks</tspan></text>
-  <line x1="77967" x2="77967" y1="25" y2="315" fill="none" stroke="red" stroke-width="2px"/>
+  <line x1="85747" x2="85747" y1="25" y2="315" fill="none" stroke="red" stroke-width="2px"/>
   <text x="292" y="25" font-family="var(--mermaid-font-family)" font-size="18px" text-anchor="middle">Adding GANTT diagram functionality to mermaid</text>
 </svg>

@@ -18,13 +18,13 @@
   </defs>
   <line x1="75" x2="75" y1="5" y2="522" fill="#ececff" stroke="#dacef3" stroke-width="2px"/>
   <rect width="150" height="65" fill="#ececff" stroke="#dacef3" rx="3" ry="3"/>
-  <text x="75" y="32.5" fill="#ececff" stroke="#dacef3" alignment-baseline="central" dominant-baseline="central" font-family="Open-Sans,sans-serif" font-size="14px" font-weight="400" text-anchor="middle"><tspan x="75" fill="#000" stroke="none" dy="0">Alice</tspan></text>
+  <text x="75" y="32.5" fill="#ececff" stroke="#dacef3" alignment-baseline="central" dominant-baseline="central" font-family="Open-Sans,&quot;sans-serif&quot;" font-size="14px" font-weight="400" text-anchor="middle"><tspan x="75" fill="#000" stroke="none" dy="0">Alice</tspan></text>
   <line x1="275" x2="275" y1="5" y2="522" fill="#ececff" stroke="#dacef3" stroke-width="2px"/>
   <rect width="150" height="65" x="200" fill="#ececff" stroke="#dacef3" rx="3" ry="3"/>
-  <text x="275" y="32.5" fill="#ececff" stroke="#dacef3" alignment-baseline="central" dominant-baseline="central" font-family="Open-Sans,sans-serif" font-size="14px" font-weight="400" text-anchor="middle"><tspan x="275" fill="#000" stroke="none" dy="0">Bob</tspan></text>
+  <text x="275" y="32.5" fill="#ececff" stroke="#dacef3" alignment-baseline="central" dominant-baseline="central" font-family="Open-Sans,&quot;sans-serif&quot;" font-size="14px" font-weight="400" text-anchor="middle"><tspan x="275" fill="#000" stroke="none" dy="0">Bob</tspan></text>
   <line x1="475" x2="475" y1="5" y2="522" fill="#ececff" stroke="#dacef3" stroke-width="2px"/>
   <rect width="150" height="65" x="400" fill="#ececff" stroke="#dacef3" rx="3" ry="3"/>
-  <text x="475" y="32.5" fill="#ececff" stroke="#dacef3" alignment-baseline="central" dominant-baseline="central" font-family="Open-Sans,sans-serif" font-size="14px" font-weight="400" text-anchor="middle"><tspan x="475" fill="#000" stroke="none" dy="0">John</tspan></text>
+  <text x="475" y="32.5" fill="#ececff" stroke="#dacef3" alignment-baseline="central" dominant-baseline="central" font-family="Open-Sans,&quot;sans-serif&quot;" font-size="14px" font-weight="400" text-anchor="middle"><tspan x="475" fill="#000" stroke="none" dy="0">John</tspan></text>
   <defs>
     <marker markerHeight="12" markerUnits="userSpaceOnUse" markerWidth="12" orient="auto" refX="9" refY="5">
       <path stroke="#333" d="m0 0 10 5-10 5z"/>
@@ -66,9 +66,9 @@
   <text x="375" y="449" stroke="#333" alignment-baseline="middle" dominant-baseline="middle" dy="1em" font-weight="400" text-anchor="middle">Jolly good!</text>
   <line x1="275" x2="475" y1="482" y2="482" fill="none" stroke="#333" stroke-dasharray="3,3" stroke-width="1.5"/>
   <rect width="150" height="65" y="502" fill="#ececff" stroke="#dacef3" rx="3" ry="3"/>
-  <text x="75" y="534.5" fill="#ececff" stroke="#dacef3" alignment-baseline="central" dominant-baseline="central" font-family="Open-Sans,sans-serif" font-size="14px" font-weight="400" text-anchor="middle"><tspan x="75" fill="#000" stroke="none" dy="0">Alice</tspan></text>
+  <text x="75" y="534.5" fill="#ececff" stroke="#dacef3" alignment-baseline="central" dominant-baseline="central" font-family="Open-Sans,&quot;sans-serif&quot;" font-size="14px" font-weight="400" text-anchor="middle"><tspan x="75" fill="#000" stroke="none" dy="0">Alice</tspan></text>
   <rect width="150" height="65" x="200" y="502" fill="#ececff" stroke="#dacef3" rx="3" ry="3"/>
-  <text x="275" y="534.5" fill="#ececff" stroke="#dacef3" alignment-baseline="central" dominant-baseline="central" font-family="Open-Sans,sans-serif" font-size="14px" font-weight="400" text-anchor="middle"><tspan x="275" fill="#000" stroke="none" dy="0">Bob</tspan></text>
+  <text x="275" y="534.5" fill="#ececff" stroke="#dacef3" alignment-baseline="central" dominant-baseline="central" font-family="Open-Sans,&quot;sans-serif&quot;" font-size="14px" font-weight="400" text-anchor="middle"><tspan x="275" fill="#000" stroke="none" dy="0">Bob</tspan></text>
   <rect width="150" height="65" x="400" y="502" fill="#ececff" stroke="#dacef3" rx="3" ry="3"/>
-  <text x="475" y="534.5" fill="#ececff" stroke="#dacef3" alignment-baseline="central" dominant-baseline="central" font-family="Open-Sans,sans-serif" font-size="14px" font-weight="400" text-anchor="middle"><tspan x="475" fill="#000" stroke="none" dy="0">John</tspan></text>
+  <text x="475" y="534.5" fill="#ececff" stroke="#dacef3" alignment-baseline="central" dominant-baseline="central" font-family="Open-Sans,&quot;sans-serif&quot;" font-size="14px" font-weight="400" text-anchor="middle"><tspan x="475" fill="#000" stroke="none" dy="0">John</tspan></text>
 </svg>
