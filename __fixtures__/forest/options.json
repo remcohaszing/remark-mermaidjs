@@ -1,3 +1,5 @@
 {
-  "theme": "forest"
+  "mermaidOptions": {
+    "theme": "forest"
+  }
 }

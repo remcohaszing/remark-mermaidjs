@@ -1,7 +1,8 @@
 import { readdir, readFile, writeFile } from 'fs/promises';
 import process from 'process';
 
-import puppeteer from 'puppeteer';
+import { executablePath } from 'puppeteer';
+import puppeteer from 'puppeteer-core';
 import rehypeStringify from 'rehype-stringify';
 import { remark } from 'remark';
 import remarkRehype from 'remark-rehype';
@@ -12,6 +13,9 @@ import * as assert from 'uvu/assert';
 import remarkMermaid, { defaultSVGOOptions, RemarkMermaidOptions } from './index.js';
 
 const fixtures = new URL('__fixtures__/', import.meta.url);
+const launchOptions = {
+  executablePath: executablePath(),
+};
 
 test.after.each(() => {
   sinon.restore();
@@ -25,9 +29,11 @@ for (const name of await readdir(fixtures)) {
     const expected = await readFile(new URL('output.md', fixture), 'utf8');
     let options: RemarkMermaidOptions = {
       svgo: defaultSVGOOptions,
+      launchOptions,
     };
     try {
       options = JSON.parse(await readFile(new URL('options.json', fixture), 'utf8'));
+      options.launchOptions = launchOptions;
     } catch {
       // This test case uses default options.
     }
@@ -47,14 +53,14 @@ graph TD;
 `;
 
 test('should not launch the browser if no graphs are defined', async () => {
-  const processor = remark().use(remarkMermaid);
+  const processor = remark().use(remarkMermaid, { launchOptions });
   const launch = sinon.spy(puppeteer, 'launch');
   await processor.process('```js\n```');
   sinon.assert.notCalled(launch);
 });
 
 test('should share the browser for concurrent calls', async () => {
-  const processor = remark().use(remarkMermaid);
+  const processor = remark().use(remarkMermaid, { launchOptions });
   const launch = sinon.spy(puppeteer, 'launch');
   await Promise.all(
     Array.from<string>({ length: 3 })
@@ -65,7 +71,7 @@ test('should share the browser for concurrent calls', async () => {
 });
 
 test('should close the browser if no more files are being processed', async () => {
-  const processor = remark().use(remarkMermaid);
+  const processor = remark().use(remarkMermaid, { launchOptions });
   const launch = sinon.spy(puppeteer, 'launch');
   for (const content of Array.from<string>({ length: 3 }).fill(markdown)) {
     await processor.process(content);
@@ -74,7 +80,10 @@ test('should close the browser if no more files are being processed', async () =
 });
 
 test('should output a remark-rehype compatible ast', async () => {
-  const processor = remark().use(remarkMermaid).use(remarkRehype).use(rehypeStringify);
+  const processor = remark()
+    .use(remarkMermaid, { launchOptions })
+    .use(remarkRehype)
+    .use(rehypeStringify);
   const { value } = await processor.process(`
 \`\`\`mermaid
 graph TD;

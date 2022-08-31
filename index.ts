@@ -4,7 +4,7 @@ import { fromParse5 } from 'hast-util-from-parse5';
 import { Code, Parent, Root } from 'mdast';
 import { Mermaid } from 'mermaid';
 import { parseFragment } from 'parse5';
-import puppeteer from 'puppeteer';
+import puppeteer, { Browser, Page, PuppeteerLaunchOptions } from 'puppeteer-core';
 import { optimize, OptimizedSvg, OptimizeOptions } from 'svgo';
 import { Plugin } from 'unified';
 import { visit } from 'unist-util-visit';
@@ -77,10 +77,8 @@ export const defaultSVGOOptions: OptimizeOptions = {
 export interface RemarkMermaidOptions {
   /**
    * Launc options to pass to puppeteer.
-   *
-   * @default {}
    */
-  launchOptions?: puppeteer.LaunchOptions;
+  launchOptions: PuppeteerLaunchOptions;
 
   /**
    * SVGO options used to minify the SVO output.
@@ -100,12 +98,12 @@ export interface RemarkMermaidOptions {
 /**
  * @param options Options that may be used to tweak the output.
  */
-const remarkMermaid: Plugin<[RemarkMermaidOptions?], Root> = ({
-  launchOptions = { args: ['--no-sandbox', '--disable-setuid-sandbox'] },
+const remarkMermaid: Plugin<[RemarkMermaidOptions], Root> = ({
+  launchOptions,
   mermaidOptions = {},
   svgo = defaultSVGOOptions,
-} = {}) => {
-  let browserPromise: Promise<puppeteer.Browser> | undefined;
+}) => {
+  let browserPromise: Promise<Browser> | undefined;
   let count = 0;
 
   return async function transformer(ast) {
@@ -121,9 +119,12 @@ const remarkMermaid: Plugin<[RemarkMermaidOptions?], Root> = ({
     }
 
     count += 1;
-    browserPromise ??= puppeteer.launch(launchOptions);
+    browserPromise ??= puppeteer.launch({
+      args: ['--no-sandbox', '--disable-setuid-sandbox'],
+      ...launchOptions,
+    });
     const browser = await browserPromise;
-    let page: puppeteer.Page | undefined;
+    let page: Page | undefined;
     let results: string[];
     try {
       page = await browser.newPage();
