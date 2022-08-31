@@ -53,9 +53,9 @@ These options are passed to
 These options are passed to the [SVGO](https://github.com/svg/svgo) constructor. Set to `null` to
 disable minifying using SVGO completely.
 
-#### `theme`
+#### `mermaidOptions`
 
-The [mermaid theme] to use.
+The [mermaid options](https://mermaid-js.github.io/mermaid/#/Setup) to use.
 
 ## License
 
