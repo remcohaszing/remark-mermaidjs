@@ -1,6 +1,6 @@
 {
   "name": "remark-mermaidjs",
-  "version": "2.1.1",
+  "version": "3.0.0",
   "description": "A remark plugin to render mermaid diagrams using puppeteer",
   "exports": "./index.js",
   "type": "module",
