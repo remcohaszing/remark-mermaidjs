@@ -14,7 +14,7 @@ import remarkMermaid, { defaultSVGOOptions, RemarkMermaidOptions } from './index
 
 const fixtures = new URL('__fixtures__/', import.meta.url);
 const launchOptions = {
-  // ExecutablePath: executablePath(),
+  executablePath: executablePath(),
 };
 
 test.after.each(() => {
