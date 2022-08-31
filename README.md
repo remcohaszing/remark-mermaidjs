@@ -54,3 +54,7 @@ disable minifying using SVGO completely.
 #### `theme`
 
 The [mermaid theme] to use.
+
+## License
+
+[MIT](LICENSE.md) © [Remco Haszing](https://github.com/remcohaszing)
