@@ -9,7 +9,7 @@ import sinon from 'sinon';
 import { test } from 'uvu';
 import * as assert from 'uvu/assert';
 
-import { defaultSVGOOptions, remarkMermaid, RemarkMermaidOptions } from './index.js';
+import remarkMermaid, { defaultSVGOOptions, RemarkMermaidOptions } from './index.js';
 
 const fixtures = new URL('__fixtures__/', import.meta.url);
 

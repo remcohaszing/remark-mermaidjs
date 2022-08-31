@@ -22,19 +22,18 @@ is needed in a CI environment. The simplest way to do this us using
 This plugin takes all code blocks marked as `mermaid` and renders them as an inline SVG.
 
 ```js
-const { readFileSync } = require('fs');
+import { readFile } from 'fs/promises';
 
-const remark = require('remark');
-const { remarkMermaid } = require('remark-mermaidjs');
+import { remark } from 'remark';
+import remarkMermaid from 'remark-mermaidjs';
 
-remark()
+const { value } = await remark()
   .use(remarkMermaid, {
     /* Optional options */
   })
-  .process(readFileSync('readme.md'))
-  .then((result) => {
-    console.log(result.contents);
-  });
+  .process(await readFile('readme.md'));
+
+console.log(value);
 ```
 
 ### Options

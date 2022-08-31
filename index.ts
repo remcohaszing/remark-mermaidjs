@@ -100,7 +100,7 @@ export interface RemarkMermaidOptions {
 /**
  * @param options Options that may be used to tweak the output.
  */
-export const remarkMermaid: Plugin<[RemarkMermaidOptions?], Root> = ({
+const remarkMermaid: Plugin<[RemarkMermaidOptions?], Root> = ({
   launchOptions = { args: ['--no-sandbox', '--disable-setuid-sandbox'] },
   mermaidOptions = {},
   svgo = defaultSVGOOptions,
@@ -170,3 +170,5 @@ export const remarkMermaid: Plugin<[RemarkMermaidOptions?], Root> = ({
     return ast;
   };
 };
+
+export default remarkMermaid;
