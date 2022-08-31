@@ -10,15 +10,11 @@ using [puppeteer](https://pptr.dev).
 
 ## Installation
 
-This package has a peer dependency on `puppeteer`.
-
 ```sh
-npm install puppeteer remark-mermaidjs
+npm install  remark-mermaidjs
 ```
 
-Since this package uses Puppeteer, some system dependencies may need to be installed. Typically this
-is needed in a CI environment. The simplest way to do this us using
-[`install-chrome-dependencies`](https://gitlab.com/appsemble/install-chrome-dependencies)
+Since this package uses Google Chrome, You have to make sure it’s available on your system.
 
 ## Usage
 
@@ -32,7 +28,13 @@ import remarkMermaid from 'remark-mermaidjs';
 
 const { value } = await remark()
   .use(remarkMermaid, {
-    /* Optional options */
+    launchOptions: {
+      executablePath: 'path/to/chrome/executable',
+
+      /* More puppeteer launch options */
+    },
+
+    /* More options */
   })
   .process(await readFile('readme.md'));
 
