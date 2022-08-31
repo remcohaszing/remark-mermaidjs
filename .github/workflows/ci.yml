@@ -17,6 +17,7 @@ jobs:
 
   test:
     runs-on: ubuntu-latest
+    continue-on-error: true
     strategy:
       matrix:
         node-version: [14, 16, 18]
