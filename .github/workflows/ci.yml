@@ -8,28 +8,29 @@ jobs:
   eslint:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
         with:
-          node-version: 16
+          node-version: 18
       - run: npm ci
       - run: npx eslint .
 
-  jest:
+  test:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: [14, 16]
+        node-version: [14, 16, 18]
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
       - run: npm --global install npm@8
+        if: ${{ matrix.node-version == 14 }}
       - run: npm ci
-      - run: npm test -- --coverage
-      - uses: codecov/codecov-action@v2
-        if: ${{ matrix.node-version == 16 }}
+      - run: npm test
+      - uses: codecov/codecov-action@v3
+        if: ${{ matrix.node-version == 18 }}
 
   prettier:
     runs-on: ubuntu-latest
@@ -37,16 +38,16 @@ jobs:
       - uses: actions/checkout@v1
       - uses: actions/setup-node@v1
         with:
-          node-version: 16
+          node-version: 18
       - run: npm ci
       - run: npx prettier .
 
   tsc:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
         with:
-          node-version: 16
-      - run: npm xi
+          node-version: 18
+      - run: npm ci
       - run: npx tsc
