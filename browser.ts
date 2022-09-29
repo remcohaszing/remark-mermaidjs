@@ -1,7 +1,6 @@
-import { fromParse5 } from 'hast-util-from-parse5';
+import { fromDom } from 'hast-util-from-dom';
 import { type Code, type Parent, type Root } from 'mdast';
 import mermaid from 'mermaid';
-import { parseFragment } from 'parse5';
 import { type Plugin } from 'unified';
 import { visit } from 'unist-util-visit';
 
@@ -23,12 +22,14 @@ function transformer(ast: Root): void {
     mermaid.render(`remark-mermaid-${index}`, code),
   );
 
+  const wrapper = document.createElement('div');
   for (const [i, [, index, parent]] of instances.entries()) {
     const value = results[i];
+    wrapper.innerHTML = value;
     parent.children.splice(index, 1, {
       type: 'paragraph',
       children: [{ type: 'html', value }],
-      data: { hChildren: [fromParse5(parseFragment(value))] },
+      data: { hChildren: [fromDom(wrapper.firstChild!)] },
     });
   }
 }
