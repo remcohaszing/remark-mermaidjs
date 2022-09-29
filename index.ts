@@ -97,7 +97,7 @@ export interface RemarkMermaidOptions {
    * The mermaid options to use.
    *
    * **Note**: This options is only supported in Node.js. In the browser this option is unused. If
-   * you this in a browser, call `mermaid.initialize()` manually.
+   * you use this in a browser, call `mermaid.initialize()` manually.
    */
   mermaidOptions?: Parameters<typeof mermaid['initialize']>[0];
 }

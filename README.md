@@ -62,7 +62,7 @@ disable minifying using SVGO completely.
 The [mermaid options](https://mermaid-js.github.io/mermaid/#/Setup) to use.
 
 **Note**: This options is only supported in Node.js. In the browser this option is unused. If you
-this in a browser, call `mermaid.initialize()` manually.
+use this in a browser, call `mermaid.initialize()` manually.
 
 ## License
 
