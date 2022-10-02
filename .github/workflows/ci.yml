@@ -49,6 +49,10 @@ jobs:
       - run: npm ci
       - run: npx playwright install
       - run: npm test
+      - uses: actions/upload-artifact@v3
+        with:
+          name: test-results-node${{ matrix.node-version }}
+          path: test-results/
       - uses: codecov/codecov-action@v3
         if: ${{ matrix.node-version == 18 }}
 
