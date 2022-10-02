@@ -48,14 +48,21 @@ console.log(value);
 These options are passed to
 [`puppeteer.launch()`](https://pptr.dev/#?product=Puppeteer&show=api-puppeteerlaunchoptions).
 
+- **Note**: This options is required in Node.js. In the browser this option is unused.
+
 #### `svgo`
 
 These options are passed to the [SVGO](https://github.com/svg/svgo) constructor. Set to `null` to
 disable minifying using SVGO completely.
 
+**Note**: This options is only supported in Node.js. In the browser this option is unused.
+
 #### `mermaidOptions`
 
 The [mermaid options](https://mermaid-js.github.io/mermaid/#/Setup) to use.
+
+**Note**: This options is only supported in Node.js. In the browser this option is unused. If you
+use this in a browser, call `mermaid.initialize()` manually.
 
 ## License
 

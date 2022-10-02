@@ -1,12 +1,12 @@
 import { createRequire } from 'module';
 
 import { fromParse5 } from 'hast-util-from-parse5';
-import { Code, Parent, Root } from 'mdast';
-import { Mermaid } from 'mermaid';
+import { type Code, type Parent, type Root } from 'mdast';
+import { type Mermaid } from 'mermaid';
 import { parseFragment } from 'parse5';
-import puppeteer, { Browser, Page, PuppeteerLaunchOptions } from 'puppeteer-core';
-import { optimize, OptimizedSvg, OptimizeOptions } from 'svgo';
-import { Plugin } from 'unified';
+import puppeteer, { type Browser, type Page, type PuppeteerLaunchOptions } from 'puppeteer-core';
+import { optimize, type OptimizedSvg, type OptimizeOptions } from 'svgo';
+import { type Plugin } from 'unified';
 import { visit } from 'unist-util-visit';
 
 const mermaidScript = {
@@ -76,7 +76,9 @@ export const defaultSVGOOptions: OptimizeOptions = {
 
 export interface RemarkMermaidOptions {
   /**
-   * Launc options to pass to puppeteer.
+   * Launch options to pass to puppeteer.
+   *
+   * **Note**: This options is required in Node.js. In the browser this option is unused.
    */
   launchOptions: PuppeteerLaunchOptions;
 
@@ -85,12 +87,17 @@ export interface RemarkMermaidOptions {
    *
    * Set to `null` explicitly to disable this.
    *
+   * **Note**: This options is only supported in Node.js. In the browser this option is unused.
+   *
    * @default defaultSVGOOptions
    */
   svgo?: OptimizeOptions | null;
 
   /**
    * The mermaid options to use.
+   *
+   * **Note**: This options is only supported in Node.js. In the browser this option is unused. If
+   * you use this in a browser, call `mermaid.initialize()` manually.
    */
   mermaidOptions?: Parameters<typeof mermaid['initialize']>[0];
 }
@@ -98,11 +105,13 @@ export interface RemarkMermaidOptions {
 /**
  * @param options Options that may be used to tweak the output.
  */
-const remarkMermaid: Plugin<[RemarkMermaidOptions], Root> = ({
-  launchOptions,
-  mermaidOptions = {},
-  svgo = defaultSVGOOptions,
-}) => {
+const remarkMermaid: Plugin<[RemarkMermaidOptions?], Root> = (options) => {
+  if (!options?.launchOptions?.executablePath) {
+    throw new Error('The option `launchOptions.executablePath` is required when using Node.js');
+  }
+
+  const { launchOptions, mermaidOptions, svgo = defaultSVGOOptions } = options;
+
   let browserPromise: Promise<Browser> | undefined;
   let count = 0;
 
@@ -135,14 +144,17 @@ const remarkMermaid: Plugin<[RemarkMermaidOptions], Root> = ({
       results = await page.evaluate(
         // We can’t calculate coverage on this function, as it’s run by Chrome, not Node.
         /* c8 ignore start */
-        (codes, initOptions) =>
-          codes.map((code) => {
-            const id = 'a';
+        (codes, initOptions) => {
+          if (initOptions) {
             mermaid.initialize(initOptions);
+          }
+          return codes.map((code) => {
+            const id = 'a';
             const div = document.createElement('div');
             div.innerHTML = mermaid.render(id, code);
             return div.innerHTML;
-          }),
+          });
+        },
         /* C8 ignore stop */
         instances.map((instance) => instance[0]),
         mermaidOptions,
