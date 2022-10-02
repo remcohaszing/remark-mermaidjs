@@ -42,6 +42,10 @@ jobs:
           node-version: ${{ matrix.node-version }}
       - run: npm --global install npm@8
         if: ${{ matrix.node-version == 14 }}
+      - uses: actions/cache@v3
+        with:
+          path: ~/.cache/ms-playwright
+          key: playwright-${{ hashFiles('package-lock.json') }}
       - run: npm ci
       - run: npx playwright install
       - run: npm test
