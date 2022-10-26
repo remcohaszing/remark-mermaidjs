@@ -47,7 +47,7 @@ jobs:
           path: ~/.cache/ms-playwright
           key: playwright-${{ hashFiles('package-lock.json') }}
       - run: npm ci
-      - run: npx playwright install
+      - run: npx playwright install --with-deps
       - run: npm test
       - uses: actions/upload-artifact@v3
         if: always()

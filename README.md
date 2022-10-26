@@ -11,10 +11,13 @@ using [puppeteer](https://pptr.dev).
 ## Installation
 
 ```sh
-npm install  remark-mermaidjs
+npm install remark-mermaidjs
 ```
 
-Since this package uses Google Chrome, You have to make sure it’s available on your system.
+Since this package uses Google Chrome, You have to make sure it’s available on your system. You may
+also need to install some additional packages, such as fonts, depending on your system. For more
+information, see the Puppeteer
+[troubleshooting](https://github.com/puppeteer/puppeteer/blob/main/docs/troubleshooting.md) guide.
 
 ## Usage
 
