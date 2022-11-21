@@ -1,4 +1,4 @@
-import { readdir, readFile } from 'fs/promises';
+import { readdir, readFile } from 'node:fs/promises';
 
 import { chromium, expect, test } from '@playwright/test';
 import puppeteer from 'puppeteer-core';
@@ -7,7 +7,7 @@ import { remark } from 'remark';
 import remarkRehype from 'remark-rehype';
 import sinon from 'sinon';
 
-import remarkMermaid, { defaultSVGOOptions, type RemarkMermaidOptions } from '../index.js';
+import remarkMermaid, { type RemarkMermaidOptions } from '../index.js';
 
 const fixtures = new URL('fixtures/', import.meta.url);
 const fixtureNames = await readdir(fixtures);
@@ -47,7 +47,6 @@ test.describe.parallel('node', () => {
       const fixture = new URL(`${name}/`, fixtures);
       const original = await readFile(new URL('input.md', fixture));
       let options: RemarkMermaidOptions = {
-        svgo: defaultSVGOOptions,
         launchOptions,
       };
       try {

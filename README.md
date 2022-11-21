@@ -24,7 +24,7 @@ information, see the Puppeteer
 This plugin takes all code blocks marked as `mermaid` and renders them as an inline SVG.
 
 ```js
-import { readFile } from 'fs/promises';
+import { readFile } from 'node:fs/promises';
 
 import { remark } from 'remark';
 import remarkMermaid from 'remark-mermaidjs';
