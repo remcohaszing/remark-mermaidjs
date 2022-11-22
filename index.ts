@@ -90,12 +90,7 @@ const remarkMermaid: Plugin<[RemarkMermaidOptions?], Root> = (options) => {
           if (initOptions) {
             mermaid.initialize(initOptions);
           }
-          return codes.map((code) => {
-            const id = 'a';
-            const div = document.createElement('div');
-            div.innerHTML = mermaid.render(id, code);
-            return div.innerHTML;
-          });
+          return codes.map((code, index) => mermaid.render(`remark-mermaid-${index}`, code));
         },
         /* C8 ignore stop */
         instances.map((instance) => instance[0]),
