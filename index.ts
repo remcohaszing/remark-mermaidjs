@@ -22,7 +22,7 @@ export interface RemarkMermaidOptions {
    *
    * **Note**: This options is required in Node.js. In the browser this option is unused.
    */
-  launchOptions: PuppeteerLaunchOptions;
+  launchOptions?: PuppeteerLaunchOptions;
 
   /**
    * SVGO options used to minify the SVO output.

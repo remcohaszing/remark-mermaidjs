@@ -50,7 +50,7 @@ test.describe.parallel('node', () => {
         launchOptions,
       };
       try {
-        options = JSON.parse(await readFile(new URL('options.json', fixture), 'utf8'));
+        ({ options } = await import(String(new URL('options.ts', fixture))));
         options.launchOptions = launchOptions;
       } catch {
         // This test case uses default options.
