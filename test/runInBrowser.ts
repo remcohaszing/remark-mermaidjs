@@ -1,8 +1,13 @@
 import rehypeStringify from 'rehype-stringify';
 import { remark } from 'remark';
+import { type RemarkMermaidOptions } from 'remark-mermaidjs';
 import remarkRehype from 'remark-rehype';
 
 import remarkMermaid from '../browser.js';
+import { options as error } from './fixtures/error/options.js';
+import { options as errorEmpty } from './fixtures/errorEmpty/options.js';
+
+const options: Record<string, RemarkMermaidOptions> = { error, errorEmpty };
 
 /**
  * Process a fixture using remark and remark-mermaidjs.
@@ -13,10 +18,12 @@ import remarkMermaid from '../browser.js';
  * @returns A tuple of the file processed to both markdown and HTML.
  */
 export async function processFixture(name: string): Promise<[string, string]> {
-  const response = await fetch(`fixtures/${name}/input.md`);
-  const original = await response.text();
-  const processor = remark().use(remarkMermaid);
-  const asMarkdown = processor.processSync(original);
-  const asHTML = processor().use(remarkRehype).use(rehypeStringify).processSync(original);
+  const testOptions = name in options ? options[name] : undefined;
+  const path = `fixtures/${name}/input.md`;
+  const response = await fetch(path);
+  const value = await response.text();
+  const processor = remark().use(remarkMermaid, testOptions);
+  const asMarkdown = processor.processSync({ path, value });
+  const asHTML = processor().use(remarkRehype).use(rehypeStringify).processSync({ path, value });
   return [asMarkdown.value as string, asHTML.value as string];
 }

@@ -46,6 +46,15 @@ console.log(value);
 
 ### Options
 
+#### `errorFallback`
+
+Create a fallback node if processing of a mermaid diagram fails. If nothing is returned, the code
+block is removed. The function receives the following arguments:
+
+- `node`: The mdast `code` node that couldn’t be rendered.
+- `error`: The error message that was thrown.
+- `file`: The file on which the error occurred.
+
 #### `launchOptions`
 
 These options are passed to
