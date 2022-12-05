@@ -78,7 +78,7 @@ const remarkMermaid: RemarkMermaid = (options) => {
 
     // Nothing to do. No need to start puppeteer in this case.
     if (!instances.length) {
-      return ast;
+      return;
     }
 
     count += 1;
@@ -133,8 +133,6 @@ const remarkMermaid: RemarkMermaid = (options) => {
       browserPromise = undefined;
       await browser?.close();
     }
-
-    return ast;
   };
 };
 
