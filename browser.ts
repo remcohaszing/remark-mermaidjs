@@ -4,6 +4,7 @@ import { type RemarkMermaid } from 'remark-mermaidjs';
 
 import { extractCodeBlocks, replaceCodeBlocks } from './shared.js';
 
+let counter = 0;
 const remarkMermaid: RemarkMermaid = (options) => (ast, file) => {
   const instances = extractCodeBlocks(ast);
 
@@ -12,12 +13,14 @@ const remarkMermaid: RemarkMermaid = (options) => (ast, file) => {
     return;
   }
 
-  const results = instances.map(([node], index) => {
+  const results = instances.map(([node]) => {
     try {
+      // @ts-expect-error The mermaid types are wrong.
+      const result = mermaid.render(`remark-mermaid-${counter}`, node.value);
+      counter += 1;
       return {
         success: true,
-        // @ts-expect-error The mermaid types are wrong.
-        result: mermaid.render(`remark-mermaid-${index}`, node.value),
+        result,
       };
     } catch (error) {
       return {
