@@ -1,14 +1,15 @@
 import { createRequire } from 'node:module';
 
 import { fromParse5 } from 'hast-util-from-parse5';
-import { type BlockContent, type Code, type Parent, type Root } from 'mdast';
+import { type BlockContent, type Code, type Root } from 'mdast';
 import { type MermaidConfig } from 'mermaid';
 import { parseFragment } from 'parse5';
 import puppeteer, { type Browser, type Page, type PuppeteerLaunchOptions } from 'puppeteer-core';
 import { type Config, optimize } from 'svgo';
 import { type Plugin } from 'unified';
-import { visit } from 'unist-util-visit';
 import { type VFile } from 'vfile';
+
+import { extractCodeBlocks, replaceCodeBlocks, type Result } from './shared.js';
 
 const mermaidScript = {
   path: createRequire(import.meta.url).resolve('mermaid/dist/mermaid.min.js'),
@@ -16,30 +17,6 @@ const mermaidScript = {
 
 // eslint-disable-next-line @typescript-eslint/consistent-type-imports
 declare const mermaid: typeof import('mermaid').default;
-
-interface SuccessResult {
-  /**
-   * This indicates diagram was rendered succesfully.
-   */
-  success: true;
-
-  /**
-   * The resulting SVG code.
-   */
-  svg: string;
-}
-
-interface ErrorResult {
-  /**
-   * This indicates diagram wasn’t rendered succesfully.
-   */
-  success: false;
-
-  /**
-   * The error message.
-   */
-  error: string;
-}
 
 export interface RemarkMermaidOptions {
   /**
@@ -91,17 +68,13 @@ const remarkMermaid: RemarkMermaid = (options) => {
     throw new Error('The option `launchOptions.executablePath` is required when using Node.js');
   }
 
-  const { errorFallback, launchOptions, mermaidOptions, svgo } = options;
+  const { launchOptions, mermaidOptions, svgo } = options;
 
   let browserPromise: Promise<Browser> | undefined;
   let count = 0;
 
   return async function transformer(ast, file) {
-    const instances: [Code, number, Parent][] = [];
-
-    visit(ast, { type: 'code', lang: 'mermaid' }, (node: Code, index, parent: Parent) => {
-      instances.push([node, index, parent]);
-    });
+    const instances = extractCodeBlocks(ast);
 
     // Nothing to do. No need to start puppeteer in this case.
     if (!instances.length) {
@@ -115,7 +88,7 @@ const remarkMermaid: RemarkMermaid = (options) => {
     });
     const browser = await browserPromise;
     let page: Page | undefined;
-    let results: (ErrorResult | SuccessResult)[];
+    let results: Result[];
     try {
       page = await browser.newPage();
       await page.goto(String(new URL('index.html', import.meta.url)));
@@ -133,13 +106,13 @@ const remarkMermaid: RemarkMermaid = (options) => {
             try {
               return {
                 success: true,
-                svg: mermaid.render(`remark-mermaid-${index}`, code),
-              } as const;
+                result: mermaid.render(`remark-mermaid-${index}`, code),
+              };
             } catch (error) {
               return {
                 success: false,
-                error: error instanceof Error ? error.message : String(error),
-              } as const;
+                result: error instanceof Error ? error.message : String(error),
+              };
             }
           });
         },
@@ -152,29 +125,11 @@ const remarkMermaid: RemarkMermaid = (options) => {
       await page?.close();
     }
 
-    for (const [i, [node, index, parent]] of instances.entries()) {
-      const result = results[i];
-      if (result.success) {
-        let value = result.svg;
-        if (svgo !== false) {
-          value = optimize(value, svgo).data;
-        }
-        parent.children[index] = {
-          type: 'paragraph',
-          children: [{ type: 'html', value }],
-          data: { hChildren: [fromParse5(parseFragment(value))] },
-        };
-      } else if (errorFallback) {
-        const fallback = errorFallback(node, result.error, file);
-        if (fallback) {
-          parent.children[index] = fallback;
-        } else {
-          parent.children.splice(index, 1);
-        }
-      } else {
-        file.fail(result.error, node, 'remark-mermaidjs:remark-mermaidjs');
-      }
-    }
+    replaceCodeBlocks(instances, results, options, file, (value) => {
+      const processedValue = svgo === false ? value : optimize(value, svgo).data;
+      return [processedValue, fromParse5(parseFragment(processedValue))];
+    });
+
     if (!count) {
       browserPromise = undefined;
       await browser?.close();
