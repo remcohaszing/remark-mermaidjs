@@ -49,7 +49,8 @@
     "puppeteer-core": "^19.0.0",
     "svgo": "^3.0.0",
     "unified": "^10.0.0",
-    "unist-util-visit": "^4.0.0"
+    "unist-util-visit": "^4.0.0",
+    "vfile": "^5.0.0"
   },
   "devDependencies": {
     "@playwright/test": "^1.0.0",

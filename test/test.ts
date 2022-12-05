@@ -6,6 +6,7 @@ import rehypeStringify from 'rehype-stringify';
 import { remark } from 'remark';
 import remarkRehype from 'remark-rehype';
 import sinon from 'sinon';
+import { VFile } from 'vfile';
 
 import remarkMermaid, { type RemarkMermaidOptions } from '../index.js';
 
@@ -45,7 +46,7 @@ test.describe.parallel('node', () => {
     test(name, async ({}, testInfo) => {
       testInfo.snapshotSuffix = 'node';
       const fixture = new URL(`${name}/`, fixtures);
-      const original = await readFile(new URL('input.md', fixture));
+      const value = await readFile(new URL('input.md', fixture));
       let options: RemarkMermaidOptions = {
         launchOptions,
       };
@@ -56,8 +57,11 @@ test.describe.parallel('node', () => {
         // This test case uses default options.
       }
       const processor = remark().use(remarkMermaid, options);
-      const asMarkdown = await processor.process(original);
-      const asHTML = await processor().use(remarkRehype).use(rehypeStringify).process(original);
+      const asMarkdown = await processor.process({ path: `${name}/input.md`, value });
+      const asHTML = await processor()
+        .use(remarkRehype)
+        .use(rehypeStringify)
+        .process({ path: `${name}/input.md`, value });
       expect(asMarkdown.value).toMatchSnapshot({ name: `${name}.md` });
       expect(asHTML.value).toMatchSnapshot({ name: `${name}.html` });
     });
@@ -103,5 +107,22 @@ test.describe.serial('node', () => {
     expect(() => remark().use(remarkMermaid, { launchOptions: {} }).processSync('')).toThrowError(
       'The option `launchOptions.executablePath` is required when using Node.js',
     );
+  });
+
+  test('it should throw a vfile error if a diagram is invalid without error fallback', async () => {
+    const processor = remark().use(remarkMermaid, { launchOptions });
+    const file = new VFile('```mermaid\ninvalid\n```\n');
+    await expect(() => processor.process(file)).rejects.toThrowError(
+      'No diagram type detected for text: invalid',
+    );
+    expect(file.messages).toHaveLength(1);
+    expect(file.messages[0].message).toBe('No diagram type detected for text: invalid');
+    expect(file.messages[0].source).toBe('remark-mermaidjs');
+    expect(file.messages[0].ruleId).toBe('remark-mermaidjs');
+    expect(file.messages[0].fatal).toBe(true);
+    expect(file.messages[0].position).toStrictEqual({
+      start: { offset: 0, line: 1, column: 1 },
+      end: { offset: 22, line: 3, column: 4 },
+    });
   });
 });
