@@ -20,14 +20,10 @@
   },
   "author": "Remco Haszing <remcohaszing@gmail.com>",
   "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/remcohaszing/remark-mermaidjs.git"
-  },
-  "bugs": {
-    "url": "https://github.com/remcohaszing/remark-mermaidjs/issues"
-  },
+  "repository": "remcohaszing/remark-mermaidjs",
+  "bugs": "https://github.com/remcohaszing/remark-mermaidjs/issues",
   "homepage": "https://github.com/remcohaszing/remark-mermaidjs#readme",
+  "funding": "https://github.com/sponsors/remcohaszing",
   "keywords": [
     "documentation",
     "mermaid",
