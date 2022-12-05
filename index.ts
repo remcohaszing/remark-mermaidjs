@@ -93,7 +93,6 @@ const remarkMermaid: RemarkMermaid = (options) => {
       page = await browser.newPage();
       await page.goto(String(new URL('index.html', import.meta.url)));
       await page.addScriptTag(mermaidScript);
-      await page.setViewport({ width: 600, height: 3000 });
 
       results = await page.evaluate(
         // We can’t calculate coverage on this function, as it’s run by Chrome, not Node.
