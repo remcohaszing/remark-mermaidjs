@@ -12,7 +12,8 @@
     "browser.js",
     "index.d.ts",
     "index.html",
-    "index.js"
+    "index.js",
+    "shared.js"
   ],
   "scripts": {
     "prepack": "tsc --noEmit false",
