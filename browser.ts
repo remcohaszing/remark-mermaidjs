@@ -1,4 +1,3 @@
-import { fromDom } from 'hast-util-from-dom';
 import mermaid from 'mermaid';
 import { type RemarkMermaid } from 'remark-mermaidjs';
 
@@ -30,11 +29,7 @@ const remarkMermaid: RemarkMermaid = (options) => (ast, file) => {
     }
   });
 
-  const wrapper = document.createElement('div');
-  replaceCodeBlocks(instances, results, options, file, (value) => {
-    wrapper.innerHTML = value;
-    return [value, fromDom(wrapper.firstChild!)];
-  });
+  replaceCodeBlocks(instances, results, options, file);
 };
 
 export default remarkMermaid;

@@ -1,9 +1,7 @@
 import { createRequire } from 'node:module';
 
-import { fromParse5 } from 'hast-util-from-parse5';
 import { type BlockContent, type Code, type Root } from 'mdast';
 import { type MermaidConfig } from 'mermaid';
-import { parseFragment } from 'parse5';
 import puppeteer, { type Browser, type Page, type PuppeteerLaunchOptions } from 'puppeteer-core';
 import { type Plugin } from 'unified';
 import { type VFile } from 'vfile';
@@ -113,10 +111,7 @@ const remarkMermaid: RemarkMermaid = (options) => {
       await page?.close();
     }
 
-    replaceCodeBlocks(instances, results, options, file, (value) => [
-      value,
-      fromParse5(parseFragment(value)),
-    ]);
+    replaceCodeBlocks(instances, results, options, file);
 
     if (!count) {
       browserPromise = undefined;

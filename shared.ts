@@ -1,4 +1,4 @@
-import { type Node } from 'hast';
+import { fromHtmlIsomorphic } from 'hast-util-from-html-isomorphic';
 import { type Code, type Parent, type Root } from 'mdast';
 import { visit } from 'unist-util-visit';
 import { type VFile } from 'vfile';
@@ -42,23 +42,22 @@ export interface Result {
  * @param results The diagram rendering results.
  * @param options The `remark-mermaidjs` options as given by the user.
  * @param file The file to report errors on.
- * @param processDiagram Postprocess a diagram.
  */
 export function replaceCodeBlocks(
   instances: CodeInstance[],
   results: Result[],
   options: RemarkMermaidOptions | undefined,
   file: VFile,
-  processDiagram: (diagram: string) => [string, Node],
 ): void {
   for (const [i, [node, index, parent]] of instances.entries()) {
     const result = results[i];
     if (result.success) {
-      const [value, hChild] = processDiagram(result.result);
+      const value = result.result;
+      const hChildren = fromHtmlIsomorphic(value, { fragment: true }).children;
       parent.children[index] = {
         type: 'paragraph',
         children: [{ type: 'html', value }],
-        data: { hChildren: [hChild] },
+        data: { hChildren },
       };
     } else if (options?.errorFallback) {
       const fallback = options.errorFallback(node, result.result, file);
