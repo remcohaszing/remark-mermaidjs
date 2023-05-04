@@ -52,7 +52,7 @@ export interface RemarkMermaidOptions {
    * @param error The error message that was thrown.
    * @param file The file on which the error occurred.
    * @returns A fallback node to render instead of the invalid diagram. If nothing is returned, the
-   * code block is removed
+   *   code block is removed
    */
   // eslint-disable-next-line @typescript-eslint/no-invalid-void-type
   errorFallback?: (node: Code, error: string, file: VFile) => BlockContent | undefined | void;
@@ -115,6 +115,7 @@ const remarkMermaid: RemarkMermaid = (options) => {
             }
           });
         },
+
         /* C8 ignore stop */
         instances.map((instance) => instance[0].value),
         mermaidOptions,

@@ -3,9 +3,9 @@ import { remark } from 'remark';
 import { type RemarkMermaidOptions } from 'remark-mermaidjs';
 import remarkRehype from 'remark-rehype';
 
-import remarkMermaid from '../browser.js';
 import { options as error } from './fixtures/error/options.js';
 import { options as errorEmpty } from './fixtures/errorEmpty/options.js';
+import remarkMermaid from '../browser.js';
 
 const options: Record<string, RemarkMermaidOptions> = { error, errorEmpty };
 

@@ -1,4 +1,4 @@
-import type { RemarkMermaidOptions } from 'remark-mermaidjs';
+import { type RemarkMermaidOptions } from 'remark-mermaidjs';
 
 export const options: RemarkMermaidOptions = {
   mermaidOptions: {
