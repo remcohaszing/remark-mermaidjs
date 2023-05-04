@@ -5,7 +5,6 @@ import { type BlockContent, type Code, type Root } from 'mdast';
 import { type MermaidConfig } from 'mermaid';
 import { parseFragment } from 'parse5';
 import puppeteer, { type Browser, type Page, type PuppeteerLaunchOptions } from 'puppeteer-core';
-import { type Config, optimize } from 'svgo';
 import { type Plugin } from 'unified';
 import { type VFile } from 'vfile';
 
@@ -25,17 +24,6 @@ export interface RemarkMermaidOptions {
    * **Note**: This options is required in Node.js. In the browser this option is unused.
    */
   launchOptions?: PuppeteerLaunchOptions;
-
-  /**
-   * SVGO options used to minify the SVO output.
-   *
-   * Set to `false` explicitly to disable this.
-   *
-   * **Note**: This options is only supported in Node.js. In the browser this option is unused.
-   *
-   * @default defaultSVGOOptions
-   */
-  svgo?: Config | false;
 
   /**
    * The mermaid options to use.
@@ -68,7 +56,7 @@ const remarkMermaid: RemarkMermaid = (options) => {
     throw new Error('The option `launchOptions.executablePath` is required when using Node.js');
   }
 
-  const { launchOptions, mermaidOptions, svgo } = options;
+  const { launchOptions, mermaidOptions } = options;
 
   let browserPromise: Promise<Browser> | undefined;
   let count = 0;
@@ -125,10 +113,10 @@ const remarkMermaid: RemarkMermaid = (options) => {
       await page?.close();
     }
 
-    replaceCodeBlocks(instances, results, options, file, (value) => {
-      const processedValue = svgo === false ? value : optimize(value, svgo).data;
-      return [processedValue, fromParse5(parseFragment(processedValue))];
-    });
+    replaceCodeBlocks(instances, results, options, file, (value) => [
+      value,
+      fromParse5(parseFragment(value)),
+    ]);
 
     if (!count) {
       browserPromise = undefined;

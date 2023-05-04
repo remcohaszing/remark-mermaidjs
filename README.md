@@ -62,13 +62,6 @@ These options are passed to
 
 - **Note**: This options is required in Node.js. In the browser this option is unused.
 
-#### `svgo`
-
-These options are passed to the [SVGO](https://github.com/svg/svgo) constructor. Set to `false` to
-disable minifying using SVGO completely.
-
-**Note**: This options is only supported in Node.js. In the browser this option is unused.
-
 #### `mermaidOptions`
 
 The [mermaid options](https://mermaid-js.github.io/mermaid/#/Setup) to use.
