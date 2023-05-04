@@ -8,6 +8,16 @@
 A [remark](https://remark.js.org) plugin to render [mermaid](https://mermaid-js.github.io) diagrams
 using [puppeteer](https://pptr.dev).
 
+## Table of Contents
+
+- [Installation](#installation)
+- [Usage](#usage)
+  - [Options](#options)
+    - [`errorFallback`](#errorfallback)
+    - [`launchOptions`](#launchoptions)
+    - [`mermaidOptions`](#mermaidoptions)
+- [License](#license)
+
 ## Installation
 
 ```sh
