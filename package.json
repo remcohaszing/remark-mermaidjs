@@ -1,6 +1,6 @@
 {
   "name": "remark-mermaidjs",
-  "version": "5.0.0",
+  "version": "5.0.1",
   "description": "A remark plugin to render mermaid diagrams",
   "exports": {
     "browser": "./browser.js",
