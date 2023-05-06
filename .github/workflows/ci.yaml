@@ -41,7 +41,6 @@ jobs:
 
   test:
     runs-on: ubuntu-latest
-    continue-on-error: true
     strategy:
       matrix:
         node-version: [16, 18]
@@ -91,6 +90,8 @@ jobs:
       - test
       - tsc
     if: startsWith(github.ref, 'refs/tags/')
+    permissions:
+      id-token: write
     steps:
       - uses: actions/setup-node@v3
         with:
