@@ -15,7 +15,7 @@ using [playwright](https://playwright.dev).
 
 - [Installation](#installation)
 - [Usage](#usage)
-  - [Options](#options)
+- [API](#api)
   - [`unified().use(remarkMermaid, options?)`](#unifieduseremarkmermaid-options)
     - [`browser`](#browser)
     - [`css`](#css)
@@ -23,6 +23,9 @@ using [playwright](https://playwright.dev).
     - [`launchOptions`](#launchoptions)
     - [`mermaidOptions`](#mermaidoptions)
     - [`prefix`](#prefix)
+- [Compatibility](#compatibility)
+- [Related Projects](#related-projects)
+- [Contributing](#contributing)
 - [License](#license)
 
 ## Installation
@@ -60,7 +63,7 @@ const { value } = await remark()
 console.log(value);
 ```
 
-### Options
+## API
 
 This package has a default export `remarkMermaid`.
 
@@ -100,6 +103,25 @@ use this in a browser, call `mermaid.initialize()` manually.
 #### `prefix`
 
 A custom prefix to use for Mermaid IDs. (`string`, default: `mermaid`)
+
+## Compatibility
+
+This project is compatible with Node.js 16 or greater.
+
+## Related Projects
+
+- [`mermaid`](https://mermaid.js.org) is the library that’s used to render the diagrams.
+- [`mermaid-isomorphic`](https://github.com/remcohaszing/mermaid-isomorphic) allows this package to
+  render Mermaid diagrams in both Node.js and the browser.
+- [`rehype-mermaidjs`](https://github.com/remcohaszing/rehype-mermaidjs) is a more powerful plugin
+  that does the same, but as a [rehype](https://github.com/rehypejs/rehype) plugin.
+
+## Contributing
+
+Test fixtures are generated and verified using Linux. Rendering on other platforms may yield
+slightly different results. Don’t worry about adding new fixtures, but don’t update existing ones
+that cause CI to fail. Furthermore see my global
+[contributing guidelines](https://github.com/remcohaszing/.github/blob/main/CONTRIBUTING.md).
 
 ## License
 
