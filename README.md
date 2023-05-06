@@ -6,16 +6,20 @@
 [![prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)](https://prettier.io)
 
 A [remark](https://remark.js.org) plugin to render [mermaid](https://mermaid-js.github.io) diagrams
-using [puppeteer](https://pptr.dev).
+using [playwright](https://playwright.dev).
 
 ## Table of Contents
 
 - [Installation](#installation)
 - [Usage](#usage)
   - [Options](#options)
+  - [`unified().use(remarkMermaid, options?)`](#unifieduseremarkmermaid-options)
+    - [`browser`](#browser)
+    - [`css`](#css)
     - [`errorFallback`](#errorfallback)
     - [`launchOptions`](#launchoptions)
     - [`mermaidOptions`](#mermaidoptions)
+    - [`prefix`](#prefix)
 - [License](#license)
 
 ## Installation
@@ -24,10 +28,15 @@ using [puppeteer](https://pptr.dev).
 npm install remark-mermaidjs
 ```
 
-Since this package uses Google Chrome, You have to make sure it’s available on your system. You may
-also need to install some additional packages, such as fonts, depending on your system. For more
-information, see the Puppeteer
-[troubleshooting](https://github.com/puppeteer/puppeteer/blob/main/docs/troubleshooting.md) guide.
+In Node.js this package uses [playwright](https://playwright.dev) under the hood. To use it, you may
+need to install additional dependencies. These can be installed with:
+
+```sh
+npx playwright install --with-deps chromium
+```
+
+See the Playwright [Browsers](https://playwright.dev/docs/browsers) documentation for more
+information.
 
 ## Usage
 
@@ -41,13 +50,7 @@ import remarkMermaid from 'remark-mermaidjs';
 
 const { value } = await remark()
   .use(remarkMermaid, {
-    launchOptions: {
-      executablePath: 'path/to/chrome/executable',
-
-      /* More puppeteer launch options */
-    },
-
-    /* More options */
+    /* Options */
   })
   .process(await readFile('readme.md'));
 
@@ -55,6 +58,19 @@ console.log(value);
 ```
 
 ### Options
+
+This package has a default export `remarkMermaid`.
+
+### `unified().use(remarkMermaid, options?)`
+
+#### `browser`
+
+The Playwright browser to use. (`object`, default: chromium)
+
+#### `css`
+
+A URL that points to a custom CSS file to load. Use this to load custom fonts. This option is
+ignored in the browser. You need to include the CSS in your build manually. (`string` | `URL`)
 
 #### `errorFallback`
 
@@ -67,8 +83,7 @@ block is removed. The function receives the following arguments:
 
 #### `launchOptions`
 
-These options are passed to
-[`puppeteer.launch()`](https://pptr.dev/#?product=Puppeteer&show=api-puppeteerlaunchoptions).
+The options used to launch the browser. (`object`)
 
 - **Note**: This options is required in Node.js. In the browser this option is unused.
 
@@ -78,6 +93,10 @@ The [mermaid options](https://mermaid-js.github.io/mermaid/#/Setup) to use.
 
 **Note**: This options is only supported in Node.js. In the browser this option is unused. If you
 use this in a browser, call `mermaid.initialize()` manually.
+
+#### `prefix`
+
+A custom prefix to use for Mermaid IDs. (`string`, default: `mermaid`)
 
 ## License
 

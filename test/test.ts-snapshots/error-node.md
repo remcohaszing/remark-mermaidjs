@@ -4,7 +4,7 @@ This is an invalid diagram
 
     input.md
 
-    No diagram type detected for text: invalid
+    UnknownDiagramError: No diagram type detected matching given configuration for text: invalid
 
     {
       "type": "code",
