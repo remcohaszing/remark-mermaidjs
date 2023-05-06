@@ -49,18 +49,18 @@ information.
 This plugin takes all code blocks marked as `mermaid` and renders them as an inline SVG.
 
 ```js
-import { readFile } from 'node:fs/promises';
+import { readFile } from 'node:fs/promises'
 
-import { remark } from 'remark';
-import remarkMermaid from 'remark-mermaidjs';
+import { remark } from 'remark'
+import remarkMermaid from 'remark-mermaidjs'
 
 const { value } = await remark()
   .use(remarkMermaid, {
     /* Options */
   })
-  .process(await readFile('readme.md'));
+  .process(await readFile('readme.md'))
 
-console.log(value);
+console.log(value)
 ```
 
 ## API

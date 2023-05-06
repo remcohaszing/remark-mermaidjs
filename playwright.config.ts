@@ -1,8 +1,8 @@
-import { type PlaywrightTestConfig } from '@playwright/test';
+import { type PlaywrightTestConfig } from '@playwright/test'
 
 const config: PlaywrightTestConfig = {
   testMatch: /test\/test\.ts$/,
-  metadata: {},
-};
+  metadata: {}
+}
 
-export default config;
+export default config

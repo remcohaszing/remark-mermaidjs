@@ -1,15 +1,15 @@
-import { fromHtmlIsomorphic } from 'hast-util-from-html-isomorphic';
-import { type BlockContent, type Code, type Parent, type Root } from 'mdast';
+import { fromHtmlIsomorphic } from 'hast-util-from-html-isomorphic'
+import { type BlockContent, type Code, type Parent, type Root } from 'mdast'
 import {
   createMermaidRenderer,
   type CreateMermaidRendererOptions,
-  type RenderOptions,
-} from 'mermaid-isomorphic';
-import { type Plugin } from 'unified';
-import { visit } from 'unist-util-visit';
-import { type VFile } from 'vfile';
+  type RenderOptions
+} from 'mermaid-isomorphic'
+import { type Plugin } from 'unified'
+import { visit } from 'unist-util-visit'
+import { type VFile } from 'vfile'
 
-type CodeInstance = [Code, Parent];
+type CodeInstance = [Code, Parent]
 
 export interface RemarkMermaidOptions
   extends CreateMermaidRendererOptions,
@@ -24,58 +24,58 @@ export interface RemarkMermaidOptions
    *   code block is removed
    */
   // eslint-disable-next-line @typescript-eslint/no-invalid-void-type
-  errorFallback?: (node: Code, error: string, file: VFile) => BlockContent | undefined | void;
+  errorFallback?: (node: Code, error: string, file: VFile) => BlockContent | undefined | void
 }
 
-export type RemarkMermaid = Plugin<[RemarkMermaidOptions?], Root>;
+export type RemarkMermaid = Plugin<[RemarkMermaidOptions?], Root>
 
 /**
  * @param options Options that may be used to tweak the output.
  */
 const remarkMermaid: RemarkMermaid = (options) => {
-  const render = createMermaidRenderer(options);
+  const render = createMermaidRenderer(options)
 
   return async function transformer(ast, file) {
-    const instances: CodeInstance[] = [];
+    const instances: CodeInstance[] = []
 
     visit(ast, { type: 'code', lang: 'mermaid' }, (node: Code, index, parent: Parent) => {
-      instances.push([node, parent]);
-    });
+      instances.push([node, parent])
+    })
 
     // Nothing to do. No need to start a browser in this case.
     if (!instances.length) {
-      return;
+      return
     }
 
     const results = await render(
       instances.map((instance) => instance[0].value),
-      options,
-    );
+      options
+    )
 
     for (const [i, [node, parent]] of instances.entries()) {
-      const result = results[i];
-      const nodeIndex = parent.children.indexOf(node);
+      const result = results[i]
+      const nodeIndex = parent.children.indexOf(node)
 
       if (result.status === 'fulfilled') {
-        const { svg } = result.value;
-        const hChildren = fromHtmlIsomorphic(svg, { fragment: true }).children;
+        const { svg } = result.value
+        const hChildren = fromHtmlIsomorphic(svg, { fragment: true }).children
         parent.children[nodeIndex] = {
           type: 'paragraph',
           children: [{ type: 'html', value: svg }],
-          data: { hChildren },
-        };
+          data: { hChildren }
+        }
       } else if (options?.errorFallback) {
-        const fallback = options.errorFallback(node, result.reason, file);
+        const fallback = options.errorFallback(node, result.reason, file)
         if (fallback) {
-          parent.children[nodeIndex] = fallback;
+          parent.children[nodeIndex] = fallback
         } else {
-          parent.children.splice(nodeIndex, 1);
+          parent.children.splice(nodeIndex, 1)
         }
       } else {
-        file.fail(result.reason, node, 'remark-mermaidjs:remark-mermaidjs');
+        file.fail(result.reason, node, 'remark-mermaidjs:remark-mermaidjs')
       }
     }
-  };
-};
+  }
+}
 
-export default remarkMermaid;
+export default remarkMermaid
