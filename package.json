@@ -27,9 +27,6 @@
     "remark-plugin",
     "unified"
   ],
-  "engines": {
-    "node": ">=14"
-  },
   "dependencies": {
     "@types/mdast": "^3.0.0",
     "hast-util-from-html-isomorphic": "^1.0.0",
