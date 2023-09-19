@@ -6,10 +6,10 @@ import {
   type RenderOptions
 } from 'mermaid-isomorphic'
 import { type Plugin } from 'unified'
-import { visit } from 'unist-util-visit'
+import { visitParents } from 'unist-util-visit-parents'
 import { type VFile } from 'vfile'
 
-type CodeInstance = [Code, Parent]
+type Ancestors = (Code | Parent)[]
 
 export interface RemarkMermaidOptions
   extends CreateMermaidRendererOptions,
@@ -27,19 +27,17 @@ export interface RemarkMermaidOptions
   errorFallback?: (node: Code, error: string, file: VFile) => BlockContent | undefined | void
 }
 
-export type RemarkMermaid = Plugin<[RemarkMermaidOptions?], Root>
-
 /**
  * @param options Options that may be used to tweak the output.
  */
-const remarkMermaid: RemarkMermaid = (options) => {
+const remarkMermaid: Plugin<[RemarkMermaidOptions?], Root> = (options) => {
   const render = createMermaidRenderer(options)
 
   return async function transformer(ast, file) {
-    const instances: CodeInstance[] = []
+    const instances: Ancestors[] = []
 
-    visit(ast, { type: 'code', lang: 'mermaid' }, (node: Code, index, parent: Parent) => {
-      instances.push([node, parent])
+    visitParents(ast, { type: 'code', lang: 'mermaid' }, (node: Code, ancestors) => {
+      instances.push([...ancestors, node])
     })
 
     // Nothing to do. No need to start a browser in this case.
@@ -48,12 +46,14 @@ const remarkMermaid: RemarkMermaid = (options) => {
     }
 
     const results = await render(
-      instances.map((instance) => instance[0].value),
+      instances.map((ancestors) => (ancestors.at(-1) as Code).value),
       options
     )
 
-    for (const [i, [node, parent]] of instances.entries()) {
+    for (const [i, ancestors] of instances.entries()) {
       const result = results[i]
+      const node = ancestors.at(-1) as Code
+      const parent = ancestors.at(-2) as Parent
       const nodeIndex = parent.children.indexOf(node)
 
       if (result.status === 'fulfilled') {
@@ -72,7 +72,14 @@ const remarkMermaid: RemarkMermaid = (options) => {
           parent.children.splice(nodeIndex, 1)
         }
       } else {
-        file.fail(result.reason, node, 'remark-mermaidjs:remark-mermaidjs')
+        const message = file.message(result.reason, {
+          ruleId: 'remark-mermaidjs',
+          source: 'remark-mermaidjs',
+          ancestors
+        })
+        message.fatal = true
+        message.url = 'https://github.com/remcohaszing/remark-mermaidjs'
+        throw message
       }
     }
   }

@@ -48,7 +48,7 @@ test.describe.parallel('node', () => {
     expect(file.messages[0].source).toBe('remark-mermaidjs')
     expect(file.messages[0].ruleId).toBe('remark-mermaidjs')
     expect(file.messages[0].fatal).toBe(true)
-    expect(file.messages[0].position).toStrictEqual({
+    expect(file.messages[0].place).toStrictEqual({
       start: { offset: 0, line: 1, column: 1 },
       end: { offset: 22, line: 3, column: 4 }
     })

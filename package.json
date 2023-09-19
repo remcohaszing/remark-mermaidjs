@@ -28,12 +28,12 @@
     "unified"
   ],
   "dependencies": {
-    "@types/mdast": "^3.0.0",
-    "hast-util-from-html-isomorphic": "^1.0.0",
+    "@types/mdast": "^4.0.0",
+    "hast-util-from-html-isomorphic": "^2.0.0",
     "mermaid-isomorphic": "^2.0.0",
-    "unified": "^10.0.0",
-    "unist-util-visit": "^4.0.0",
-    "vfile": "^5.0.0"
+    "unified": "^11.0.0",
+    "unist-util-visit-parents": "^6.0.0",
+    "vfile": "^6.0.0"
   },
   "devDependencies": {
     "@playwright/test": "^1.0.0",
@@ -41,8 +41,8 @@
     "eslint": "^8.0.0",
     "eslint-config-remcohaszing": "^10.0.0",
     "prettier": "^3.0.0",
-    "rehype-stringify": "^9.0.0",
-    "remark": "^14.0.0",
+    "rehype-stringify": "^10.0.0",
+    "remark": "^15.0.0",
     "remark-cli": "^11.0.0",
     "remark-preset-remcohaszing": "^2.0.0",
     "remark-rehype": "^10.0.0",
