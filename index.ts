@@ -33,7 +33,7 @@ export interface RemarkMermaidOptions
 const remarkMermaid: Plugin<[RemarkMermaidOptions?], Root> = (options) => {
   const render = createMermaidRenderer(options)
 
-  return async function transformer(ast, file) {
+  return function transformer(ast, file) {
     const instances: Ancestors[] = []
 
     visitParents(ast, { type: 'code', lang: 'mermaid' }, (node: Code, ancestors) => {
@@ -45,43 +45,43 @@ const remarkMermaid: Plugin<[RemarkMermaidOptions?], Root> = (options) => {
       return
     }
 
-    const results = await render(
+    return render(
       instances.map((ancestors) => (ancestors.at(-1) as Code).value),
       options
-    )
+    ).then((results) => {
+      for (const [i, ancestors] of instances.entries()) {
+        const result = results[i]
+        const node = ancestors.at(-1) as Code
+        const parent = ancestors.at(-2) as Parent
+        const nodeIndex = parent.children.indexOf(node)
 
-    for (const [i, ancestors] of instances.entries()) {
-      const result = results[i]
-      const node = ancestors.at(-1) as Code
-      const parent = ancestors.at(-2) as Parent
-      const nodeIndex = parent.children.indexOf(node)
-
-      if (result.status === 'fulfilled') {
-        const { svg } = result.value
-        const hChildren = fromHtmlIsomorphic(svg, { fragment: true }).children
-        parent.children[nodeIndex] = {
-          type: 'paragraph',
-          children: [{ type: 'html', value: svg }],
-          data: { hChildren }
-        }
-      } else if (options?.errorFallback) {
-        const fallback = options.errorFallback(node, result.reason, file)
-        if (fallback) {
-          parent.children[nodeIndex] = fallback
+        if (result.status === 'fulfilled') {
+          const { svg } = result.value
+          const hChildren = fromHtmlIsomorphic(svg, { fragment: true }).children
+          parent.children[nodeIndex] = {
+            type: 'paragraph',
+            children: [{ type: 'html', value: svg }],
+            data: { hChildren }
+          }
+        } else if (options?.errorFallback) {
+          const fallback = options.errorFallback(node, result.reason, file)
+          if (fallback) {
+            parent.children[nodeIndex] = fallback
+          } else {
+            parent.children.splice(nodeIndex, 1)
+          }
         } else {
-          parent.children.splice(nodeIndex, 1)
+          const message = file.message(result.reason, {
+            ruleId: 'remark-mermaidjs',
+            source: 'remark-mermaidjs',
+            ancestors
+          })
+          message.fatal = true
+          message.url = 'https://github.com/remcohaszing/remark-mermaidjs'
+          throw message
         }
-      } else {
-        const message = file.message(result.reason, {
-          ruleId: 'remark-mermaidjs',
-          source: 'remark-mermaidjs',
-          ancestors
-        })
-        message.fatal = true
-        message.url = 'https://github.com/remcohaszing/remark-mermaidjs'
-        throw message
       }
-    }
+    })
   }
 }
 
