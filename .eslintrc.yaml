@@ -1,7 +1,5 @@
+root: true
 extends:
   - remcohaszing
 rules:
   no-param-reassign: off
-  '@typescript-eslint/consistent-type-imports':
-    - error
-    - prefer: type-imports
