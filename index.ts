@@ -1,3 +1,4 @@
+import { type ElementContent } from 'hast'
 import { fromHtmlIsomorphic } from 'hast-util-from-html-isomorphic'
 import { type BlockContent, type Code, type Parent, type Root } from 'mdast'
 import {
@@ -57,7 +58,7 @@ const remarkMermaid: Plugin<[RemarkMermaidOptions?], Root> = (options) => {
 
         if (result.status === 'fulfilled') {
           const { svg } = result.value
-          const hChildren = fromHtmlIsomorphic(svg, { fragment: true }).children
+          const hChildren = fromHtmlIsomorphic(svg, { fragment: true }).children as ElementContent[]
           parent.children[nodeIndex] = {
             type: 'paragraph',
             children: [{ type: 'html', value: svg }],
