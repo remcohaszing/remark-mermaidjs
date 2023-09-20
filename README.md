@@ -8,7 +8,7 @@
 A [remark](https://remark.js.org) plugin to render [mermaid](https://mermaid-js.github.io) diagrams
 using [playwright](https://playwright.dev).
 
-> [!IMPORTANT]
+> \[!IMPORTANT]
 >
 > Use cases for this package are rare. You should probably use
 > [`rehype-mermaidjs`](https://github.com/remcohaszing/rehype-mermaidjs) instead.
