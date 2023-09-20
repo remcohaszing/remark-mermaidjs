@@ -108,7 +108,7 @@ A custom prefix to use for Mermaid IDs. (`string`, default: `mermaid`)
 
 ## Compatibility
 
-This project is compatible with Node.js 16 or greater.
+This project is compatible with Node.js 18 or greater.
 
 ## Related Projects
 
