@@ -18,18 +18,23 @@ export interface RemarkMermaidOptions
   /**
    * Create a fallback node if processing of a mermaid diagram fails.
    *
-   * @param node The mdast `code` node that couldn’t be rendered.
-   * @param error The error message that was thrown.
-   * @param file The file on which the error occurred.
-   * @returns A fallback node to render instead of the invalid diagram. If nothing is returned, the
-   *   code block is removed
+   * @param node
+   *   The mdast `code` node that couldn’t be rendered.
+   * @param error
+   *   The error message that was thrown.
+   * @param file
+   *   The file on which the error occurred.
+   * @returns
+   *   A fallback node to render instead of the invalid diagram. If nothing is returned, the code
+   *   block is removed
    */
   // eslint-disable-next-line @typescript-eslint/no-invalid-void-type
   errorFallback?: (node: Code, error: string, file: VFile) => BlockContent | undefined | void
 }
 
 /**
- * @param options Options that may be used to tweak the output.
+ * @param options
+ *   Options that may be used to tweak the output.
  */
 const remarkMermaid: Plugin<[RemarkMermaidOptions?], Root> = (options) => {
   const render = createMermaidRenderer(options)
