@@ -10,6 +10,7 @@ import { VFile } from 'vfile'
 
 testFixturesDirectory<RemarkMermaidOptions>({
   directory: new URL('../fixtures', import.meta.url),
+  prettier: true,
   tests: {
     'expected.md'(input, options) {
       return remark().use(remarkMermaid, options).process(input)
