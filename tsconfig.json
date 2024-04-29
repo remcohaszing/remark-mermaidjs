@@ -1,11 +1,12 @@
 {
   "compilerOptions": {
     "declaration": true,
-    "lib": ["dom", "es2020"],
-    "module": "node16",
-    "noEmit": true,
+    "declarationMap": true,
+    "module": "nodenext",
+    "outDir": "dist",
+    "rootDir": "src",
     "skipLibCheck": true,
-    "strict": true,
-    "target": "es2020"
+    "sourceMap": true,
+    "strict": true
   }
 }

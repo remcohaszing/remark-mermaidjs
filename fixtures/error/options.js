@@ -1,6 +1,5 @@
-import { type RemarkMermaidOptions } from 'remark-mermaidjs'
-
-export const options: RemarkMermaidOptions = {
+/** @type {import('remark-mermaidjs').RemarkMermaidOptions} */
+export default {
   errorFallback(node, error, vfile) {
     return {
       type: 'code',

@@ -2,15 +2,18 @@
   "name": "remark-mermaidjs",
   "version": "6.0.0",
   "description": "A remark plugin to render mermaid diagrams",
-  "exports": "./index.js",
+  "exports": "./dist/remark-mermaidjs.js",
+  "main": "./dist/remark-mermaidjs.js",
   "type": "module",
   "files": [
-    "index.d.ts",
-    "index.js"
+    "dist",
+    "src",
+    "!*.test.*"
   ],
   "scripts": {
-    "prepack": "tsc --noEmit false",
-    "test": "c8 playwright test"
+    "prepack": "tsc --build",
+    "pretest": "tsc --build",
+    "test": "c8 node --enable-source-maps ./dist/remark-mermaidjs.test.js"
   },
   "author": "Remco Haszing <remcohaszing@gmail.com>",
   "license": "MIT",
@@ -36,7 +39,6 @@
     "vfile": "^6.0.0"
   },
   "devDependencies": {
-    "@playwright/test": "^1.0.0",
     "@types/hast": "^3.0.0",
     "c8": "^8.0.0",
     "eslint": "^8.0.0",
@@ -47,6 +49,7 @@
     "remark-cli": "^11.0.0",
     "remark-preset-remcohaszing": "^2.0.0",
     "remark-rehype": "^11.0.0",
+    "snapshot-fixtures": "^1.0.0",
     "typescript": "^5.0.0"
   }
 }
