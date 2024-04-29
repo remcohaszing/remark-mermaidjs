@@ -12,9 +12,10 @@
   >
     <g>
       <rect
-        class="actor"
+        class="actor actor-bottom"
         ry="3"
         rx="3"
+        name="John"
         height="65"
         width="150"
         stroke="#666"
@@ -40,9 +41,10 @@
     </g>
     <g>
       <rect
-        class="actor"
+        class="actor actor-bottom"
         ry="3"
         rx="3"
+        name="Bob"
         height="65"
         width="150"
         stroke="#666"
@@ -68,9 +70,10 @@
     </g>
     <g>
       <rect
-        class="actor"
+        class="actor actor-bottom"
         ry="3"
         rx="3"
+        name="Alice"
         height="65"
         width="150"
         stroke="#666"
@@ -107,9 +110,10 @@
       ></line>
       <g id="root-2">
         <rect
-          class="actor"
+          class="actor actor-top"
           ry="3"
           rx="3"
+          name="John"
           height="65"
           width="150"
           stroke="#666"
@@ -147,9 +151,10 @@
       ></line>
       <g id="root-1">
         <rect
-          class="actor"
+          class="actor actor-top"
           ry="3"
           rx="3"
+          name="Bob"
           height="65"
           width="150"
           stroke="#666"
@@ -187,9 +192,10 @@
       ></line>
       <g id="root-0">
         <rect
-          class="actor"
+          class="actor actor-top"
           ry="3"
           rx="3"
+          name="Alice"
           height="65"
           width="150"
           stroke="#666"
@@ -388,14 +394,14 @@
         markerWidth="12"
         markerUnits="userSpaceOnUse"
         refY="5"
-        refX="9"
+        refX="7.9"
         id="arrowhead"
       >
         <path d="M 0 0 L 10 5 L 0 10 z"></path>
       </marker>
     </defs>
     <defs>
-      <marker refY="5" refX="4" orient="auto" markerHeight="8" markerWidth="15" id="crosshead">
+      <marker refY="4.5" refX="4" orient="auto" markerHeight="8" markerWidth="15" id="crosshead">
         <path
           style="stroke-dasharray: 0, 0"
           d="M 1,2 L 6,7 M 6,2 L 1,7"
@@ -406,7 +412,14 @@
       </marker>
     </defs>
     <defs>
-      <marker orient="auto" markerHeight="28" markerWidth="20" refY="7" refX="18" id="filled-head">
+      <marker
+        orient="auto"
+        markerHeight="28"
+        markerWidth="20"
+        refY="7"
+        refX="15.5"
+        id="filled-head"
+      >
         <path d="M 18,7 L9,13 L14,7 L9,1 Z"></path>
       </marker>
     </defs>
@@ -491,7 +504,7 @@
       dominant-baseline="middle"
       text-anchor="middle"
       y="80"
-      x="197"
+      x="196"
     >
       Hello Bob, how are you?
     </text>
@@ -502,9 +515,9 @@
       stroke-width="2"
       class="messageLine0"
       y2="109"
-      x2="319"
+      x2="315"
       y1="109"
-      x1="75"
+      x1="76"
     ></line>
     <text
       style="font-family: arial, sans-serif; font-size: 16px; font-weight: 400"
@@ -514,7 +527,7 @@
       dominant-baseline="middle"
       text-anchor="middle"
       y="124"
-      x="432"
+      x="430"
     >
       How about you John?
     </text>
@@ -525,9 +538,9 @@
       stroke-width="2"
       class="messageLine1"
       y2="153"
-      x2="544"
+      x2="540"
       y1="153"
-      x1="319"
+      x1="320"
     ></line>
     <text
       style="font-family: arial, sans-serif; font-size: 16px; font-weight: 400"
@@ -537,7 +550,7 @@
       dominant-baseline="middle"
       text-anchor="middle"
       y="168"
-      x="197"
+      x="199"
     >
       I am good thanks!
     </text>
@@ -548,9 +561,9 @@
       stroke-width="2"
       class="messageLine1"
       y2="197"
-      x2="75"
+      x2="79"
       y1="197"
-      x1="319"
+      x1="318"
     ></line>
     <text
       style="font-family: arial, sans-serif; font-size: 16px; font-weight: 400"
@@ -560,7 +573,7 @@
       dominant-baseline="middle"
       text-anchor="middle"
       y="212"
-      x="432"
+      x="430"
     >
       I am good thanks!
     </text>
@@ -571,9 +584,9 @@
       stroke-width="2"
       class="messageLine0"
       y2="241"
-      x2="544"
+      x2="540"
       y1="241"
-      x1="319"
+      x1="320"
     ></line>
     <text
       style="font-family: arial, sans-serif; font-size: 16px; font-weight: 400"
@@ -593,9 +606,9 @@
       stroke-width="2"
       class="messageLine1"
       y2="383"
-      x2="75"
+      x2="76"
       y1="383"
-      x1="319"
+      x1="318"
     ></line>
     <text
       style="font-family: arial, sans-serif; font-size: 16px; font-weight: 400"
@@ -615,9 +628,9 @@
       stroke-width="2"
       class="messageLine0"
       y2="427"
-      x2="544"
+      x2="543"
       y1="427"
-      x1="75"
+      x1="76"
     ></line>
   </svg>
 </p>
@@ -700,6 +713,11 @@
       #mermaid-1 .flowchart-label text {
         text-anchor: middle;
       }
+      #mermaid-1 .node .katex path {
+        fill: #000;
+        stroke: #000;
+        stroke-width: 1px;
+      }
       #mermaid-1 .node .label {
         text-align: center;
       }
@@ -770,10 +788,10 @@
         markerWidth="12"
         markerUnits="userSpaceOnUse"
         refY="5"
-        refX="10"
+        refX="6"
         viewBox="0 0 10 10"
         class="marker flowchart"
-        id="flowchart-pointEnd"
+        id="mermaid-1_flowchart-pointEnd"
       >
         <path
           style="stroke-width: 1; stroke-dasharray: 1, 0"
@@ -787,10 +805,10 @@
         markerWidth="12"
         markerUnits="userSpaceOnUse"
         refY="5"
-        refX="0"
+        refX="4.5"
         viewBox="0 0 10 10"
         class="marker flowchart"
-        id="flowchart-pointStart"
+        id="mermaid-1_flowchart-pointStart"
       >
         <path
           style="stroke-width: 1; stroke-dasharray: 1, 0"
@@ -807,7 +825,7 @@
         refX="11"
         viewBox="0 0 10 10"
         class="marker flowchart"
-        id="flowchart-circleEnd"
+        id="mermaid-1_flowchart-circleEnd"
       >
         <circle
           style="stroke-width: 1; stroke-dasharray: 1, 0"
@@ -826,7 +844,7 @@
         refX="-1"
         viewBox="0 0 10 10"
         class="marker flowchart"
-        id="flowchart-circleStart"
+        id="mermaid-1_flowchart-circleStart"
       >
         <circle
           style="stroke-width: 1; stroke-dasharray: 1, 0"
@@ -845,7 +863,7 @@
         refX="12"
         viewBox="0 0 11 11"
         class="marker cross flowchart"
-        id="flowchart-crossEnd"
+        id="mermaid-1_flowchart-crossEnd"
       >
         <path
           style="stroke-width: 2; stroke-dasharray: 1, 0"
@@ -862,7 +880,7 @@
         refX="-1"
         viewBox="0 0 11 11"
         class="marker cross flowchart"
-        id="flowchart-crossStart"
+        id="mermaid-1_flowchart-crossStart"
       >
         <path
           style="stroke-width: 2; stroke-dasharray: 1, 0"
@@ -874,32 +892,32 @@
         <g class="clusters"></g>
         <g class="edgePaths">
           <path
-            marker-end="url(#flowchart-pointEnd)"
+            marker-end="url(#mermaid-1_flowchart-pointEnd)"
             style="fill: none"
             class="edge-thickness-normal edge-pattern-solid flowchart-link LS-A LE-B"
             id="L-A-B-0"
-            d="M89.27357256596906,58.66796875L100.85037297164088,53.547526041666664C112.42717337731271,48.427083333333336,135.58077418865636,38.186197916666664,159.9245016776615,33.065755208333336C184.26822916666666,27.9453125,209.80208333333334,27.9453125,222.56901041666666,27.9453125L235.3359375,27.9453125"
+            d="M89.274,58.668L100.85,53.548C112.427,48.427,135.581,38.186,159.041,33.066C182.502,27.945,206.269,27.945,218.152,27.945L230.036,27.945"
           ></path>
           <path
-            marker-end="url(#flowchart-pointEnd)"
+            marker-end="url(#mermaid-1_flowchart-pointEnd)"
             style="fill: none"
             class="edge-thickness-normal edge-pattern-solid flowchart-link LS-A LE-C"
             id="L-A-C-0"
-            d="M89.27357256596906,91.66796875L100.85037297164088,96.78841145833333C112.42717337731271,101.90885416666667,135.58077418865636,112.14973958333333,156.29038709432817,117.27018229166667C177,122.390625,195.265625,122.390625,204.3984375,122.390625L213.53125,122.390625"
+            d="M89.274,91.668L100.85,96.788C112.427,101.909,135.581,112.15,155.407,117.27C175.233,122.391,191.732,122.391,199.982,122.391L208.231,122.391"
           ></path>
           <path
-            marker-end="url(#flowchart-pointEnd)"
+            marker-end="url(#mermaid-1_flowchart-pointEnd)"
             style="fill: none"
             class="edge-thickness-normal edge-pattern-solid flowchart-link LS-B LE-D"
             id="L-B-D-0"
-            d="M291.2265625,27.9453125L299.02734375,27.9453125C306.828125,27.9453125,322.4296875,27.9453125,337.9939961245097,32.38556116715695C353.55830474901944,36.8258098343139,369.0853594980388,45.7063071686278,376.8488868725485,50.14655583578476L384.61241424705827,54.5868045029417"
+            d="M291.227,27.945L299.027,27.945C306.828,27.945,322.43,27.945,337.227,31.947C352.025,35.949,366.018,43.952,373.015,47.954L380.012,51.956"
           ></path>
           <path
-            marker-end="url(#flowchart-pointEnd)"
+            marker-end="url(#mermaid-1_flowchart-pointEnd)"
             style="fill: none"
             class="edge-thickness-normal edge-pattern-solid flowchart-link LS-C LE-D"
             id="L-C-D-0"
-            d="M313.03125,122.390625L317.1979166666667,122.390625C321.3645833333333,122.390625,329.6979166666667,122.390625,341.628110707843,118.1170429995097C353.55830474901944,113.84346099901943,369.0853594980388,105.29629699803887,376.8488868725485,101.02271499754858L384.61241424705827,96.7491329970583"
+            d="M313.031,122.391L317.198,122.391C321.365,122.391,329.698,122.391,340.854,118.543C352.011,114.695,365.99,107,372.98,103.153L379.969,99.305"
           ></path>
         </g>
         <g class="edgeLabels">
@@ -952,6 +970,8 @@
         <g class="nodes">
           <g
             transform="translate(51.96875, 75.16796875)"
+            data-id="A"
+            data-node="true"
             id="flowchart-A-0"
             class="node default default flowchart-label"
           >
@@ -979,6 +999,8 @@
           </g>
           <g
             transform="translate(263.28125, 27.9453125)"
+            data-id="B"
+            data-node="true"
             id="flowchart-B-1"
             class="node default default flowchart-label"
           >
@@ -997,6 +1019,8 @@
           </g>
           <g
             transform="translate(263.28125, 122.390625)"
+            data-id="C"
+            data-node="true"
             id="flowchart-C-3"
             class="node default default flowchart-label"
           >
@@ -1024,6 +1048,8 @@
           </g>
           <g
             transform="translate(421.2734375, 75.16796875)"
+            data-id="D"
+            data-node="true"
             id="flowchart-D-5"
             class="node default default flowchart-label"
           >
@@ -1063,9 +1089,10 @@
   >
     <g>
       <rect
-        class="actor"
+        class="actor actor-bottom"
         ry="3"
         rx="3"
+        name="Bob"
         height="65"
         width="150"
         stroke="#666"
@@ -1091,9 +1118,10 @@
     </g>
     <g>
       <rect
-        class="actor"
+        class="actor actor-bottom"
         ry="3"
         rx="3"
+        name="Alice"
         height="65"
         width="150"
         stroke="#666"
@@ -1130,9 +1158,10 @@
       ></line>
       <g id="root-4">
         <rect
-          class="actor"
+          class="actor actor-top"
           ry="3"
           rx="3"
+          name="Bob"
           height="65"
           width="150"
           stroke="#666"
@@ -1170,9 +1199,10 @@
       ></line>
       <g id="root-3">
         <rect
-          class="actor"
+          class="actor actor-top"
           ry="3"
           rx="3"
+          name="Alice"
           height="65"
           width="150"
           stroke="#666"
@@ -1371,14 +1401,14 @@
         markerWidth="12"
         markerUnits="userSpaceOnUse"
         refY="5"
-        refX="9"
+        refX="7.9"
         id="arrowhead"
       >
         <path d="M 0 0 L 10 5 L 0 10 z"></path>
       </marker>
     </defs>
     <defs>
-      <marker refY="5" refX="4" orient="auto" markerHeight="8" markerWidth="15" id="crosshead">
+      <marker refY="4.5" refX="4" orient="auto" markerHeight="8" markerWidth="15" id="crosshead">
         <path
           style="stroke-dasharray: 0, 0"
           d="M 1,2 L 6,7 M 6,2 L 1,7"
@@ -1389,7 +1419,14 @@
       </marker>
     </defs>
     <defs>
-      <marker orient="auto" markerHeight="28" markerWidth="20" refY="7" refX="18" id="filled-head">
+      <marker
+        orient="auto"
+        markerHeight="28"
+        markerWidth="20"
+        refY="7"
+        refX="15.5"
+        id="filled-head"
+      >
         <path d="M 18,7 L9,13 L14,7 L9,1 Z"></path>
       </marker>
     </defs>
@@ -1406,19 +1443,19 @@
       </marker>
     </defs>
     <g>
-      <line class="loopLine" y2="164" x2="331" y1="164" x1="65"></line>
-      <line class="loopLine" y2="342" x2="331" y1="164" x1="331"></line>
-      <line class="loopLine" y2="342" x2="331" y1="342" x1="65"></line>
-      <line class="loopLine" y2="342" x2="65" y1="164" x1="65"></line>
+      <line class="loopLine" y2="164" x2="332" y1="164" x1="64"></line>
+      <line class="loopLine" y2="342" x2="332" y1="164" x1="332"></line>
+      <line class="loopLine" y2="342" x2="332" y1="342" x1="64"></line>
+      <line class="loopLine" y2="342" x2="64" y1="164" x1="64"></line>
       <line
         style="stroke-dasharray: 3, 3"
         class="loopLine"
         y2="258"
-        x2="331"
+        x2="332"
         y1="258"
-        x1="65"
+        x1="64"
       ></line>
-      <polygon class="labelBox" points="65,164 115,164 115,177 106.6,184 65,184"></polygon>
+      <polygon class="labelBox" points="64,164 114,164 114,177 105.6,184 64,184"></polygon>
       <text
         style="font-family: arial, sans-serif; font-size: 16px; font-weight: 400"
         class="labelText"
@@ -1426,7 +1463,7 @@
         dominant-baseline="middle"
         text-anchor="middle"
         y="177"
-        x="90"
+        x="89"
       >
         alt
       </text>
@@ -1450,11 +1487,11 @@
       </text>
     </g>
     <g>
-      <line class="loopLine" y2="352" x2="331" y1="352" x1="65"></line>
-      <line class="loopLine" y2="441" x2="331" y1="352" x1="331"></line>
-      <line class="loopLine" y2="441" x2="331" y1="441" x1="65"></line>
-      <line class="loopLine" y2="441" x2="65" y1="352" x1="65"></line>
-      <polygon class="labelBox" points="65,352 115,352 115,365 106.6,372 65,372"></polygon>
+      <line class="loopLine" y2="352" x2="332" y1="352" x1="64"></line>
+      <line class="loopLine" y2="441" x2="332" y1="352" x1="332"></line>
+      <line class="loopLine" y2="441" x2="332" y1="441" x1="64"></line>
+      <line class="loopLine" y2="441" x2="64" y1="352" x1="64"></line>
+      <polygon class="labelBox" points="64,352 114,352 114,365 105.6,372 64,372"></polygon>
       <text
         style="font-family: arial, sans-serif; font-size: 16px; font-weight: 400"
         class="labelText"
@@ -1462,7 +1499,7 @@
         dominant-baseline="middle"
         text-anchor="middle"
         y="365"
-        x="90"
+        x="89"
       >
         opt
       </text>
@@ -1477,11 +1514,11 @@
       </text>
     </g>
     <g>
-      <line class="loopLine" y2="75" x2="341" y1="75" x1="55"></line>
-      <line class="loopLine" y2="451" x2="341" y1="75" x1="341"></line>
-      <line class="loopLine" y2="451" x2="341" y1="451" x1="55"></line>
-      <line class="loopLine" y2="451" x2="55" y1="75" x1="55"></line>
-      <polygon class="labelBox" points="55,75 105,75 105,88 96.6,95 55,95"></polygon>
+      <line class="loopLine" y2="75" x2="342" y1="75" x1="54"></line>
+      <line class="loopLine" y2="451" x2="342" y1="75" x1="342"></line>
+      <line class="loopLine" y2="451" x2="342" y1="451" x1="54"></line>
+      <line class="loopLine" y2="451" x2="54" y1="75" x1="54"></line>
+      <polygon class="labelBox" points="54,75 104,75 104,88 95.6,95 54,95"></polygon>
       <text
         style="font-family: arial, sans-serif; font-size: 16px; font-weight: 400"
         class="labelText"
@@ -1489,7 +1526,7 @@
         dominant-baseline="middle"
         text-anchor="middle"
         y="88"
-        x="80"
+        x="79"
       >
         loop
       </text>
@@ -1511,7 +1548,7 @@
       dominant-baseline="middle"
       text-anchor="middle"
       y="125"
-      x="198"
+      x="197"
     >
       Hello Bob, how are you?
     </text>
@@ -1522,9 +1559,9 @@
       stroke-width="2"
       class="messageLine0"
       y2="154"
-      x2="321"
+      x2="317"
       y1="154"
-      x1="75"
+      x1="76"
     ></line>
     <text
       style="font-family: arial, sans-serif; font-size: 16px; font-weight: 400"
@@ -1534,7 +1571,7 @@
       dominant-baseline="middle"
       text-anchor="middle"
       y="214"
-      x="198"
+      x="200"
     >
       Not so good :(
     </text>
@@ -1545,9 +1582,9 @@
       stroke-width="2"
       class="messageLine0"
       y2="243"
-      x2="75"
+      x2="79"
       y1="243"
-      x1="321"
+      x1="320"
     ></line>
     <text
       style="font-family: arial, sans-serif; font-size: 16px; font-weight: 400"
@@ -1557,7 +1594,7 @@
       dominant-baseline="middle"
       text-anchor="middle"
       y="303"
-      x="198"
+      x="200"
     >
       Feeling fresh like a daisy
     </text>
@@ -1568,9 +1605,9 @@
       stroke-width="2"
       class="messageLine0"
       y2="332"
-      x2="75"
+      x2="79"
       y1="332"
-      x1="321"
+      x1="320"
     ></line>
     <text
       style="font-family: arial, sans-serif; font-size: 16px; font-weight: 400"
@@ -1580,7 +1617,7 @@
       dominant-baseline="middle"
       text-anchor="middle"
       y="402"
-      x="198"
+      x="200"
     >
       Thanks for asking
     </text>
@@ -1591,9 +1628,9 @@
       stroke-width="2"
       class="messageLine0"
       y2="431"
-      x2="75"
+      x2="79"
       y1="431"
-      x1="321"
+      x1="320"
     ></line>
   </svg>
 </p>
@@ -1610,9 +1647,10 @@
   >
     <g>
       <rect
-        class="actor"
+        class="actor actor-bottom"
         ry="3"
         rx="3"
+        name="John"
         height="65"
         width="150"
         stroke="#666"
@@ -1638,9 +1676,10 @@
     </g>
     <g>
       <rect
-        class="actor"
+        class="actor actor-bottom"
         ry="3"
         rx="3"
+        name="Bob"
         height="65"
         width="150"
         stroke="#666"
@@ -1666,9 +1705,10 @@
     </g>
     <g>
       <rect
-        class="actor"
+        class="actor actor-bottom"
         ry="3"
         rx="3"
+        name="Alice"
         height="65"
         width="150"
         stroke="#666"
@@ -1705,9 +1745,10 @@
       ></line>
       <g id="root-7">
         <rect
-          class="actor"
+          class="actor actor-top"
           ry="3"
           rx="3"
+          name="John"
           height="65"
           width="150"
           stroke="#666"
@@ -1745,9 +1786,10 @@
       ></line>
       <g id="root-6">
         <rect
-          class="actor"
+          class="actor actor-top"
           ry="3"
           rx="3"
+          name="Bob"
           height="65"
           width="150"
           stroke="#666"
@@ -1785,9 +1827,10 @@
       ></line>
       <g id="root-5">
         <rect
-          class="actor"
+          class="actor actor-top"
           ry="3"
           rx="3"
+          name="Alice"
           height="65"
           width="150"
           stroke="#666"
@@ -1986,14 +2029,14 @@
         markerWidth="12"
         markerUnits="userSpaceOnUse"
         refY="5"
-        refX="9"
+        refX="7.9"
         id="arrowhead"
       >
         <path d="M 0 0 L 10 5 L 0 10 z"></path>
       </marker>
     </defs>
     <defs>
-      <marker refY="5" refX="4" orient="auto" markerHeight="8" markerWidth="15" id="crosshead">
+      <marker refY="4.5" refX="4" orient="auto" markerHeight="8" markerWidth="15" id="crosshead">
         <path
           style="stroke-dasharray: 0, 0"
           d="M 1,2 L 6,7 M 6,2 L 1,7"
@@ -2004,7 +2047,14 @@
       </marker>
     </defs>
     <defs>
-      <marker orient="auto" markerHeight="28" markerWidth="20" refY="7" refX="18" id="filled-head">
+      <marker
+        orient="auto"
+        markerHeight="28"
+        markerWidth="20"
+        refY="7"
+        refX="15.5"
+        id="filled-head"
+      >
         <path d="M 18,7 L9,13 L14,7 L9,1 Z"></path>
       </marker>
     </defs>
@@ -2021,11 +2071,11 @@
       </marker>
     </defs>
     <g>
-      <line class="loopLine" y2="119" x2="581" y1="119" x1="369"></line>
-      <line class="loopLine" y2="268" x2="581" y1="119" x1="581"></line>
-      <line class="loopLine" y2="268" x2="581" y1="268" x1="369"></line>
-      <line class="loopLine" y2="268" x2="369" y1="119" x1="369"></line>
-      <polygon class="labelBox" points="369,119 419,119 419,132 410.6,139 369,139"></polygon>
+      <line class="loopLine" y2="119" x2="582" y1="119" x1="370"></line>
+      <line class="loopLine" y2="268" x2="582" y1="119" x1="582"></line>
+      <line class="loopLine" y2="268" x2="582" y1="268" x1="370"></line>
+      <line class="loopLine" y2="268" x2="370" y1="119" x1="370"></line>
+      <polygon class="labelBox" points="370,119 420,119 420,132 411.6,139 370,139"></polygon>
       <text
         style="font-family: arial, sans-serif; font-size: 16px; font-weight: 400"
         class="labelText"
@@ -2033,7 +2083,7 @@
         dominant-baseline="middle"
         text-anchor="middle"
         y="132"
-        x="394"
+        x="395"
       >
         loop
       </text>
@@ -2042,9 +2092,9 @@
         class="loopText"
         text-anchor="middle"
         y="137"
-        x="500"
+        x="501"
       >
-        <tspan x="500">[Healthcheck]</tspan>
+        <tspan x="501">[Healthcheck]</tspan>
       </text>
     </g>
     <g>
@@ -2092,7 +2142,7 @@
       dominant-baseline="middle"
       text-anchor="middle"
       y="80"
-      x="275"
+      x="274"
     >
       Hello John, how are you?
     </text>
@@ -2103,9 +2153,9 @@
       stroke-width="2"
       class="messageLine0"
       y2="109"
-      x2="475"
+      x2="471"
       y1="109"
-      x1="75"
+      x1="76"
     ></line>
     <text
       style="font-family: arial, sans-serif; font-size: 16px; font-weight: 400"
@@ -2115,7 +2165,7 @@
       dominant-baseline="middle"
       text-anchor="middle"
       y="169"
-      x="475"
+      x="476"
     >
       Fight against hypochondria
     </text>
@@ -2125,7 +2175,7 @@
       stroke="none"
       stroke-width="2"
       class="messageLine0"
-      d="M 475,198 C 535,188 535,228 475,218"
+      d="M 476,198 C 536,188 536,228 476,218"
     ></path>
     <text
       style="font-family: arial, sans-serif; font-size: 16px; font-weight: 400"
@@ -2135,7 +2185,7 @@
       dominant-baseline="middle"
       text-anchor="middle"
       y="347"
-      x="275"
+      x="277"
     >
       Great!
     </text>
@@ -2146,9 +2196,9 @@
       stroke-width="2"
       class="messageLine1"
       y2="376"
-      x2="75"
+      x2="79"
       y1="376"
-      x1="475"
+      x1="474"
     ></line>
     <text
       style="font-family: arial, sans-serif; font-size: 16px; font-weight: 400"
@@ -2158,7 +2208,7 @@
       dominant-baseline="middle"
       text-anchor="middle"
       y="391"
-      x="375"
+      x="377"
     >
       How about you?
     </text>
@@ -2169,9 +2219,9 @@
       stroke-width="2"
       class="messageLine0"
       y2="420"
-      x2="275"
+      x2="279"
       y1="420"
-      x1="475"
+      x1="474"
     ></line>
     <text
       style="font-family: arial, sans-serif; font-size: 16px; font-weight: 400"
@@ -2181,7 +2231,7 @@
       dominant-baseline="middle"
       text-anchor="middle"
       y="435"
-      x="375"
+      x="374"
     >
       Jolly good!
     </text>
@@ -2192,9 +2242,9 @@
       stroke-width="2"
       class="messageLine1"
       y2="464"
-      x2="475"
+      x2="471"
       y1="464"
-      x1="275"
+      x1="276"
     ></line>
   </svg>
 </p>
