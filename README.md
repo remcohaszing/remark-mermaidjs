@@ -89,12 +89,12 @@ The options used to launch the browser. (`object`)
 
 - **Note**: This options is required in Node.js. In the browser this option is unused.
 
-#### `mermaidOptions`
+#### `mermaidConfig`
 
-The [mermaid options](https://mermaid-js.github.io/mermaid/#/Setup) to use.
+The [mermaid config](https://mermaid.js.org/config/schema-docs/config.html) to use.
 
-**Note**: This options is only supported in Node.js. In the browser this option is unused. If you
-use this in a browser, call `mermaid.initialize()` manually.
+**Note**: This config is only supported in Node.js. In the browser this option is unused. If you use
+this in a browser, call `mermaid.initialize()` manually.
 
 #### `prefix`
 
