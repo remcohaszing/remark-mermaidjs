@@ -53,7 +53,7 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
       - run: npm ci
-      - run: npx playwright install --with-deps chromium
+      - run: npx playwright-core install --with-deps chromium
       - run: npm test
       - uses: actions/upload-artifact@v4
         if: always()
