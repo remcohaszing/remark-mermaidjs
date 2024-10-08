@@ -11,7 +11,7 @@ using [playwright](https://playwright.dev).
 > \[!IMPORTANT]
 >
 > Use cases for this package are rare. You should probably use
-> [`rehype-mermaidjs`](https://github.com/remcohaszing/rehype-mermaidjs) instead.
+> [`rehype-mermaid`](https://github.com/remcohaszing/rehype-mermaid) instead.
 
 ## Table of Contents
 
@@ -27,10 +27,10 @@ using [playwright](https://playwright.dev).
 ## Installation
 
 ```sh
-npm install rehype-mermaidjs
+npm install remark-mermaidjs
 ```
 
-Outside of browsers `rehype-mermaidjs` uses [Playwright](https://playwright.dev). If you use this
+Outside of browsers `remark-mermaidjs` uses [Playwright](https://playwright.dev). If you use this
 outside of a browser, you need to install Playwright and a Playwright browser.
 
 ```sh
@@ -110,8 +110,8 @@ This project is compatible with Node.js 18 or greater.
 - [`mermaid`](https://mermaid.js.org) is the library that’s used to render the diagrams.
 - [`mermaid-isomorphic`](https://github.com/remcohaszing/mermaid-isomorphic) allows this package to
   render Mermaid diagrams in both Node.js and the browser.
-- [`rehype-mermaidjs`](https://github.com/remcohaszing/rehype-mermaidjs) is a more powerful plugin
-  that does the same, but as a [rehype](https://github.com/rehypejs/rehype) plugin.
+- [`rehype-mermaid`](https://github.com/remcohaszing/rehype-mermaid) is a more powerful plugin that
+  does the same, but as a [rehype](https://github.com/rehypejs/rehype) plugin.
 
 ## Contributing
 
