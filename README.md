@@ -2,8 +2,8 @@
 
 [![github actions](https://github.com/remcohaszing/remark-mermaidjs/actions/workflows/ci.yaml/badge.svg)](https://github.com/remcohaszing/remark-mermaidjs/actions/workflows/ci.yaml)
 [![codecov](https://codecov.io/gh/remcohaszing/remark-mermaidjs/branch/main/graph/badge.svg)](https://codecov.io/gh/remcohaszing/remark-mermaidjs)
-[![npm](https://img.shields.io/npm/v/remark-mermaidjs)](https://www.npmjs.com/package/remark-mermaidjs)
-[![prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)](https://prettier.io)
+[![npm version](https://img.shields.io/npm/v/remark-mermaidjs)](https://www.npmjs.com/package/remark-mermaidjs)
+[![npm downloads](https://img.shields.io/npm/dm/remark-mermaidjs)](https://www.npmjs.com/package/remark-mermaidjs)
 
 A [remark](https://remark.js.org) plugin to render [mermaid](https://mermaid-js.github.io) diagrams
 using [playwright](https://playwright.dev).
