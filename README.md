@@ -27,13 +27,14 @@ using [playwright](https://playwright.dev).
 ## Installation
 
 ```sh
-npm install remark-mermaidjs
+npm install rehype-mermaidjs
 ```
 
-In Node.js this package uses [playwright](https://playwright.dev) under the hood. To use it, you may
-need to install additional dependencies. These can be installed with:
+Outside of browsers `rehype-mermaidjs` uses [Playwright](https://playwright.dev). If you use this
+outside of a browser, you need to install Playwright and a Playwright browser.
 
 ```sh
+npm install playwright
 npx playwright install --with-deps chromium
 ```
 
